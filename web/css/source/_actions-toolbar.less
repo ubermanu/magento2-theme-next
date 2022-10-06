@@ -39,9 +39,11 @@
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .actions-toolbar {
         .lib-actions-toolbar();
+        .lib-css(gap, @actions-toolbar-gap);
 
         > .primary,
         > .secondary {
+            .lib-css(gap, @actions-toolbar-actions-gap);
             margin-bottom: 0;
 
             .action {
