@@ -260,14 +260,7 @@
 }
 
 .lib-form-element-all() {
-    input[type="text"],
-    input[type="password"],
-    input[type="url"],
-    input[type="tel"],
-    input[type="search"],
-    input[type="number"],
-    input[type*="date"],
-    input[type="email"] {
+    .input-text {
         .lib-form-element-input(@_type: input-text);
     }
 
