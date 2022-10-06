@@ -1,0 +1,26 @@
+{
+    "name": "ubermanu/magento2-theme-next",
+    "description": "Magento 2 theme based on blank with a few improvements",
+    "type": "magento2-theme",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Emmanuel Vodor",
+            "email": "manu@paca.happy-dev.fr"
+        }
+    ],
+    "config": {
+        "sort-packages": true
+    },
+    "version": "100.4.4",
+    "require": {
+        "php": "~7.4.0||~8.1.0",
+        "magento/framework": "103.0.*",
+        "magento/theme-frontend-blank": "100.4.*"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ]
+    }
+}
