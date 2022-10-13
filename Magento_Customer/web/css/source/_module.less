@@ -268,15 +268,15 @@
 
     .field.password {
         .control {
-            .lib-vendor-prefix-display();
-            .lib-vendor-prefix-flex-direction();
+            display: flex;
+            flex-direction: column;
 
             .mage-error {
-                .lib-vendor-prefix-order(2);
+                order: 2;
             }
 
             .input-text {
-                .lib-vendor-prefix-order(0);
+                order: 0;
                 z-index: 2;
             }
         }
