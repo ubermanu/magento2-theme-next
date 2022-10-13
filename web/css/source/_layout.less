@@ -90,15 +90,18 @@
 
     .columns {
         .page-layout-2columns-left & {
-            grid-template-areas: 'sidebar main main' 'sidebar-additional main main';
+            grid-template-areas: 'sidebar main' 'sidebar-additional main';
+            grid-template-columns: max-content 1fr;
         }
 
         .page-layout-2columns-right & {
-            grid-template-areas: 'main main sidebar' 'main main sidebar-additional';
+            grid-template-areas: 'main sidebar' 'main sidebar-additional';
+            grid-template-columns: 1fr max-content;
         }
 
         .page-layout-3columns & {
-            grid-template-areas: 'sidebar main main sidebar-additional';
+            grid-template-areas: 'sidebar main sidebar-additional';
+            grid-template-columns: max-content 1fr max-content;
         }
     }
 
