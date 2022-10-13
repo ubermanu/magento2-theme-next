@@ -90,31 +90,16 @@
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
     .block-collapsible-nav {
-        left: 0;
-        position: absolute;
-        top: -21px;
         width: 100%;
-        z-index: 5;
 
         .title {
             &:extend(.abs-toggling-title-mobile all);
+            border-left: @border-width__base solid @border-color__base;
+            border-right: @border-width__base solid @border-color__base;
         }
 
-        .content {
-            border-bottom: @border-width__base solid @border-color__base;
+        .content:not(.active) {
             display: none;
-
-            &.active {
-                display: block;
-            }
-        }
-    }
-
-    .page-main {
-        .account &,
-        .cms-privacy-policy & {
-            padding-top: 41px;
-            position: relative;
         }
     }
 }
