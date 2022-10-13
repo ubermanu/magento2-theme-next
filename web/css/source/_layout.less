@@ -1,4 +1,4 @@
-@layout-column-main__sidebar-offset: 2%;
+@layout-column-main__sidebar-offset: 2vw;
 @layout-column__additional-sidebar-offset: @layout-column-main__sidebar-offset;
 
 //
@@ -7,29 +7,27 @@
 
 & when (@media-common = true) {
     .columns {
-        #lib-layout-columns();
+        display: grid;
+        grid-template-areas: 'main' 'sidebar' 'sidebar-additional';
+        gap: @layout-column-main__sidebar-offset;
 
         .column.main {
-            &:extend(.abs-add-box-sizing all);
-            .lib-css(margin-bottom, @indent__xl);
-            flex-basis: auto;
-            flex-grow: 1;
-            order: 1;
-            width: 100%;
+            grid-area: main;
+            box-sizing: border-box;
         }
 
-        .sidebar-main {
-            &:extend(.abs-add-box-sizing all);
-            flex-grow: 1;
-            flex-basis: 100%;
-            order: 1;
+        .sidebar {
+            grid-area: sidebar;
+            box-sizing: border-box;
         }
 
         .sidebar-additional {
-            &:extend(.abs-add-box-sizing all);
-            flex-grow: 1;
-            flex-basis: 100%;
-            order: 2;
+            grid-area: sidebar-additional;
+            box-sizing: border-box;
+        }
+
+        .sidebar:empty {
+            display: none;
         }
     }
 }
@@ -91,43 +89,21 @@
     }
 
     .columns {
-        display: block;
+        .page-layout-2columns-left & {
+            grid-template-areas: 'sidebar main main' 'sidebar-additional main main';
+        }
+
+        .page-layout-2columns-right & {
+            grid-template-areas: 'main main sidebar' 'main main sidebar-additional';
+        }
+
+        .page-layout-3columns & {
+            grid-template-areas: 'sidebar main main sidebar-additional';
+        }
     }
 
     .column.main {
-        #lib-layout-columns > .main();
-        &:extend(.abs-add-box-sizing-desktop all);
-        min-height: 300px;
-    }
-
-    .sidebar-main {
-        #lib-layout-columns > .left();
-        padding-right: @layout-column-main__sidebar-offset;
-        &:extend(.abs-add-box-sizing-desktop all);
-    }
-
-    .page-layout-2columns-right .sidebar-main {
-        padding-left: @layout-column-main__sidebar-offset;
-        padding-right: 0;
-    }
-
-    .sidebar-additional {
-        #lib-layout-columns > .right();
-        clear: right;
-        padding-left: @layout-column__additional-sidebar-offset;
-        &:extend(.abs-add-box-sizing-desktop all);
-    }
-
-    .page-layout-2columns-left {
-        .main {
-            padding-left: @layout-column__additional-sidebar-offset
-        }
-
-        .sidebar-additional {
-            clear: left;
-            float: left;
-            padding-left: 0;
-        }
+        min-height: 30rem;
     }
 
     .panel.header {
