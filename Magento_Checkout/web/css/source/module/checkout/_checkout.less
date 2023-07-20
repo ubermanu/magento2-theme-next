@@ -91,7 +91,8 @@
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .opc-wrapper {
         &:extend(.abs-add-box-sizing-desktop-m all);
-        .lib-layout-column(2, 1, @checkout-wrapper__columns);
+        // TODO: fix the checkout layout
+        //.lib-layout-column(2, 1, @checkout-wrapper__columns);
 
         padding-right: @indent__l;
     }
