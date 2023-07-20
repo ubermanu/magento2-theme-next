@@ -4,7 +4,7 @@ import less from 'magefront-plugin-less';
 export default {
     plugins: [
         less({
-            less: less4,
+            compiler: less4,
         }),
         'magefront-plugin-requirejs',
         'magefront-plugin-js-translations',
