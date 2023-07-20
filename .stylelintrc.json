@@ -4,6 +4,7 @@
   ],
   "customSyntax": "postcss-less",
   "rules": {
+    "less/no-duplicate-variables": null,
     "import-notation": false
   }
 }
