@@ -154,14 +154,6 @@
     &::placeholder {
         .lib-css(color, @_placeholder-color);
     }
-
-    &::input-placeholder {
-        .lib-css(color, @_placeholder-color);
-    }
-
-    &:input-placeholder {
-        .lib-css(color, @_placeholder-color);
-    }
 }
 
 .lib-form-validation(
@@ -409,16 +401,6 @@
         .lib-css(color, @_color);
         ._lib-form-element-state-add-font-style(@_font-style-state, @_font-style-default);
     }
-
-    &::input-placeholder {
-        .lib-css(color, @_color);
-        ._lib-form-element-state-add-font-style(@_font-style-state, @_font-style-default);
-    }
-
-    &:input-placeholder {
-        .lib-css(color, @_color);
-        ._lib-form-element-state-add-font-style(@_font-style-state, @_font-style-default);
-    }
 }
 
 ._lib-form-element-state-add-background(@_background-state, @_background-default) when not (@_background-state = @_background-default) {
@@ -621,18 +603,16 @@
     }
 
     .addon {
-        .lib-vendor-prefix-display(inline-flex);
-        .lib-vendor-prefix-flex-wrap(nowrap);
-
+        display: inline-flex;
+        flex-wrap: nowrap;
         padding: 0;
         width: 100%;
 
         textarea,
         select,
         input {
-            .lib-vendor-prefix-order(2);
-            .lib-vendor-prefix-flex-basis(100%);
-
+            order: 2;
+            flex-basis: 100%;
             display: inline-block;
             margin: 0;
             width: auto;
@@ -641,8 +621,8 @@
         .addbefore,
         .addafter {
             .lib-form-element-input(@_type: input-text);
-            .lib-vendor-prefix-order(3);
 
+            order: 3;
             display: inline-block;
             vertical-align: middle;
             white-space: nowrap;
@@ -651,7 +631,7 @@
 
         .addbefore {
             float: left;
-            .lib-vendor-prefix-order(1);
+            order: 1;
         }
     }
 

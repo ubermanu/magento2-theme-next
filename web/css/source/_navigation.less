@@ -81,7 +81,7 @@
 
     .nav-sections {
         -webkit-overflow-scrolling: touch;
-        .lib-css(transition, left .3s, 1);
+        .lib-css(transition, left .3s);
 
         height: 100%;
         left: calc(~'-1 * (100% - @{active-nav-indent})');
@@ -190,7 +190,7 @@
         width: 100%;
 
         .page-wrapper {
-            .lib-css(transition, left .3s, 1);
+            .lib-css(transition, left .3s);
 
             height: 100%;
             left: 0;
@@ -212,15 +212,15 @@
         }
 
         .nav-sections {
-            @_shadow: 0 0 5px 0 rgba(50, 50, 50, .75);
-            .lib-css(box-shadow, @_shadow, 1);
+            @_shadow: 0 0 5px 0 rgba(50, 50, 50, 75%);
+            .lib-css(box-shadow, @_shadow);
 
             left: 0;
             z-index: 99;
         }
 
         .nav-toggle {
-            &:after {
+            &::after {
                 background: rgba(0, 0, 0, @overlay__opacity);
                 content: '';
                 display: block;

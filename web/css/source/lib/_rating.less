@@ -20,7 +20,7 @@
     overflow: hidden;
 
     &::before {
-        ._lib-rating-icon-defalt(
+        ._lib-rating-icon-default(
             @_icon-font,
             @_icon-font-size,
             @_icon-letter-spacing,
@@ -59,7 +59,7 @@
         }
 
         &::before {
-            ._lib-rating-icon-defalt(
+            ._lib-rating-icon-default(
                 @_icon-font,
                 @_icon-font-size,
                 @_icon-letter-spacing,
@@ -170,18 +170,21 @@
             z-index: @_icon-count - (@_index - 2);
 
             &::before {
-               .lib-rating-icons-content(@_index, @_icon-content);
+                .lib-rating-icons-content(@_index, @_icon-content);
             }
         }
         //  Next iteration
         .loopingClass(@_index - 1);
     }
 
-    .loopingClass (0) {}
+    // TODO: Can this be replaced by a proper counter?
+    // stylelint-disable-next-line block-no-empty
+    .loopingClass (0) {
+    }
     .loopingClass (@_icon-count);
 }
 
-._lib-rating-icon-defalt(
+._lib-rating-icon-default(
     @_icon-font,
     @_icon-font-size,
     @_icon-letter-spacing,
@@ -228,7 +231,7 @@
     @_icon-count: @rating-icon__count,
     @_icon-content: @rating-icon__content
 ) when (@_icon-count > 0) {
-    .lib-rating-icons-content((@_icon-count - 1),@_icon-content);
+    .lib-rating-icons-content((@_icon-count - 1), @_icon-content);
 
     content+_: @_icon-content;
 }

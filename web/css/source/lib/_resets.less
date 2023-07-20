@@ -85,7 +85,7 @@
     .lib-form-element-all();
 
     form {
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0%);
     }
 
     address {
@@ -234,7 +234,7 @@
     kbd,
     pre,
     samp {
-        font-family: monospace, monospace;
+        font-family: monospace;
         font-size: 1em;
     }
 
@@ -261,6 +261,7 @@
     html input[type="button"],
     input[type="reset"],
     input[type="submit"] {
+        // stylelint-disable-next-line property-no-vendor-prefix
         -webkit-appearance: button;
         cursor: pointer;
     }
@@ -353,8 +354,8 @@
     menu, nav, output, ruby, section, summary,
     time, mark, audio, video {
         border: 0;
-        font-size: 100%;
         font: inherit;
+        font-size: 100%;
         margin: 0;
         padding: 0;
         vertical-align: baseline;
@@ -379,7 +380,6 @@
 
     blockquote::before, blockquote::after,
     q::before, q::after {
-        content: '';
         content: none;
     }
 

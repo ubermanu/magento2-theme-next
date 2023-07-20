@@ -8,6 +8,9 @@
     "less/no-duplicate-variables": null,
     "no-duplicate-selectors": null,
     "selector-class-pattern": null,
+    "function-no-unknown": null,
+    "no-invalid-position-at-import-rule": null,
+    "less/color-no-invalid-hex": null,
     "import-notation": false
   }
 }

@@ -81,7 +81,7 @@
     overflow-wrap: break-word;
     word-wrap: break-word;
     word-break: break-word;
-    .lib-hyphens();
+    hyphens: auto;
 }
 
 .lib-text-overflow() {
@@ -94,14 +94,9 @@
     background-color: transparent;
     border: 0;
     color: transparent;
+    // stylelint-disable-next-line font-family-name-quotes, font-family-no-missing-generic-family-keyword
     font: ~'0/0' a;
     text-shadow: none;
-}
-
-//  Optional hyphenation
-/** @deprecated */
-.lib-hyphens(@mode: auto) {
-    hyphens: @mode;
 }
 
 .lib-typography(

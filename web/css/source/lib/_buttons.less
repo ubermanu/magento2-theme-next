@@ -91,7 +91,7 @@
         @_icon-font-vertical-align: @_button-icon-font-vertical-align,
         @_icon-font-position: @_button-icon-font-position,
         @_icon-font-text-hide: @_button-icon-font-text-hide
-    );;
+    );
 
     &:focus,
     &:active {
@@ -135,7 +135,7 @@
 .lib-button-size(
     @_button-line-height: @button__line-height,
     @_button-padding: @button__padding
-){
+) {
     .lib-line-height(@_button-line-height);
     .lib-css(padding, @_button-padding);
 }
@@ -245,6 +245,7 @@
 
 .lib-button-reset() {
     background-image: none; // Reset unusual Firefox-on-Android default style
+    // stylelint-disable-next-line declaration-block-no-shorthand-property-overrides
     background: none;
     box-sizing: content-box; // Hack: fix Firefox button line-height problem
     border: 0;
@@ -330,7 +331,7 @@
         @_button-gradient-color-end-hover: @_button-gradient-color-end-hover,
         @_button-gradient-color-start-active: @_button-gradient-color-start-active,
         @_button-gradient-color-end-active: @_button-gradient-color-end-active
-     );
+    );
 }
 
 //
@@ -414,7 +415,7 @@
         @_icon-font-vertical-align: @_icon-font-vertical-align,
         @_icon-font-position: @_icon-font-position,
         @_icon-font-text-hide: @_icon-font-text-hide
-    );;
+    );
 }
 
 .lib-button-icon (

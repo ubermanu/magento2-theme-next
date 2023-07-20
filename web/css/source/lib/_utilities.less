@@ -259,25 +259,7 @@
 
 .lib-css(
     @_property,
-    @_value,
-    @_prefix: 0
-) when (@_prefix = 1)
-  and not (@_value = '')
-  and not (@_value = false)
-  and not (extract(@_value, 1) = false)
-  and not (extract(@_value, 2) = false)
-  and not (extract(@_value, 3) = false)
-  and not (extract(@_value, 4) = false)
-  and not (extract(@_value, 5) = false) {
-    -webkit-@{_property}: @_value;
-    -moz-@{_property}: @_value;
-    -ms-@{_property}: @_value;
-}
-
-.lib-css(
-    @_property,
-    @_value,
-    @_prefix: 0
+    @_value
 ) when not (@_value = '')
   and not (@_value = false)
   and not (extract(@_value, 1) = false)
@@ -373,99 +355,10 @@
     @_input-placeholder-color: @form-element-input-placeholder__color,
     @_input-placeholder-font-weight: @form-element-input__font-weight
 ) {
-    &::input-placeholder {
-        .lib-css(color, @_input-placeholder-color);
-        .lib-css(font-weight, @_input-placeholder-font-weight);
-    }
-
-    &:placeholder {
-        .lib-css(color, @_input-placeholder-color);
-        .lib-css(font-weight, @_input-placeholder-font-weight);
-    }
-
     &::placeholder {
         .lib-css(color, @_input-placeholder-color);
         .lib-css(font-weight, @_input-placeholder-font-weight);
     }
-
-    &:input-placeholder {
-        .lib-css(color, @_input-placeholder-color);
-        .lib-css(font-weight, @_input-placeholder-font-weight);
-    }
-}
-
-//
-//  Flex layout
-//  ---------------------------------------------
-
-/** @deprecated */
-.lib-vendor-prefix-display(
-    @_value: flex
-) {
-    display: @_value;
-}
-
-/** @deprecated */
-.lib-vendor-prefix-flex-grow(
-    @_value: 0
-) {
-    flex-grow: @_value;
-}
-
-/** @deprecated */
-.lib-vendor-prefix-flex-shrink (
-    @_value: 1
-) {
-    flex-shrink: @_value;
-}
-
-/** @deprecated */
-.lib-vendor-prefix-flex-basis (
-    @_value: auto
-) {
-    flex-basis: @_value;
-}
-
-/** @deprecated */
-.lib-vendor-prefix-flex-wrap (
-    @_value: wrap
-) {
-    flex-wrap: @_value;
-}
-
-/** @deprecated */
-.lib-vendor-prefix-flex-direction (
-    @_value: column
-) {
-    flex-direction: @_value;
-}
-
-/** @deprecated */
-.lib-vendor-prefix-order (
-    @_value: 0
-) {
-    order: @_value;
-}
-
-/** @deprecated */
-.lib-vendor-box-align (
-    @_value: stretch
-) {
-    align-items: @_value;
-}
-
-/** @deprecated */
-.lib-vendor-prefix-appearance (
-    @value: none
-) {
-    appearance: @value;
-}
-
-/** @deprecated */
-.lib-vendor-prefix-column-count (
-    @_value
-) {
-    column-count: @_value;
 }
 
 //
