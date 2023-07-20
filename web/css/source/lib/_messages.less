@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Messages
@@ -37,6 +37,7 @@
     .lib-css(border-radius, @_message-border-radius);
     .lib-css(margin, @_message-margin);
     .lib-css(padding, @_message-padding);
+
     display: block;
     .lib-typography(
         @_color: @message__color,
@@ -140,9 +141,10 @@ and not (@_message-border-style = false) {
 ) {
     position: relative;
 
-    &:before {
+    &::before {
         .lib-css(background, @_message-icon-background);
         .lib-css(width, @message-icon__lateral-width);
+
         content: '';
         display: block;
         height: 100%;
@@ -153,8 +155,9 @@ and not (@_message-border-style = false) {
     }
 
     > *:first-child {
-        &:before {
+        &::before {
             .lib-css(margin-top, -@message-icon__lateral-arrow-size);
+
             content: '';
             overflow: hidden;
             position: absolute;
@@ -163,7 +166,7 @@ and not (@_message-border-style = false) {
     }
 
     > *:first-child {
-        &:after {
+        &::after {
             ._lib-icon-font(
                 @_icon-font-content: @_message-icon,
                 @_icon-font: @icon-font,
@@ -178,6 +181,7 @@ and not (@_message-border-style = false) {
             .lib-css(right, @_message-icon-right);
             .lib-css(top, @_message-icon-top);
             .lib-css(width, @message-icon__lateral-width);
+
             position: absolute;
             text-align: center;
         }
@@ -195,21 +199,21 @@ and not (@_message-border-style = false) {
 ) when (@_message-icon-position = right) {
     .lib-css(padding-right, @message-icon__lateral-width + @indent__s);
 
-    &:before {
+    &::before {
         right: 0;
 
         ._lib-message-icon-lateral-border-radius(@_message-icon-position);
     }
 
     > *:first-child {
-        &:before {
+        &::before {
             .lib-arrow(left, @message-icon__lateral-arrow-size, @_message-icon-background);
             .lib-css(right, @message-icon__lateral-width);
         }
     }
 
     > *:first-child {
-        &:after {
+        &::after {
             right: 0;
         }
     }
@@ -221,17 +225,17 @@ and not (@_message-border-style = false) {
 ) when (@_message-icon-position = left) {
     .lib-css(padding-left, @message-icon__lateral-width + @indent__s);
 
-    &:before {
+    &::before {
         left: 0;
         ._lib-message-icon-lateral-border-radius(@_message-icon-position);
     }
 
-    > *:first-child:before {
+    > *:first-child::before {
         .lib-arrow(right, @message-icon__lateral-arrow-size, @_message-icon-background);
         .lib-css(left, @message-icon__lateral-width);
     }
 
-    > *:first-child:after {
+    > *:first-child::after {
         left: 0;
     }
 }
@@ -258,9 +262,10 @@ and not (@_message-border-style = false) {
     @_message-icon-right
 ) {
     .lib-css(padding-left, @message-icon__inner-padding-left);
+
     position: relative;
 
-    > *:first-child:before {
+    > *:first-child::before {
         ._lib-icon-font(
             @_icon-font-content: @_message-icon,
             @_icon-font: @icon-font,
@@ -275,6 +280,7 @@ and not (@_message-border-style = false) {
         .lib-css(right, @_message-icon-right);
         .lib-css(top, @_message-icon-top);
         .lib-css(width, @message-icon__inner-padding-left);
+
         position: absolute;
         text-align: center;
     }

@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Styles Extends
@@ -14,6 +14,7 @@
 & when (@media-common = true) {
     .abs-reset-list {
         .lib-list-reset-styles();
+
         > li {
             margin: 0;
         }
@@ -42,7 +43,7 @@
         float: left;
         margin: 0 @indent__s @indent__xs 0;
 
-        &:after {
+        &::after {
             content: ': ';
         }
     }
@@ -167,6 +168,7 @@
         }
 
         .lib-font-size(18);
+
         border-bottom: 1px solid @secondary__color;
         margin-bottom: 15px;
         padding-bottom: 12px;
@@ -337,6 +339,7 @@
 & when (@media-common = true) {
     .abs-action-remove {
         &:extend(.abs-action-button-as-link all);
+
         left: @indent__s;
         margin-left: 70%;
         position: absolute;
@@ -622,7 +625,7 @@
             @_icon-font-display: block
         );
 
-        &:after {
+        &::after {
             position: absolute;
             right: @indent__xs;
             top: 0;
@@ -640,6 +643,7 @@
             @_options-selector : ~'.items',
             @_dropdown-split-button-border-radius-fix: true
         );
+
         vertical-align: middle;
     }
 }
@@ -684,6 +688,7 @@
 & when (@media-common = true) {
     .abs-action-button-as-link {
         .lib-button-as-link(@_margin: false);
+
         border-radius: 0;
         font-size: inherit;
         font-weight: @font-weight__regular;
@@ -735,6 +740,7 @@
         .price-excluding-tax,
         .weee {
             .lib-font-size(14);
+
             display: inline-block;
             white-space: nowrap;
         }
@@ -743,11 +749,11 @@
             display: inline-block;
             .lib-font-size(11);
 
-            &:before {
+            &::before {
                 content: '('attr(data-label)': ';
             }
 
-            &:after {
+            &::after {
                 content: ')';
             }
         }
@@ -771,7 +777,7 @@
             @_icon-font-position: after
         );
 
-        &:after {
+        &::after {
             position: absolute;
             right: (-@indent__s);
             top: 3px;
@@ -800,6 +806,7 @@
 & when (@media-common = true) {
     .abs-methods-shipping-title {
         .lib-font-size(14);
+
         font-weight: @font-weight__bold;
         margin: 0 0 15px;
     }
@@ -820,7 +827,7 @@
 
             .col {
                 &.item {
-                    &:before {
+                    &::before {
                         display: none;
                     }
                 }
@@ -834,7 +841,7 @@
                     white-space: nowrap;
                     width: 33%;
 
-                    &[data-th]:before {
+                    &[data-th]::before {
                         content: attr(data-th) ':';
                         display: block;
                         font-weight: @font-weight__bold;
@@ -901,7 +908,7 @@
 
 & when (@media-common = true) {
     .abs-colon {
-        &:after {
+        &::after {
             content: ': ';
         }
     }
@@ -949,7 +956,8 @@
 
         .action.new {
             &:extend(.abs-icon-add all);
-            &:before {
+
+            &::before {
                 margin-left: -17px;
                 margin-right: @indent__xs;
             }
@@ -978,7 +986,7 @@
             @_icon-font-display: block
         );
 
-        &:after {
+        &::after {
             position: absolute;
             right: @indent__s;
             top: 0;
@@ -1099,6 +1107,7 @@
     .abs-block-items-counter {
         .lib-css(color, @primary__color__lighter);
         .lib-font-size(12px);
+
         white-space: nowrap;
     }
 }
@@ -1134,6 +1143,7 @@
                     @_icon-font-size: 32px,
                     @_icon-font-line-height: 16px
                 );
+
                 padding-left: @indent__xs;
             }
         }
@@ -1192,6 +1202,7 @@
     .abs-field-date {
         .control {
             &:extend(.abs-add-box-sizing all);
+
             position: relative;
         }
 
@@ -1219,6 +1230,7 @@
 & when (@media-common = true) {
     .abs-field-tooltip {
         &:extend(.abs-add-box-sizing all);
+
         position: relative;
 
         input {
@@ -1237,25 +1249,27 @@
     .lib-css(top, @checkout-tooltip-content-mobile__top);
     left: auto;
 
-    &:before,
-    &:after {
+    &::before,
+    &::after {
         .lib-arrow(
             @_position: top,
             @_size: @checkout-tooltip-icon-arrow__font-size,
             @_color: @checkout-tooltip-content__background-color
         );
         .lib-css(margin-top, @checkout-tooltip-icon-arrow__left);
+
         right: @indent__s;
         left: auto;
         top: 0;
     }
 
-    &:before {
+    &::before {
         .lib-css(border-bottom-color, @checkout-tooltip-content__border-color);
     }
 
-    &:after {
+    &::after {
         .lib-css(border-bottom-color, @checkout-tooltip-content__background-color);
+
         top: 1px;
     }
 };
@@ -1341,6 +1355,7 @@
                 .amount {
                     .lib-css(border-top, @border-width__base solid @border-color__base);
                     .lib-css(border-bottom, @border-width__base solid @border-color__base);
+
                     cursor: pointer;
                 }
 
@@ -1352,10 +1367,11 @@
                         @_icon-font-position: after,
                         @_icon-font-display: block
                     );
+
                     padding-right: @indent__m;
                     position: relative;
 
-                    &:after {
+                    &::after {
                         position: absolute;
                         right: -5px;
                         top: -12px;
@@ -1379,6 +1395,7 @@
 
             &-details {
                 .lib-css(border-bottom, @border-width__base solid @border-color__base);
+
                 display: none;
 
                 &.shown {
@@ -1409,12 +1426,13 @@
                 @_icon-font-position: after,
                 @_icon-font-display: block
             );
+
             margin-bottom: 0;
             overflow: hidden;
             padding: 7px @indent__l 7px @indent__xs;
             position: relative;
 
-            &:after {
+            &::after {
                 position: absolute;
                 right: -5px;
                 top: -5px;
@@ -1423,6 +1441,7 @@
             strong {
                 .column.main & {
                     .lib-font-size(18);
+
                     font-weight: @font-weight__regular;
                 }
             }

@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Variables
@@ -34,7 +34,6 @@
 //  _____________________________________________
 
 & when (@media-common = true) {
-
     .field-tooltip {
         cursor: pointer;
         position: absolute;
@@ -49,7 +48,7 @@
             }
 
             .field-tooltip-action {
-                &:before {
+                &::before {
                     .lib-css(color, @checkout-tooltip-icon__hover__color);
                 }
             }
@@ -69,8 +68,8 @@
                 @_icon-font-color-active: false
             );
 
-            &:before { 
-                padding-left : 1px;  
+            &::before {
+                padding-left : 1px;
             }
 
             &:focus {
@@ -81,7 +80,7 @@
                         display: block;
                     }
 
-                    &:before {
+                    &::before {
                         .lib-css(color, @checkout-tooltip-icon__hover__color);
                     }
                 }
@@ -95,6 +94,7 @@
             .lib-css(font-size, @checkout-tooltip-content__font-size);
             .lib-css(padding, @checkout-tooltip-content__padding);
             .lib-css(width, @checkout-tooltip-content__width);
+
             display: none;
             left: 38px;
             position: absolute;
@@ -103,8 +103,8 @@
             word-wrap: break-word;
             z-index: 2;
 
-            &:before,
-            &:after {
+            &::before,
+            &::after {
                 .lib-arrow(
                 @_position: left,
                 @_size: @checkout-tooltip-icon-arrow__font-size,
@@ -112,18 +112,20 @@
                 );
                 .lib-css(left, @checkout-tooltip-icon-arrow__left);
                 .lib-css(top, @checkout-tooltip-content__padding);
+
                 content: '';
                 display: block;
                 position: absolute;
                 z-index: 3;
             }
 
-            &:before {
+            &::before {
                 .lib-css(border-right-color, @checkout-tooltip-content__active__border-color);
             }
 
-            &:after {
+            &::after {
                 .lib-css(border-right-color, @checkout-tooltip-content__background-color);
+
                 width: 1px;
                 z-index: 4;
             }
@@ -150,6 +152,7 @@
         .field-tooltip-content {
             .lib-css(right, @checkout-tooltip-content-mobile__right);
             .lib-css(top, @checkout-tooltip-content-mobile__top);
+
             left: auto;
             &:extend(.abs-checkout-tooltip-content-position-top-mobile all);
         }
@@ -166,6 +169,7 @@
         right: -10px;
         top: 40px;
     }
+
     .field-tooltip .field-tooltip-content::before,
     .field-tooltip .field-tooltip-content::after {
         border: 10px solid transparent;
@@ -176,11 +180,14 @@
         top: 0;
         width: 0;
     }
+
     .field-tooltip .field-tooltip-content::before {
         .lib-css(border-bottom-color, @checkout-tooltip-content__border-color);
     }
+
     .field-tooltip .field-tooltip-content::after {
         .lib-css(border-bottom-color, @checkout-tooltip-content__background-color);
+
         top: 1px;
     }
 }

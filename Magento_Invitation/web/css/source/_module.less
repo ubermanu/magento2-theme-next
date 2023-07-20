@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Common
@@ -10,6 +10,7 @@
 & when (@media-common = true) {
     .form-add-invitations {
         &:extend(.abs-add-fields all);
+
         .action {
             &.add {
                 .lib-button-icon(
@@ -17,6 +18,7 @@
                     @_icon-font-text-hide: true,
                     @_icon-font-size: 31px
                 );
+
                 line-height: normal;
                 padding: 2px 0;
                 width: auto;
@@ -41,6 +43,7 @@
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .form-add-invitations {
         &:extend(.abs-add-fields-desktop all);
+
         .additional,
         .field.text {
             .lib-css(margin-top, @form-field__vertical-indent__desktop);

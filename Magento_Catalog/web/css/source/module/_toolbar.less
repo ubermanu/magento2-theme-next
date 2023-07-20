@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Variables
@@ -91,7 +91,7 @@
 
     .sorter {
         .sort-desc {
-            &:before {
+            &::before {
                 content: @icon-arrow-down;
             }
         }
@@ -160,6 +160,7 @@
 
     .modes-mode {
         .lib-css(color, @text__color__muted);
+
         border: 1px solid @border-color__base;
         border-right: 0;
         float: left;
@@ -171,6 +172,7 @@
         &:not(.active) {
             &:hover {
                 .lib-css(color, @text__color__muted);
+
                 background: darken(@toolbar-element-background, 7%);
             }
         }

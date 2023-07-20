@@ -26,9 +26,7 @@
 
             &-name {
                 &:extend(.abs-product-link all);
-                -moz-hyphens: auto;
-                -ms-hyphens: auto;
-                -webkit-hyphens: auto;
+
                 display: block;
                 hyphens: auto;
                 margin: @indent__xs 0;
@@ -63,7 +61,7 @@
 
                         &:extend(.abs-actions-addto-gridlist all);
 
-                        &:before {
+                        &::before {
                             margin: 0;
                         }
 
@@ -99,6 +97,7 @@
 
                 .price {
                     .lib-font-size(14);
+
                     font-weight: @font-weight__bold;
                     white-space: nowrap;
                 }
@@ -106,7 +105,7 @@
                 .price-label {
                     font-size: @font-size__s;
 
-                    &:after {
+                    &::after {
                         content: ':';
                     }
                 }
@@ -116,6 +115,7 @@
             .minimal-price {
                 .price {
                     .lib-font-size(14);
+
                     font-weight: @font-weight__bold;
                 }
 
@@ -201,22 +201,22 @@
         .weee,
         .price-including-tax + .price-excluding-tax .price,
         .weee .price,
-        .weee + .price-excluding-tax:before,
+        .weee + .price-excluding-tax::before,
         .weee + .price-excluding-tax .price {
             .lib-font-size(11);
         }
 
         .weee {
-            &:before {
+            &::before {
                 content: '(' attr(data-label) ': ';
             }
 
-            &:after {
+            &::after {
                 content: ')';
             }
 
             + .price-excluding-tax {
-                &:before {
+                &::before {
                     content: attr(data-label) ': ';
                 }
             }

@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Common
@@ -15,8 +15,10 @@
                 font-size: 1.6rem;
                 margin-bottom: @indent__base;
                 margin-top: @indent__l;
+
                 a {
                     color: @text__color;
+
                     &:hover {
                         text-decoration: none;
                     }
@@ -174,7 +176,7 @@
                         }
 
                         > .field {
-                            &:before {
+                            &::before {
                                 display: none;
                             }
 
@@ -190,6 +192,7 @@
         .block-title,
         .block-content .title {
             &:extend(.abs-account-title all);
+
             border-bottom: @border-width__base solid @border-color__base;
             padding-bottom: @indent__s;
 
@@ -204,6 +207,7 @@
 
         .block-content {
             &:extend(.abs-add-clearfix all);
+
             .title {
                 border-bottom: none;
                 padding-bottom: 0;
@@ -261,6 +265,7 @@
 
         .checkout-review .grand.totals {
             .lib-font-size(@font-size__xl);
+
             margin-bottom: @indent__xl;
 
             .mark {
@@ -295,7 +300,7 @@
     .multicheckout {
         .data.table {
             .address {
-                &:before {
+                &::before {
                     margin-bottom: @indent__xs;
                 }
             }
@@ -387,6 +392,7 @@
         .block-shipping {
             .box {
                 &:extend(.abs-add-box-sizing-desktop-s all);
+
                 float: left;
                 width: 25%;
             }
@@ -402,7 +408,7 @@
                     }
 
                     .field {
-                        &:before {
+                        &::before {
                             display: none;
                         }
                     }
@@ -412,14 +418,17 @@
 
         .block-billing {
             &:extend(.abs-add-clearfix-desktop-s all);
+
             .box-billing-address {
                 &:extend(.abs-add-box-sizing-desktop-s all);
+
                 float: left;
                 width: 25%;
             }
 
             .box-billing-method {
                 &:extend(.abs-add-box-sizing-desktop-s all);
+
                 float: left;
                 padding-left: @indent__m;
                 width: 50%;

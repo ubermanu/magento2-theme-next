@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Common
@@ -32,6 +32,7 @@
         .order-title {
             > strong {
                 .lib-heading(h3);
+
                 display: inline-block;
             }
         }
@@ -44,7 +45,7 @@
             }
 
             .title {
-                &:after {
+                &::after {
                     content: ': ';
                 }
             }
@@ -73,7 +74,7 @@
                 dt {
                     display: inline-block;
 
-                    &:after {
+                    &::after {
                         content: ': ';
                     }
                 }
@@ -204,7 +205,7 @@
                         > strong {
                             font-weight: @font-weight__regular;
 
-                            &:after {
+                            &::after {
                                 content: ': ';
                             }
                         }
@@ -294,6 +295,7 @@
             }
         }
     }
+
     .order-items.table-wrapper {
         .col.price,
         .col.qty,
@@ -388,6 +390,7 @@
 
                     .box {
                         &:extend(.abs-blocks-2columns all);
+
                         margin-bottom: @indent__base;
                     }
                 }

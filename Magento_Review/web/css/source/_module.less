@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Variables
@@ -18,11 +18,11 @@
     .data.switch .counter {
         .lib-css(color, @text__color__muted);
 
-        &:before {
+        &::before {
             content: '(';
         }
 
-        &:after {
+        &::after {
             content: ')';
         }
     }
@@ -60,6 +60,7 @@
 
             .legend {
                 .lib-heading(h3);
+
                 margin: 0 0 @indent__base;
             }
 
@@ -161,10 +162,10 @@
 //  _____________________________________________
 
 & when (@media-common = true) {
-
     .customer-review {
         .product-details {
             &:extend(.abs-add-clearfix all);
+
             margin-bottom: @indent__xl;
         }
 
@@ -190,6 +191,7 @@
 
             .review-title {
                 .lib-heading(h3);
+
                 font-weight: @font-weight__semibold;
                 margin-bottom: @indent__base;
             }
@@ -273,6 +275,7 @@
 
         .fieldset &-legend.legend {
             &:extend(.abs-reset-left-margin all);
+
             margin-bottom: @indent__base;
 
             strong {
@@ -298,6 +301,7 @@
 
         &-item {
             .lib-clearer();
+
             border-bottom: 1px solid @color-gray79;
             margin: 0;
             padding: @indent__base 0;
@@ -320,6 +324,7 @@
 
         &-title {
             .lib-heading(h3);
+
             margin: 0 0 @indent__base;
         }
 

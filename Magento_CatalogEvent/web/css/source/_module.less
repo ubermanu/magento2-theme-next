@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 @catalog-event-background-color: @color-gray94;
 @catalog-event-color: @primary__color;
@@ -19,6 +19,7 @@
     .block-category-event {
         .lib-css(background, @catalog-event-background-color);
         .lib-css(color, @catalog-event-color);
+
         padding: @indent__s 0 15px;
         text-align: center;
 
@@ -31,6 +32,7 @@
 
             strong {
                 .lib-font-size(15);
+
                 font-weight: @font-weight__light;
             }
         }
@@ -45,11 +47,13 @@
 
             .value {
                 .lib-font-size(18);
+
                 font-weight: @font-weight__light;
             }
 
             .label {
                 .lib-font-size(10);
+
                 display: block;
                 text-transform: lowercase;
             }
@@ -77,8 +81,9 @@
                 padding-right: @indent__xl;
                 position: relative;
 
-                &:after {
+                &::after {
                     .lib-font-size(18);
+
                     content: '\2013';
                     display: block;
                     position: absolute;
@@ -121,6 +126,7 @@
 
             .label {
                 .lib-font-size(14);
+
                 text-transform: none;
             }
         }
@@ -133,8 +139,9 @@
             .start {
                 padding-right: 50px;
 
-                &:after {
+                &::after {
                     .lib-font-size(50);
+
                     right: 10px;
                 }
             }

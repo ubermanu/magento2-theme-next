@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Common
@@ -15,8 +15,8 @@
 
     //  Summary block
     .cart-summary {
-        &:extend(.abs-add-box-sizing all);
         .lib-css(background, @sidebar__background-color);
+
         margin-bottom: @indent__m;
         padding: 1px 15px @indent__m;
 
@@ -27,6 +27,7 @@
 
         .block {
             &:extend(.abs-discount-block all);
+
             margin-bottom: 0;
 
             .item-options {
@@ -60,6 +61,7 @@
                 }
             }
         }
+
         .actions-toolbar {
             > .primary {
                 button {
@@ -137,6 +139,7 @@
             > .action {
                 &:extend(button all);
                 .lib-link-as-button();
+
                 margin-bottom: @indent__s;
                 margin-right: @indent__s;
 
@@ -149,6 +152,7 @@
         .action {
             &.help.map {
                 &:extend(.abs-action-button-as-link all);
+
                 font-weight: @font-weight__regular;
             }
         }
@@ -176,7 +180,7 @@
         }
 
         .gift-registry-name-label {
-            &:after {
+            &::after {
                 content: ':';
             }
         }
@@ -210,11 +214,13 @@
 
         .checkout-methods-items {
             &:extend(.abs-reset-list all);
+
             margin-top: @indent__base;
             text-align: center;
 
             .action.primary {
                 &:extend(.abs-button-l all);
+
                 width: 100%;
             }
 
@@ -305,7 +311,7 @@
                     white-space: nowrap;
                     width: 33%;
 
-                    &[data-th]:before {
+                    &[data-th]::before {
                         content: attr(data-th) ':';
                         display: block;
                         font-weight: @font-weight__bold;
@@ -340,13 +346,14 @@
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .cart-container {
         &:extend(.abs-add-clearfix-desktop all);
+
         .form-cart {
             &:extend(.abs-shopping-cart-items-desktop all);
         }
 
         .widget {
             float: left;
-            
+
             &.block {
                 margin-bottom: @indent__base;
             }
@@ -361,6 +368,7 @@
         .actions-toolbar {
             .column.main & {
                 &:extend(.abs-reset-left-margin-desktop all);
+
                 > .secondary {
                     float: none;
                 }
@@ -371,6 +379,7 @@
             .fieldset {
                 .field {
                     .lib-form-field-type-revert(@_type: block);
+
                     margin: 0 0 @indent__s;
                 }
             }

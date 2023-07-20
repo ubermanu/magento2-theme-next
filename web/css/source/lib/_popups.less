@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Popups
@@ -150,6 +150,7 @@
     .lib-css(right, @_popup-position-right);
     .lib-css(top, @_popup-position-top);
     .lib-css(z-index, @_popup-z-index);
+
     display: none;
     opacity: 0;
 
@@ -168,12 +169,10 @@
     ._lib-popup-fade(@_overlay-fade);
     .lib-css(background, @_overlay-background);
     .lib-css(z-index, @_overlay-z-index);
-    bottom: 0;
-    left: 0;
+
+    inset: 0;
     opacity: 0;
     position: fixed;
-    right: 0;
-    top: 0;
 
     &.active {
         .lib-css(opacity, @_overlay-opacity);

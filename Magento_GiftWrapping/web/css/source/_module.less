@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Variables
@@ -28,6 +28,7 @@
     .gift-wrapping {
         .label {
             .lib-css(margin, @form-field-type-label-block__margin);
+
             display: inline-block;
         }
 
@@ -38,12 +39,14 @@
 
     .gift-wrapping-info {
         .lib-css(font-weight, @font-weight__light);
+
         font-size: @font-size__l;
         margin: @indent__base 0;
     }
 
     .gift-wrapping-list {
         &:extend(.abs-add-clearfix all);
+
         list-style: none;
         margin: @indent__base 0 @indent__s;
         padding: 0;
@@ -60,7 +63,7 @@
             @_icon-font-vertical-align: middle
             );
 
-            &:after {
+            &::after {
                 display: block;
             }
         }
@@ -85,8 +88,9 @@
 
         &._active {
             span {
-                &:before {
+                &::before {
                     .lib-css(border, @gift-wrapping-preview__active__border-width solid @gift-wrapping-preview__active__border-color);
+
                     box-sizing: border-box;
                     content: '';
                     display: block;
@@ -117,7 +121,7 @@
             > .field {
                 margin: 0 0 @indent__xs;
 
-                &:before {
+                &::before {
                     display: none;
                 }
             }
@@ -137,6 +141,7 @@
     .table-order-review {
         .gift-wrapping {
             &:extend(.abs-add-clearfix all);
+
             margin: @indent__base 0;
 
             .title {
@@ -165,7 +170,7 @@
         }
 
         .regular-price {
-            &:before {
+            &::before {
                 content: attr(data-label)': ';
             }
 
@@ -186,6 +191,7 @@
 
         .product {
             &:extend(.abs-add-clearfix all);
+
             margin-bottom: @indent__s;
         }
 
@@ -207,6 +213,7 @@
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
     .gift-wrapping {
         .lib-css(border-bottom, @gift-wrapping__border-width solid @gift-wrapping__border-color);
+
         margin-bottom: @indent__base;
         padding-bottom: @indent__s;
     }
@@ -262,6 +269,7 @@
 
             & + .gift-message {
                 .lib-css(border-left, @gift-wrapping__border-width solid @gift-wrapping__border-color);
+
                 box-sizing: border-box;
                 float: left;
                 padding-left: 4.5rem;

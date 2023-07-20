@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //  The contents of this file will get split into two output files: email.less and email-inline.less.
 //
@@ -75,20 +75,20 @@ table {
     table,
     td,
     a {
-        -ms-text-size-adjust: 100%;
-        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+        text-size-adjust: 100%;
     }
 
     //  Allow smoother rendering of resized images in Internet Explorer (such as high-resolution logo)
     img {
-        -ms-interpolation-mode: bicubic;
+        interpolation-mode: bicubic;
     }
 
     //  Remove spacing between tables in Outlook 2007 and up
     table,
     td {
-        mso-table-lspace: 0pt;
-        mso-table-rspace: 0pt;
+        mso-table-lspace: 0;
+        mso-table-rspace: 0;
     }
 }
 
@@ -205,10 +205,12 @@ body {
     .inner-wrapper {
         td {
             .lib-css(border-radius, @button__border-radius, 1);
+
             background-color: @button-primary__background;
 
             a {
                 .lib-css(border-radius, @button__border-radius, 1);
+
                 border: 1px solid @button-primary__background;
                 color: @button-primary__color;
                 display: inline-block;

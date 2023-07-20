@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Common
@@ -129,6 +129,7 @@
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .form-create-return {
         &:extend(.abs-add-fields-desktop all);
+
         .additional {
             .field:last-child {
                 margin-top: @form-field__vertical-indent__desktop;
@@ -148,6 +149,7 @@
 
                     .box {
                         &:extend(.abs-blocks-2columns all);
+
                         margin-bottom: @indent__base;
                     }
                 }

@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Navigation
@@ -56,6 +56,7 @@
     .navigation {
         .lib-css(background, @_nav-background-color);
         .lib-css(border, @_nav-border);
+
         box-sizing: border-box;
 
         ul {
@@ -91,7 +92,9 @@
                 .lib-css(line-height, @_nav-level0-item-line-height);
                 .lib-css(padding, @_nav-level0-item-padding);
                 .lib-css(text-transform, @_nav-level0-text-transform);
+
                 word-wrap: break-word;
+
                 &:hover {
                     .lib-css(color, @navigation-level0-item__hover__color);
                 }
@@ -107,6 +110,7 @@
                         .lib-css(color, @_nav-level0-item-color-active);
                         .lib-css(padding-left, @_nav__indent-side - @_submenu-item__active__border);
                         .lib-css(text-decoration, @_nav-level0-item-text-decoration-active);
+
                         display: inline-block;
                     }
                 }
@@ -142,6 +146,7 @@
         .submenu {
             > li {
                 word-wrap: break-word;
+
                 > a {
                     &:hover {
                         .lib-css(color, @navigation-level0-item__hover__color);
@@ -155,6 +160,7 @@
                 .lib-css(font-size, @_submenu-font-size);
                 .lib-css(font-weight, @_submenu-font-weight);
                 .lib-css(line-height, @_submenu-line-height);
+
                 left: auto !important;
                 overflow-x: hidden;
                 padding: 0;
@@ -184,8 +190,10 @@
                             .lib-css(border, @_submenu-item-border);
                             .lib-css(color, @_submenu-item-color);
                             .lib-css(text-decoration, @_submenu-item-text-decoration);
+
                             display: block;
                             line-height: normal;
+
                             &:hover {
                                 .lib-css(color, @navigation-level0-item__hover__color);
                             }
@@ -286,12 +294,12 @@
     @_submenu-item-color-active: @submenu-desktop-item__active__color,
     @_submenu-item-text-decoration-active: @submenu-desktop-item__active__text-decoration
 ) {
-
     .navigation {
         .lib-css(background, @_nav-background-color);
         .lib-css(border, @_nav-border);
         .lib-css(font-size, @_nav-font-size);
         .lib-css(font-weight, @_nav-font-weight);
+
         height: inherit;
         left: auto;
         overflow: inherit;
@@ -322,6 +330,7 @@
 
         .level0 {
             .lib-css(margin, @_nav-level0-item-margin);
+
             display: inline-block;
             position: relative;
 
@@ -331,7 +340,7 @@
             }
 
             &:hover {
-                &:after {
+                &::after {
                     content: '';
                     display: block;
                     position: absolute;
@@ -350,6 +359,7 @@
                 .lib-css(line-height, @_nav-level0-item-line-height);
                 .lib-css(padding, @_nav-level0-item-padding);
                 .lib-css(text-decoration, @_nav-level0-item-text-decoration);
+
                 box-sizing: border-box;
                 position: relative;
                 display: inline-block;
@@ -371,6 +381,7 @@
                     .lib-css(border-width, @_nav-level0-item__active__border-width);
                     .lib-css(color, @_nav-level0-item-color-active);
                     .lib-css(text-decoration, @_nav-level0-item-text-decoration-active);
+
                     display: inline-block;
                 }
             }
@@ -406,6 +417,7 @@
                 .lib-css(font-weight, @_submenu-font-weight);
                 .lib-css(min-width, @_submenu-min-width);
                 .lib-css(padding, @_submenu-padding);
+
                 display: none;
                 left: 0;
                 margin: 0 !important;
@@ -420,7 +432,7 @@
                     @_left: @_submenu-arrow-left
                 );
 
-                &:before {
+                &::before {
                     content: '';
                     display: block;
                     position: absolute;
@@ -471,7 +483,7 @@
                 li {
                     margin: 0;
                     position: relative;
-                    
+
                     &.parent {
                         > a {
                             > .ui-menu-icon {
@@ -499,11 +511,11 @@
                     @_icon-font-position: after
                 );
 
-                &:before {
+                &::before {
                     display: none;
                 }
 
-                &:after {
+                &::after {
                     cursor: pointer;
                     padding: 8px 12px;
                     position: relative;
@@ -538,27 +550,29 @@
         > ul {
             .lib-css(margin-top, @_outer-size);
 
-            &:before,
-            &:after {
+            &::before,
+            &::after {
                 content: '';
                 display: block;
                 overflow: hidden;
                 position: absolute;
             }
 
-            &:before {
+            &::before {
                 .lib-css(color, @_bg);
                 .lib-css(left, @_left);
                 .lib-css(top, -@_size*2);
                 .lib-arrow(up, @_size, @_bg);
+
                 z-index: 4;
             }
 
-            &:after {
+            &::after {
                 .lib-arrow(up, @_outer-size, @_border);
                 .lib-css(color, @_border);
                 .lib-css(left, @_outer-left);
                 .lib-css(top, -@_outer-size*2);
+
                 z-index: 3;
             }
         }
@@ -569,11 +583,12 @@
         > ul {
             .lib-css(margin-top, @_size);
 
-            &:before {
+            &::before {
                 .lib-arrow(up, @_size, @_bg);
                 .lib-css(color, @_bg);
                 .lib-css(left, @_left);
                 .lib-css(top, -@_size*2);
+
                 content: '';
                 display: block;
                 overflow: hidden;
@@ -588,11 +603,12 @@
         > ul {
             .lib-css(margin-top, @_size);
 
-            &:before {
+            &::before {
                 .lib-arrow(up, @_size, @_border);
                 .lib-css(color, @_border);
                 .lib-css(left, @_left);
                 .lib-css(top, -@_size*2);
+
                 content: '';
                 display: block;
                 overflow: hidden;

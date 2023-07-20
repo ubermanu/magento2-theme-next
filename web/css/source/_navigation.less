@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Variables
@@ -14,7 +14,6 @@
 //  _____________________________________________
 
 & when (@media-common = true) {
-
     .panel.header {
         .links,
         .switcher {
@@ -34,6 +33,7 @@
             @_icon-font-color-hover: @header-icons-color-hover
         );
         .lib-icon-text-hide();
+
         cursor: pointer;
         display: block;
         font-size: 0;
@@ -60,9 +60,10 @@
                     @_icon-font-position: after,
                     @_icon-font-display: block
                 );
+
                 position: relative;
 
-                &:after {
+                &::after {
                     position: absolute;
                     right: 7px;
                     top: -8px;
@@ -81,6 +82,7 @@
     .nav-sections {
         -webkit-overflow-scrolling: touch;
         .lib-css(transition, left .3s, 1);
+
         height: 100%;
         left: calc(~'-1 * (100% - @{active-nav-indent})');
         overflow: auto;
@@ -113,9 +115,10 @@
                     @_icon-font-position: after,
                     @_icon-font-display: block
                 );
+
                 position: relative;
 
-                &:after {
+                &::after {
                     position: absolute;
                     right: -40px;
                     top: -16px;
@@ -132,6 +135,7 @@
 
         .switcher-dropdown {
             .lib-list-reset-styles();
+
             display: none;
             padding: @indent__s 0;
         }
@@ -146,6 +150,7 @@
 
         .header.links {
             .lib-list-reset-styles();
+
             border-bottom: 1px solid @color-gray82;
 
             li {
@@ -167,6 +172,7 @@
             a:hover {
                 .lib-css(color, @navigation-level0-item__color);
                 .lib-css(text-decoration, @navigation-level0-item__text-decoration);
+
                 display: block;
                 font-weight: @font-weight__bold;
                 padding: .8rem @submenu__padding-left;
@@ -185,6 +191,7 @@
 
         .page-wrapper {
             .lib-css(transition, left .3s, 1);
+
             height: 100%;
             left: 0;
             overflow: hidden;
@@ -207,6 +214,7 @@
         .nav-sections {
             @_shadow: 0 0 5px 0 rgba(50, 50, 50, .75);
             .lib-css(box-shadow, @_shadow, 1);
+
             left: 0;
             z-index: 99;
         }
@@ -228,6 +236,7 @@
 
     .nav-sections-items {
         .lib-clearfix();
+
         position: relative;
         z-index: 1;
     }
@@ -257,6 +266,7 @@
 
     .nav-sections-item-content {
         .lib-clearfix();
+
         box-sizing: border-box;
         float: right;
         margin-left: -100%;

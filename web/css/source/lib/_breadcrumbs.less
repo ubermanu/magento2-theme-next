@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Breadcrumbs
@@ -74,6 +74,7 @@
     @_breadcrumbs-link-gradient-color-end-active: @breadcrumbs-link__active__gradient-color-end
 ) {
     .lib-css(margin, @_breadcrumbs-container-margin);
+
     .items {
         .lib-font-size(@_breadcrumbs-font-size);
         .lib-css(color, @_breadcrumbs-current-color);
@@ -154,7 +155,7 @@
 
     & when not (@_breadcrumbs-separator-symbol = '') and not (@_breadcrumbs-separator-symbol = false) { // Insert separating symbol to "content"
         .item:not(:last-child) {
-            &:after {
+            &::after {
                 .lib-css(color, @_breadcrumbs-separator-color);
                 .lib-css(content, @_breadcrumbs-separator-symbol);
             }

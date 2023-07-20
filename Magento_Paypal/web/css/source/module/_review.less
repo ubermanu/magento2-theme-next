@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Common
@@ -13,6 +13,7 @@
     .paypal-review {
         .block {
             &:extend(.abs-account-blocks all);
+
             .actions-toolbar {
                 .action {
                     &.primary {
@@ -25,6 +26,7 @@
         .paypa-review-title {
             > strong {
                 .lib-heading(h3);
+
                 display: inline-block;
             }
         }
@@ -37,7 +39,7 @@
             }
 
             .title {
-                &:after {
+                &::after {
                     content: ': ';
                 }
             }
@@ -46,6 +48,7 @@
         .paypal-review-title {
             > strong {
                 .lib-heading(h3);
+
                 display: inline-block;
             }
         }
@@ -57,7 +60,8 @@
         .item-options {
             dt {
                 display: inline-block;
-                &:after {
+
+                &::after {
                     content: ': ';
                 }
             }
@@ -75,6 +79,7 @@
 
         .block {
             &:extend(.abs-discount-block all);
+
             margin-bottom: 0;
 
             .fieldset {
@@ -96,6 +101,7 @@
 
         .block-content {
             &:extend(.abs-add-clearfix-desktop all);
+
             .box-order-shipping-address,
             .box-order-shipping-method,
             .box-order-shipping-method + .box-order-billing-address {

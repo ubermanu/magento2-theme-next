@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Common
@@ -27,6 +27,7 @@
         .action.secondary {
             .lib-button-reset();
             .lib-button-as-link();
+
             margin-right: @indent__base;
         }
     }
@@ -38,11 +39,11 @@
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
     .my-credit-cards {
-        .table:not(.totals):not(.cart):not(.table-comparison) {
+        .table:not(.totals, .cart, .table-comparison) {
             .status {
                 display: none;
 
-                &:before {
+                &::before {
                     display: none;
                 }
 

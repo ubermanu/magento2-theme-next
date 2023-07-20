@@ -56,7 +56,7 @@
         &:hover {
             border-color: @color-gray68;
 
-            &:before {
+            &::before {
                 border-color: @field-control__hover__border-color;
             }
         }
@@ -64,7 +64,7 @@
         //  Toggle action
         &:extend(.abs-icon-add all);
 
-        &:before {
+        &::before {
             align-items: center;
             content: @icon-down;
             display: flex;
@@ -77,7 +77,7 @@
         }
 
         &._active {
-            &:before {
+            &::before {
                 content: @icon-up;
             }
         }
@@ -103,7 +103,7 @@
         z-index: @action-select__z-index;
 
         .action-select {
-            &:before {
+            &::before {
                 content: @icon-up;
             }
         }

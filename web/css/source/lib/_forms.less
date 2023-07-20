@@ -50,6 +50,7 @@
     .lib-css(padding, @_padding);
     .lib-css(vertical-align, @_vertical-align);
     .lib-css(width, @_width);
+
     box-sizing: border-box;
 
     ._lib-form-element-focus(
@@ -100,20 +101,21 @@
 .lib-form-element-number-reset() {
     &::-webkit-inner-spin-button,
     &::-webkit-outer-spin-button {
-        -webkit-appearance: none;
+        appearance: none;
         margin: 0;
     }
 
-    -moz-appearance: textfield;
+    appearance: textfield;
 }
 
 .lib-form-element-search-reset() {
-    -webkit-appearance: none;
+    appearance: none;
+
     &::-webkit-search-cancel-button,
     &::-webkit-search-decoration,
     &::-webkit-search-results-button,
     &::-webkit-search-results-decoration {
-        -webkit-appearance: none;
+        appearance: none;
     }
 }
 
@@ -149,15 +151,15 @@
         ._lib-form-element-state-add-font-color(@_disabled-color, @_color);
     }
 
-    &::-moz-placeholder {
+    &::placeholder {
         .lib-css(color, @_placeholder-color);
     }
 
-    &::-webkit-input-placeholder {
+    &::input-placeholder {
         .lib-css(color, @_placeholder-color);
     }
 
-    &:-ms-input-placeholder {
+    &:input-placeholder {
         .lib-css(color, @_placeholder-color);
     }
 }
@@ -278,6 +280,7 @@
 
     select[multiple] {
         .lib-css(height, auto);
+
         background-image: none;
     }
 
@@ -288,6 +291,7 @@
 
     input[type="checkbox"] {
         .lib-form-element-choice(@_type: input-checkbox);
+
         position: relative;
         top: 2px;
     }
@@ -310,7 +314,7 @@
     input[type="reset"],
     input[type="submit"] {
         cursor: pointer;
-        -webkit-appearance: button;
+        appearance: button;
     }
 
     input::-moz-focus-inner {
@@ -401,17 +405,17 @@
     @_font-style-default,
     @_font-style-state
 ) when not (@_type = select) {
-    &::-moz-placeholder {
+    &::placeholder {
         .lib-css(color, @_color);
         ._lib-form-element-state-add-font-style(@_font-style-state, @_font-style-default);
     }
 
-    &::-webkit-input-placeholder {
+    &::input-placeholder {
         .lib-css(color, @_color);
         ._lib-form-element-state-add-font-style(@_font-style-state, @_font-style-default);
     }
 
-    &:-ms-input-placeholder {
+    &:input-placeholder {
         .lib-css(color, @_color);
         ._lib-form-element-state-add-font-style(@_font-style-state, @_font-style-default);
     }
@@ -454,6 +458,7 @@
     .lib-css(border, @_border);
     .lib-css(margin, @_margin);
     .lib-css(padding, @_padding);
+
     letter-spacing: -.31em;
 
     > * {
@@ -464,6 +469,7 @@
         .lib-css(margin, @_legend-margin);
         .lib-css(padding, @_legend-padding);
         .lib-css(width, @_legend-width);
+
         box-sizing: border-box;
         float: left;
 
@@ -617,6 +623,7 @@
     .addon {
         .lib-vendor-prefix-display(inline-flex);
         .lib-vendor-prefix-flex-wrap(nowrap);
+
         padding: 0;
         width: 100%;
 
@@ -625,6 +632,7 @@
         input {
             .lib-vendor-prefix-order(2);
             .lib-vendor-prefix-flex-basis(100%);
+
             display: inline-block;
             margin: 0;
             width: auto;
@@ -634,6 +642,7 @@
         .addafter {
             .lib-form-element-input(@_type: input-text);
             .lib-vendor-prefix-order(3);
+
             display: inline-block;
             vertical-align: middle;
             white-space: nowrap;
@@ -741,12 +750,14 @@
 ) {
     .lib-clearfix();
     .lib-css(margin, @_type-inline-margin);
+
     box-sizing: border-box;
 
-    &.choice:before,
-    &.no-label:before {
+    &.choice::before,
+    &.no-label::before {
         .lib-css(padding, @_type-inline-label-padding);
         .lib-css(width, @_type-inline-label-width);
+
         box-sizing: border-box;
         content: ' ';
         float: left;
@@ -757,6 +768,7 @@
         .lib-css(padding, @_type-inline-label-padding);
         .lib-css(text-align, @_type-inline-label-align);
         .lib-css(width, @_type-inline-label-width);
+
         box-sizing: border-box;
         float: left;
     }
@@ -767,12 +779,14 @@
             .lib-css(padding, @_type-inline-label-padding);
             .lib-css(text-align, @_type-inline-label-align);
             .lib-css(width, @_type-inline-label-width);
+
             box-sizing: border-box;
             float: left;
         }
 
         > .control {
             .lib-css(width, @_type-inline-control-width);
+
             float: left;
         }
     }
@@ -785,10 +799,12 @@
     @_type-block-label-align
 ) {
     .lib-css(margin, @_type-block-margin);
+
     > .label {
         .lib-css(margin, @_type-block-label-margin);
         .lib-css(padding, @_type-block-label-padding);
         .lib-css(text-align, @_type-block-label-align);
+
         display: inline-block;
     }
 }
@@ -804,7 +820,7 @@
 ) {
     &.required > .label,
     &._required > .label {
-        &:after {
+        &::after {
             content: '*';
             .lib-typography(
                 @_font-size: @_font-size,
@@ -914,7 +930,7 @@
 
     &.choice,
     &.no-label {
-        &:before {
+        &::before {
             display: none;
         }
     }
@@ -956,10 +972,12 @@
     @_column-number: @form-field-column__number
 ) when (@_column = true) {
     .lib-css(padding, @_column-padding);
+
     box-sizing: border-box;
     display: inline-block;
 
     .lib-form-field-column-number(@_column-number);
+
     vertical-align: top;
 
     & + .fieldset {
@@ -1027,7 +1045,7 @@
     @_line-height,
     @_font-style
 ) when (@_position = top) {
-    &:before {
+    &::before {
         ._lib-form-hasrequired-position-any(
             @_border,
             @_margin,
@@ -1054,7 +1072,7 @@
     @_line-height,
     @_font-style
 ) when (@_position = bottom) {
-    &:after {
+    &::after {
         ._lib-form-hasrequired-position-any(
             @_border,
             @_margin,
@@ -1083,6 +1101,7 @@
     .lib-css(border, @_border);
     .lib-css(margin, @_margin);
     .lib-css(padding, @_padding);
+
     content: attr(data-hasrequired);
     display: block;
     letter-spacing: normal;

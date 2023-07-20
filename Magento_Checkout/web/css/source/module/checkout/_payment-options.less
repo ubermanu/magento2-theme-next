@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Variables
@@ -30,7 +30,7 @@
             &._active {
                 .payment-option-title {
                     .action-toggle {
-                        &:after {
+                        &::after {
                             content: @icon-up;
                         }
                     }
@@ -88,7 +88,7 @@
                     font-weight: @font-weight__bold;
 
                     img {
-                        -webkit-filter: grayscale(0%);
+                        filter: grayscale(0%);
                     }
                 }
 
@@ -104,8 +104,8 @@
             }
 
             img {
-                -webkit-filter: grayscale(100%); // For Webkit browsers
-                -webkit-transition: all .6s ease; // Fade to color for Chrome and Safari
+                filter: grayscale(100%); // For Webkit browsers
+                transition: all .6s ease; // Fade to color for Chrome and Safari
             }
         }
 

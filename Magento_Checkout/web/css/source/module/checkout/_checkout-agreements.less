@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Common
@@ -17,12 +17,12 @@
             .lib-vendor-prefix-display();
 
             &.required {
-                label:after {
+                label::after {
                     content: none;
                 }
 
                 .action-show {
-                    &:after {
+                    &::after {
                         content: '*';
                         .lib-typography(
                             @_font-size: @form-field-label-asterisk__font-size,
@@ -39,6 +39,7 @@
 
         .action-show {
             &:extend(.abs-action-button-as-link all);
+
             vertical-align: baseline;
         }
     }
@@ -46,6 +47,7 @@
     //  Checkout Agreements in popup
     .checkout-agreements-items {
         &:extend(.abs-reset-list all);
+
         padding-bottom: @indent__l;
 
         .checkout-agreements-item {
@@ -54,6 +56,7 @@
 
         .checkout-agreements-item-title {
             &:extend(.abs-checkout-title all);
+
             border-bottom: 0;
         }
     }

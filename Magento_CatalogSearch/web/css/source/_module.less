@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Variables
@@ -41,6 +41,7 @@
             @_icon-font-color-active: @header-icons-color-hover,
             @_icon-font-text-hide: true
             );
+
             display: inline-block;
             float: right;
 
@@ -78,6 +79,7 @@
 
     .search-autocomplete {
         &:extend(.abs-add-box-sizing all);
+
         display: none;
         margin-top: -15px;
         overflow: hidden;
@@ -89,6 +91,7 @@
 
             li {
                 .lib-css(border-top, @autocomplete-item__border);
+
                 cursor: pointer;
                 margin: 0;
                 padding: @indent__xs @indent__xl @indent__xs @indent__s;
@@ -113,6 +116,7 @@
 
                 .amount {
                     .lib-css(color, @autocomplete-item-amount__color);
+
                     position: absolute;
                     right: 7px;
                     top: @indent__xs;
@@ -130,7 +134,7 @@
                     .control {
                         padding-right: 25px;
 
-                        &:after {
+                        &::after {
                             content: ' \2013 ';
                             display: inline-block;
                             position: absolute;
@@ -227,6 +231,7 @@
 
         input {
             .lib-input-placeholder(@form-element-input-placeholder__color);
+
             margin: 0;
             padding-right: 35px;
             position: static;
@@ -240,6 +245,7 @@
             @_icon-font-color: @header-icons-color
             );
             .lib-button-reset();
+
             padding: @indent__xs 0;
             position: absolute;
             right: 10px;
@@ -247,7 +253,7 @@
             z-index: 1;
 
             &:focus {
-                &:before {
+                &::before {
                     .lib-css(color, @color-gray20);
                 }
             }

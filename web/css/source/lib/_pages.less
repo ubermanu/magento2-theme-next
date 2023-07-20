@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Pager
@@ -287,7 +287,7 @@
                 @_icon-font-vertical-align: @_pager-icon-font-vertical-align,
                 @_icon-font-position: @_pager-icon-font-position,
                 @_icon-font-text-hide: @_pager-icon-font-text-hide
-            );
+            );;
         }
 
         &.previous {
@@ -305,7 +305,7 @@
                 @_icon-font-vertical-align: @_pager-icon-font-vertical-align,
                 @_icon-font-position: @_pager-icon-font-position,
                 @_icon-font-text-hide: @_pager-icon-font-text-hide
-            );
+            );;
         }
     }
 }
@@ -316,6 +316,7 @@
     @_pager-item-display
 ) when (@_pager-reset-spaces = true) and (@_pager-item-display = inline-block) {
     .lib-inline-block-space-container();
+
     white-space: nowrap;
 }
 
@@ -346,7 +347,7 @@
             @_line-height: @_pager-line-height
         );
 
-        &:after {
+        &::after {
             content: ': ';
         }
     }
@@ -390,13 +391,13 @@
     @_icon-font-text-hide
 ) when (@_pager-icon-use = true) and (@_icon-font-position = before) {
     &:visited {
-        &:before {
+        &::before {
             .lib-css(color, @_icon-font-color-visited);
         }
     }
 
     &:active {
-        &:before {
+        &::before {
             .lib-css(color, @_icon-font-color-active);
         }
     }
@@ -445,11 +446,11 @@
         @_icon-font-text-hide: @_icon-font-text-hide
     );
 
-    &:visited:after {
+    &:visited::after {
         .lib-css(color, @_icon-font-color-visited);
     }
 
-    &:active:after {
+    &:active::after {
         .lib-css(color, @_icon-font-color-active);
     }
 }

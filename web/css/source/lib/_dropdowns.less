@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Dropdowns
@@ -53,11 +53,13 @@
     @_icon-font-text-hide: @dropdown-toggle-icon__text-hide
 ) {
     .lib-clearfix();
+
     display: inline-block;
     position: relative;
 
     @{_toggle-selector} {
         .lib-css(padding, @_dropdown-actions-padding);
+
         cursor: pointer;
 
         ._lib-dropdown-icon(
@@ -153,6 +155,7 @@
     @_icon-font-text-hide: @dropdown-split-toggle-icon__text-hide
 ) {
     .lib-clearfix();
+
     display: inline-block;
     position: relative;
 
@@ -248,6 +251,7 @@
         .lib-css(min-width, @_dropdown-list-min-width);
         .lib-css(width, @_dropdown-list-width);
         .lib-css(z-index, @_dropdown-list-z-index);
+
         box-sizing: border-box;
         display: none;
         position: absolute;
@@ -271,6 +275,7 @@
 
             &:hover {
                 .lib-css(background, @_dropdown-list-item-hover);
+
                 cursor: pointer;
             }
         }
@@ -544,12 +549,12 @@
         @_dropdown-list-pointer-border
     );
 
-    &:before {
+    &::before {
         .lib-css(left, @_dropdown-list-pointer-position-left-right);
         .lib-css(top, @_dropdown-list-pointer-position-top);
     }
 
-    &:after {
+    &::after {
         .lib-css(left, @_dropdown-list-pointer-position-left-right - 1);
         .lib-css(top, @_dropdown-list-pointer-position-top - 2);
     }
@@ -567,12 +572,12 @@
         @_dropdown-list-pointer-border
     );
 
-    &:before {
+    &::before {
         .lib-css(right, @_dropdown-list-pointer-position-left-right);
         .lib-css(top, @_dropdown-list-pointer-position-top);
     }
 
-    &:after {
+    &::after {
         .lib-css(right, @_dropdown-list-pointer-position-left-right - 1);
         .lib-css(top, @_dropdown-list-pointer-position-top - 2);
     }
@@ -582,8 +587,8 @@
     @_dropdown-list-background,
     @_dropdown-list-pointer-border
 ) {
-    &:before,
-    &:after {
+    &::before,
+    &::after {
         border-bottom-style: solid;
         content: '';
         display: block;
@@ -592,15 +597,17 @@
         width: 0;
     }
 
-    &:before {
+    &::before {
         border: 6px solid;
         .lib-css(border-color, transparent transparent @_dropdown-list-background transparent);
+
         z-index: 99;
     }
 
-    &:after {
+    &::after {
         border: 7px solid;
         .lib-css(border-color, transparent transparent @_dropdown-list-pointer-border transparent);
+
         z-index: 98;
     }
 }

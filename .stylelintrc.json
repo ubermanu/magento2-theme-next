@@ -4,7 +4,10 @@
   ],
   "customSyntax": "postcss-less",
   "rules": {
+    "no-descending-specificity": null,
     "less/no-duplicate-variables": null,
+    "no-duplicate-selectors": null,
+    "selector-class-pattern": null,
     "import-notation": false
   }
 }

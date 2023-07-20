@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Tooltips
@@ -40,6 +40,7 @@
         .lib-css(min-width, @_tooltip-min-width);
         .lib-css(padding, @_tooltip-padding);
         .lib-css(z-index, @_tooltip-z-index);
+
         display: none;
         position: absolute;
         text-align: left;
@@ -55,11 +56,11 @@
 
         ._lib-tooltip-border(@_tooltip-border-width, @_tooltip-border-color);
 
-        @_tooltip-arrow-after-margin: @_tooltip-arrow-size * -1px;
+        @_tooltip-arrow-after-margin: (@_tooltip-arrow-size * -1px);
         @_tooltip-arrow-before-margin: (@_tooltip-arrow-size + round(@_tooltip-border-width * 1.41421356)) * -1px;
 
-        &:after,
-        &:before {
+        &::after,
+        &::before {
             border: solid transparent;
             content: '';
             height: 0;
@@ -67,13 +68,15 @@
             width: 0;
         }
 
-        &:after {
+        &::after {
             .lib-css(border-width, @_tooltip-arrow-size);
+
             border-color: transparent;
         }
 
-        &:before {
-            .lib-css(border-width, @_tooltip-arrow-before-margin * -1);
+        &::before {
+            .lib-css(border-width, (@_tooltip-arrow-before-margin * -1));
+
             border-color: transparent;
         }
 
@@ -116,22 +119,24 @@
     @_tooltip-border-color
 ) when (@_tooltip-position = top) {
     .lib-css(margin-bottom, @_tooltip-arrow-size);
+
     bottom: 100%;
     left: 0;
 
-    &:after,
-    &:before {
+    &::after,
+    &::before {
         top: 100%;
     }
-    &:after {
+
+    &::after {
         .lib-css(border-top-color, @_tooltip-background);
-        .lib-css(left, @_tooltip-arrow-offset + @_tooltip-arrow-size);
+        .lib-css(left, (@_tooltip-arrow-offset + @_tooltip-arrow-size));
         .lib-css(margin-left, @_tooltip-arrow-after-margin);
     }
 
-    &:before {
+    &::before {
         .lib-css(border-top-color, @_tooltip-border-color);
-        .lib-css(left, @_tooltip-arrow-offset + @_tooltip-arrow-size);
+        .lib-css(left, (@_tooltip-arrow-offset + @_tooltip-arrow-size));
         .lib-css(margin-left, @_tooltip-arrow-before-margin);
     }
 }
@@ -146,24 +151,25 @@
     @_tooltip-border-color
 ) when (@_tooltip-position = left) {
     .lib-css(margin-right, @_tooltip-arrow-size);
+
     right: 100%;
     top: 0;
 
-    &:after,
-    &:before {
+    &::after,
+    &::before {
         left: 100%;
     }
 
-    &:after {
+    &::after {
         .lib-css(border-left-color, @_tooltip-background);
         .lib-css(margin-top, @_tooltip-arrow-after-margin);
-        .lib-css(top, @_tooltip-arrow-offset + @_tooltip-arrow-size)
+        .lib-css(top, (@_tooltip-arrow-offset + @_tooltip-arrow-size))
     }
 
-    &:before {
+    &::before {
         .lib-css(border-left-color, @_tooltip-border-color);
         .lib-css(margin-top, @_tooltip-arrow-before-margin);
-        .lib-css(top, @_tooltip-arrow-offset + @_tooltip-arrow-size);
+        .lib-css(top, (@_tooltip-arrow-offset + @_tooltip-arrow-size));
     }
 }
 
@@ -177,21 +183,22 @@
     @_tooltip-border-color
 ) when (@_tooltip-position = right) {
     .lib-css(margin-left, @_tooltip-arrow-size);
+
     left: 100%;
     top: 0;
 
-    &:after,
-    &:before {
+    &::after,
+    &::before {
         right: 100%;
     }
 
-    &:after {
+    &::after {
         .lib-css(border-right-color, @_tooltip-background);
         .lib-css(margin-top, @_tooltip-arrow-after-margin);
         .lib-css(top, @_tooltip-arrow-offset + @_tooltip-arrow-size);
     }
 
-    &:before {
+    &::before {
         .lib-css(border-right-color, @_tooltip-border-color);
         .lib-css(margin-top, @_tooltip-arrow-before-margin);
         .lib-css(top, @_tooltip-arrow-offset + @_tooltip-arrow-size);
@@ -208,21 +215,22 @@
     @_tooltip-border-color
 ) when (@_tooltip-position = bottom) {
     .lib-css(margin-top, @_tooltip-arrow-size);
+
     left: 0;
     top: 100%;
 
-    &:after,
-    &:before {
+    &::after,
+    &::before {
         bottom: 100%;
     }
 
-    &:after {
+    &::after {
         .lib-css(border-bottom-color, @_tooltip-background);
         .lib-css(left, @_tooltip-arrow-offset + @_tooltip-arrow-size);
         .lib-css(margin-left, @_tooltip-arrow-after-margin);
     }
 
-    &:before {
+    &::before {
         .lib-css(border-bottom-color, @_tooltip-border-color);
         .lib-css(left, @_tooltip-arrow-offset + @_tooltip-arrow-size);
         .lib-css(margin-left, @_tooltip-arrow-before-margin);

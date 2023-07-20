@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Variables
@@ -22,7 +22,6 @@
 //  _____________________________________________
 
 & when (@media-common = true) {
-
     .checkout-index-index {
         .page-title-wrapper {
             &:extend(.abs-visually-hidden all);
@@ -78,6 +77,7 @@
     .opc-wrapper {
         .step-title {
             .lib-css(font-size, @checkout-step-title-mobile__font-size);
+
             border-bottom: 0;
             padding-bottom: 0;
         }
@@ -92,6 +92,7 @@
     .opc-wrapper {
         &:extend(.abs-add-box-sizing-desktop-m all);
         .lib-layout-column(2, 1, @checkout-wrapper__columns);
+
         padding-right: @indent__l;
     }
 

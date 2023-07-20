@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Variables
@@ -42,7 +42,6 @@
 //  _____________________________________________
 
 & when (@media-common = true) {
-
     .opc-wrapper {
 
         //
@@ -52,6 +51,7 @@
         .form-login,
         .form-shipping-address {
             .lib-css(margin-top, @checkout-shipping-address__margin-top);
+
             margin-bottom: @indent__base;
 
             .fieldset {
@@ -74,6 +74,7 @@
             .lib-css(padding, @checkout-shipping-item__padding);
             .lib-css(transition, @checkout-shipping-item__transition);
             .lib-css(width, @checkout-shipping-item-tablet__width);
+
             display: inline-block;
             font-size: @font-size__base;
             position: relative;
@@ -83,13 +84,14 @@
             &.selected-item {
                 .lib-css(border-color, @checkout-shipping-item__active__border-color);
 
-                &:after {
+                &::after {
                     .lib-css(background, @checkout-shipping-item-icon__background-color);
                     .lib-css(color, @checkout-shipping-item-icon__color);
                     .lib-css(content, @checkout-shipping-item-icon__content);
                     .lib-css(font-family, @icons__font-name);
                     .lib-css(height, @checkout-shipping-item-icon__selected__height);
                     .lib-css(width, @checkout-shipping-item-icon__selected__width);
+
                     font-size: 27px;
                     line-height: 21px;
                     padding-top: 2px;
@@ -111,7 +113,7 @@
             margin: 0 0 @indent__base;
 
             > span {
-                &:before {
+                &::before {
                     content: '+';
                     padding-right: @indent__xs;
                 }
@@ -125,6 +127,7 @@
 
         .edit-address-link {
             &:extend(.abs-action-button-as-link all);
+
             display: block;
             float: left;
             margin: 26px 5px 0 0;
@@ -150,6 +153,7 @@
             .action {
                 &.primary {
                     &:extend(.abs-button-l all);
+
                     margin: @indent__base 0 0;
                 }
             }
@@ -211,10 +215,12 @@
             .lib-css(border-bottom, 1px solid @checkout-shipping-item-before__border-color);
             .lib-css(margin, @checkout-shipping-item-mobile__margin);
             .lib-css(padding, @checkout-shipping-item-mobile__padding);
+
             width: 100%;
 
             &.selected-item {
                 .lib-css(padding, @checkout-shipping-item-mobile__active__padding);
+
                 border-bottom-width: 2px;
 
                 .edit-address-link {
@@ -248,6 +254,7 @@
                 @_icon-font-color-hover: @color-gray19,
                 @_icon-font-color-active: @color-gray19
             );
+
             margin: 0;
             position: absolute;
             right: 0;
@@ -292,9 +299,10 @@
         .shipping-address-item {
             .lib-css(width, @checkout-shipping-item__width);
 
-            &:before {
+            &::before {
                 .lib-css(background, @checkout-shipping-item-before__border-color);
                 .lib-css(height, @checkout-shipping-item-before__height);
+
                 content: '';
                 left: 0;
                 position: absolute;
@@ -303,18 +311,18 @@
             }
 
             &:nth-child(3n + 1) {
-                &:before {
+                &::before {
                     display: none;
                 }
             }
 
             &.selected-item {
-                &:before {
+                &::before {
                     display: none;
                 }
 
                 + .shipping-address-item {
-                    &:before {
+                    &::before {
                         display: none;
                     }
                 }

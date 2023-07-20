@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Variables
@@ -26,9 +26,10 @@
 
             .field-tooltip-action {
                 .lib-css(color, @checkout-shipping-policy-action__color);
+
                 cursor: pointer;
 
-                &:before {
+                &::before {
                     display: none;
                 }
 
@@ -41,6 +42,7 @@
                 &:extend(.abs-add-box-sizing all);
                 &:extend(.abs-checkout-tooltip-content-position-top all);
                 .lib-css(width, @checkout-shipping-policy-tooltip__width);
+
                 top: @indent__l;
             }
         }
@@ -61,10 +63,11 @@
 
             .field-tooltip-content {
                 .lib-css(width, @checkout-shipping-policy-tooltip-mobile__width);
+
                 right: auto;
 
-                &:before,
-                &:after {
+                &::before,
+                &::after {
                     right: auto;
                 }
             }

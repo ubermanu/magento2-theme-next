@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Variables
@@ -17,6 +17,7 @@
 & when (@media-common = true) {
     .fieldset {
         .lib-form-fieldset();
+
         &:last-child {
             margin-bottom: @indent__base;
         }
@@ -52,7 +53,7 @@
                 }
             }
 
-            input[type=file] {
+            input[type="file"] {
                 margin: @indent__xs 0;
             }
         }
@@ -115,6 +116,7 @@
 
     .field .tooltip {
         .lib-tooltip(right);
+
         .tooltip-content {
             min-width: 200px;
             white-space: normal;
@@ -137,6 +139,7 @@
             @_icon-font-display: block,
             @_icon-font-text-hide: true
             );
+
             display: inline-block;
             vertical-align: middle;
 
@@ -188,6 +191,7 @@
 
         > .field {
             .lib-form-field-type-revert();
+
             margin: 0 0 @form-field__vertical-indent__desktop;
         }
     }

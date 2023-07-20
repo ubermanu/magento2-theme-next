@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Variables
@@ -62,6 +62,7 @@
 
         .payment-method-title {
             .lib-css(padding, @checkout-payment-method-title__padding 0);
+
             margin: 0;
 
             .payment-icon {
@@ -79,6 +80,7 @@
         .payment-method-content {
             display: none;
             .lib-css(padding, 0 0 @indent__base @checkout-payment-method-content__padding__xl);
+
             .fieldset {
                 &:not(:last-child) {
                     margin: 0 0 @indent__base;
@@ -209,9 +211,9 @@
             .fieldset {
                 > .field {
                     margin: 0 0 @indent__base;
-                    
+
                     &.choice {
-                        &:before {
+                        &::before {
                             padding: 0;
                             width: 0;
                         }

@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Common
@@ -12,7 +12,7 @@
     //  PayPal checkout button
     .paypal {
         &.after {
-            &:before {
+            &::before {
                 content: '- ' attr(data-label) ' -';
                 display: block;
                 margin: @indent__xs @indent__xs @indent__s;
@@ -21,7 +21,7 @@
         }
 
         &.before {
-            &:before {
+            &::before {
                 content: '- ' attr(data-label) ' -';
                 display: block;
                 margin: @indent__s @indent__xs;

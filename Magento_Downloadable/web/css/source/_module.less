@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Common
@@ -27,7 +27,7 @@
             display: inline;
             white-space: nowrap;
 
-            &:before {
+            &::before {
                 content: ' + ';
                 display: inline;
             }
@@ -36,17 +36,18 @@
         .price-excluding-tax {
             display: inline;
 
-            &:before {
+            &::before {
                 content: ' ('attr(data-label) ': ';
             }
 
-            &:after {
+            &::after {
                 content: ')';
             }
         }
 
         .price-including-tax {
             .lib-font-size(14);
+
             display: inline;
             font-weight: @font-weight__semibold;
         }
@@ -59,6 +60,7 @@
     .page-product-downloadable {
         .product-add-form {
             &:extend(.abs-add-clearfix all);
+
             clear: both;
             margin-bottom: @indent__m;
         }

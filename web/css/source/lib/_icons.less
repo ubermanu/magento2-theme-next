@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Icons
@@ -26,13 +26,14 @@
     @_icon-font-display: @icon-font__display
 ) when (@_icon-font-position = before) {
     .lib-css(display, @_icon-font-display);
-    text-decoration: none; 
-    
+
+    text-decoration: none;
+
     & when not (@_icon-font-content = false) {
         ._lib-icon-text-hide(@_icon-font-text-hide);
     }
 
-    &:before {
+    &::before {
         ._lib-icon-font(
             @_icon-font-content,
             @_icon-font,
@@ -45,13 +46,13 @@
     }
 
     &:hover {
-        &:before {
+        &::before {
             .lib-css(color, @_icon-font-color-hover);
         }
     }
 
     &:active {
-        &:before {
+        &::before {
             .lib-css(color, @_icon-font-color-active);
         }
     }
@@ -72,13 +73,14 @@
     @_icon-font-display: @icon-font__display
 ) when (@_icon-font-position = after) {
     .lib-css(display, @_icon-font-display);
+
     text-decoration: none;
-    
+
     & when not (@_icon-font-content = false) {
         ._lib-icon-text-hide(@_icon-font-text-hide);
     }
-    
-    &:after {
+
+    &::after {
         ._lib-icon-font(
             @_icon-font-content,
             @_icon-font,
@@ -91,13 +93,13 @@
     }
 
     &:hover {
-        &:after {
+        &::after {
             .lib-css(color, @_icon-font-color-hover);
         }
     }
 
     &:active {
-        &:after {
+        &::after {
             .lib-css(color, @_icon-font-color-active);
         }
     }
@@ -108,7 +110,7 @@
     @_icon-font-line-height: @icon-font__line-height,
     @_icon-font-position: @icon-font__position
 ) when (@_icon-font-position = before) {
-    &:before {
+    &::before {
         ._lib-icon-font-size(@_icon-font-size, @_icon-font-line-height);
     }
 }
@@ -118,7 +120,7 @@
     @_icon-font-line-height: @icon-font__line-height,
     @_icon-font-position: @icon-font__position
 ) when (@_icon-font-position = after) {
-    &:after {
+    &::after {
         ._lib-icon-font-size(@_icon-font-size, @_icon-font-line-height);
     }
 }
@@ -127,7 +129,7 @@
     @_icon-font-content,
     @_icon-font-position: @icon-font__position
 ) when (@_icon-font-position = before) {
-    &:before {
+    &::before {
         .lib-css(content, @_icon-font-content);
     }
 }
@@ -136,7 +138,7 @@
     @_icon-font-content,
     @_icon-font-position: @icon-font__position
 ) when (@_icon-font-position = after) {
-    &:after {
+    &::after {
         .lib-css(content, @_icon-font-content);
     }
 }
@@ -157,12 +159,12 @@
     @_icon-image-text-hide: @icon__text-hide
 ) when (@_icon-image-position = before) {
     display: inline-block;
-    
+
     & when not (@_icon-image = false) {
         ._lib-icon-text-hide(@_icon-image-text-hide);
     }
-    
-    &:before {
+
+    &::before {
         ._lib-icon-image(
             @_icon-image,
             @_icon-image-width,
@@ -188,12 +190,12 @@
     @_icon-image-text-hide: @icon__text-hide
 ) when (@_icon-image-position = after) {
     display: inline-block;
-    
+
     & when not (@_icon-image = false) {
         ._lib-icon-text-hide(@_icon-image-text-hide);
     }
 
-    &:after {
+    &::after {
         ._lib-icon-image(
             @_icon-image,
             @_icon-image-width,
@@ -212,7 +214,7 @@
     @_icon-image-position-y: @icon-image__position-y,
     @_icon-image-position: @icon__position
 ) when (@_icon-image-position = before) {
-    &:before {
+    &::before {
         ._lib-icon-image-position(
             @_icon-image-position-x,
             @_icon-image-position-y
@@ -225,7 +227,7 @@
     @_icon-image-position-y: @icon-image__position-y,
     @_icon-image-position: @icon__position
 ) when (@_icon-image-position = after) {
-    &:after {
+    &::after {
         ._lib-icon-image-position(
             @_icon-image-position-x,
             @_icon-image-position-y
@@ -239,7 +241,7 @@
     @_icon-sprite-grid: @icon-sprite__grid,
     @_icon-sprite-position: @icon__position
 ) when (@_icon-sprite-position = before) {
-    &:before {
+    &::before {
         ._lib-icon-sprite-position(
             @_icon-sprite-position-x,
             @_icon-sprite-position-y,
@@ -254,7 +256,7 @@
     @_icon-sprite-grid: @icon-sprite__grid,
     @_icon-sprite-position: @icon__position
 ) when (@_icon-sprite-position = after) {
-    &:after {
+    &::after {
         ._lib-icon-sprite-position(
             @_icon-sprite-position-x,
             @_icon-sprite-position-y,
@@ -268,7 +270,7 @@
     @_icon-image-height: @icon__height,
     @_icon-image-position: @icon__position
 ) when (@_icon-image-position = before) {
-    &:before {
+    &::before {
         ._lib-icon-image-size(@_icon-image-width, @_icon-image-height);
     }
 }
@@ -278,7 +280,7 @@
     @_icon-image-height: @icon__height,
     @_icon-image-position: @icon__position
 ) when (@_icon-image-position = before) {
-    &:after {
+    &::after {
         ._lib-icon-image-size(@_icon-image-width, @_icon-image-height);
     }
 }
@@ -320,6 +322,7 @@
         @_icon-image-width,
         @_icon-image-height
     );
+
     background-repeat: no-repeat;
     content: '';
     display: inline-block;
@@ -365,6 +368,7 @@
     .lib-css(font-family, @_icon-font);
     .lib-css(margin, @_icon-font-margin);
     .lib-css(vertical-align, @_icon-font-vertical-align);
+
     display: inline-block;
     font-weight: normal;
     overflow: hidden;

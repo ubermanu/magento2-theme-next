@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Loaders
@@ -27,27 +27,23 @@
 ) {
     .lib-css(background-color, @_loader-overlay-background-color);
     .lib-css(z-index, @_loader-overlay-z-index);
-    bottom: 0;
-    left: 0;
-    position: fixed;
-    right: 0;
-    top: 0;
 
-    &:before {
+    inset: 0;
+    position: fixed;
+
+    &::before {
         ._lib-loader-text(@_loader-text);
         .lib-css(background, @_loader-icon-background-color @_loader-icon-background-image no-repeat @_loader-icon-background-position);
         .lib-css(border-radius, @_loader-icon-border-radius);
         .lib-css(height, @_loader-icon-height);
         .lib-css(padding, @_loader-icon-padding);
         .lib-css(width, @_loader-icon-width);
-        bottom: 0;
+
+        inset: 0;
         box-sizing: border-box;
         content: '';
-        left: 0;
         margin: auto;
         position: absolute;
-        right: 0;
-        top: 0;
     }
 }
 
@@ -55,6 +51,7 @@
     @_loader-text
 ) when (@_loader-text = true) {
     .lib-css(padding, @_loader-text-padding);
+
     content: attr(data-text);
     text-align: center;
     vertical-align: baseline;
@@ -74,23 +71,18 @@
 ) {
     position: relative;
 
-    &:before {
+    &::before {
         .lib-css(background, @_loading-background-color @_loading-background-image no-repeat 50% 50%);
-        bottom: 0;
+
+        inset: 0;
         content: '';
-        left: 0;
         position: absolute;
-        right: 0;
-        top: 0;
     }
 }
 
 .lib-loading-mask() {
-    bottom: 0;
-    left: 0;
+    inset: 0;
     margin: auto;
     position: fixed;
-    right: 0;
-    top: 0;
     z-index: 100;
 }

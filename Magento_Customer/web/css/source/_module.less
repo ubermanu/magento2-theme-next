@@ -42,7 +42,7 @@
         .fieldset {
             .lib-form-hasrequired(bottom);
 
-            &:after {
+            &::after {
                 margin-top: 35px;
             }
         }
@@ -82,6 +82,7 @@
     .box-newsletter {
         .box-content {
             .lib-wrap-words();
+
             line-height: 26px;
         }
     }
@@ -181,6 +182,7 @@
 
         .content {
             .lib-css(background, @account-nav-background);
+
             padding: 15px 0;
         }
 
@@ -194,6 +196,7 @@
             a,
             > strong {
                 .lib-css(color, @account-nav-color);
+
                 border-left: 3px solid transparent;
                 display: block;
                 padding: @indent__xs 18px @indent__xs 15px;
@@ -288,7 +291,7 @@
         position: relative;
         z-index: 1;
 
-        &:before {
+        &::before {
             content: '';
             height: 100%;
             left: 0;
@@ -298,35 +301,35 @@
         }
 
         .password-none & {
-            &:before {
+            &::before {
                 background-color: @_password-default;
                 width: 100%;
             }
         }
 
         .password-weak & {
-            &:before {
+            &::before {
                 background-color: @_password-weak;
                 width: 25%;
             }
         }
 
         .password-medium & {
-            &:before {
+            &::before {
                 background-color: @_password-medium;
                 width: 50%;
             }
         }
 
         .password-strong & {
-            &:before {
+            &::before {
                 background-color: @_password-strong;
                 width: 75%;
             }
         }
 
         .password-very-strong & {
-            &:before {
+            &::before {
                 background-color: @_password-very-strong;
                 width: 100%;
             }
@@ -349,7 +352,7 @@
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
     .login-container {
         .fieldset {
-            &:after {
+            &::after {
                 text-align: center;
             }
         }
@@ -372,6 +375,7 @@
     .control.captcha-image {
         .captcha-img {
             .lib-css(margin-bottom, @indent__s);
+
             display: block;
         }
     }
@@ -420,7 +424,7 @@
         }
 
         .fieldset {
-            &:after {
+            &::after {
                 &:extend(.abs-margin-for-forms-desktop all);
             }
         }
@@ -435,12 +439,14 @@
                     .lib-css(padding, @form-field-type-label-inline__padding);
                     .lib-css(text-align, @form-field-type-label-inline__align);
                     .lib-css(width, @form-field-type-label-inline__width);
+
                     box-sizing: border-box;
                     float: left;
                 }
 
                 .control {
                     .lib-css(width, @form-field-type-control-inline__width);
+
                     float: left;
                 }
             }
@@ -482,6 +488,7 @@
     .block-addresses-list {
         .items.addresses {
             &:extend(.abs-add-clearfix-desktop all);
+
             font-size: 0;
 
             > .item {

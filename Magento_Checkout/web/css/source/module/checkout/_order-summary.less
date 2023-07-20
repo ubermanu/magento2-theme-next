@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Variables
@@ -30,10 +30,12 @@
         &:extend(.abs-add-box-sizing all);
         .lib-css(background, @checkout-summary__background-color);
         .lib-css(padding, @checkout-summary__padding);
+
         margin: 0 0 @indent__base;
 
         > .title {
             &:extend(.abs-checkout-title all);
+
             display: block;
         }
 
@@ -45,6 +47,7 @@
         .mark {
             .value {
                 .lib-css(color, @checkout-summary-mark-value__color);
+
                 display: block;
             }
         }
@@ -59,6 +62,7 @@
                 .amount {
                     border-top: 0;
                     .lib-font-size(14);
+
                     padding-top: 0;
 
                     strong {
@@ -81,6 +85,7 @@
             > .title {
                 border-bottom: @border-width__base solid @border-color__base;
                 .lib-css(padding, @indent__s @indent__xl @indent__s 0);
+
                 cursor: pointer;
                 .lib-icon-font(
                 @icon-down,
@@ -91,10 +96,11 @@
                 @_icon-font-position: after,
                 @_icon-font-display: block
                 );
+
                 margin-bottom: 0;
                 position: relative;
 
-                &:after {
+                &::after {
                     position: absolute;
                     right: 0;
                     top: @indent__s;
@@ -102,6 +108,7 @@
 
                 strong {
                     .lib-font-size(18);
+
                     font-weight: @font-weight__light;
                     margin: 0;
                 }
@@ -118,6 +125,7 @@
 
             .product {
                 position: relative;
+
                 .item-options {
                     &:extend(.abs-product-options-list all);
                     &:extend(.abs-add-clearfix all);
@@ -130,6 +138,7 @@
             .lib-css(margin, 0 -(@checkout-summary-items__padding) 0 0);
             .lib-css(max-height, @checkout-summary-items__max-height);
             .lib-css(padding, @checkout-summary-items__padding @checkout-summary-items__padding 0 0);
+
             border: 0;
         }
 
@@ -160,6 +169,7 @@
 
             .price {
                 .lib-font-size(16);
+
                 font-weight: @font-weight__regular;
             }
 

@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Tables
@@ -15,6 +15,7 @@
 ) {
     .lib-css(margin-bottom, @_table-margin-bottom);
     .lib-css(width, @_table-width);
+
     border-collapse: collapse;
     border-spacing: 0;
     max-width: 100%;
@@ -138,6 +139,7 @@
             > td {
                 .lib-css(padding, @_td-padding-top @_td-padding-right @_td-padding-bottom @_td-padding-left);
             }
+
             > th {
                 .lib-css(padding, @_th-padding-top @_th-padding-right @_th-padding-bottom @_th-padding-left);
             }
@@ -152,6 +154,7 @@
     @_table_border-color: @table__border-color
 ) when (@_table_type = normal){
     .lib-css(border, @_table_border-width @_table_border-style @_table_border-color);
+
     > thead,
     > tbody,
     > tfoot {
@@ -230,6 +233,7 @@
             > th,
             > td {
                 .lib-css(border-left, @_table_border-width @_table_border-style @_table_border-color);
+
                 &:first-child {
                     border-left: none;
                 }
@@ -376,6 +380,7 @@
 
 .lib-table-overflow() {
     .lib-css(margin-bottom, @table__margin-bottom);
+
     overflow-x: auto;
     overflow-y: hidden;
     width: 100%;
@@ -511,6 +516,7 @@
     @_table-responsive-cell-padding: @_table-responsive-cell-padding
 ) {
     .lib-css(background, @_table-background-color-responsive);
+
     border: none;
     display: block;
 
@@ -530,8 +536,9 @@
                 display: block;
                 .lib-css(padding, @_table-responsive-cell-padding);
 
-                &[data-th]:before {
+                &[data-th]::before {
                     .lib-css(padding-right, @table-cell__padding-horizontal);
+
                     content: attr(data-th)': ';
                     display: inline-block;
 

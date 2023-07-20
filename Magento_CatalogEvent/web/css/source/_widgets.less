@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Common
@@ -37,7 +37,7 @@
                         @_icon-font-line-height: 30px
                     );
 
-                    &:before {
+                    &::before {
                         margin-left: -15px;
                     }
                 }
@@ -48,9 +48,10 @@
 
                 &.forward {
                     .lib-icon-font-symbol(@icon-next);
+
                     right: 0;
 
-                    &:before {
+                    &::before {
                         margin-left: -20px;
                     }
                 }
@@ -73,10 +74,12 @@
 
             .slider {
                 &:extend(.abs-reset-list all);
+
                 white-space: nowrap;
 
                 .item {
                     .lib-css(background, @catalog-event-background-color);
+
                     display: inline-block;
                     text-align: center;
                     vertical-align: top;
@@ -95,6 +98,7 @@
                     .category-name {
                         display: inline-block;
                         .lib-font-size(18);
+
                         padding: 15px 5px 0;
                         word-break: break-all;
                     }
@@ -109,6 +113,7 @@
 
                         .value {
                             .lib-font-size(26);
+
                             font-weight: @font-weight__light;
                         }
 
@@ -128,8 +133,9 @@
                         }
 
                         .start {
-                            &:after {
+                            &::after {
                                 .lib-font-size(18);
+
                                 content: '\2013';
                                 display: block;
                             }
@@ -137,6 +143,7 @@
 
                         .date {
                             .lib-font-size(18);
+
                             font-weight: @font-weight__light;
                         }
 
@@ -160,6 +167,7 @@
                     .action {
                         &.show {
                             &:extend(.abs-add-box-sizing all);
+
                             display: block;
                             padding: 0;
 
@@ -176,6 +184,7 @@
                         &.event {
                             .lib-button-primary();
                             &:extend(.abs-action-link-button all);
+
                             margin-top: 15px;
 
                             &:hover {

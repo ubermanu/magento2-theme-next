@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Common
@@ -26,11 +26,11 @@
                 display: inline !important;
             }
 
-            &-including-tax:before {
+            &-including-tax::before {
                 content: ' / ';
             }
 
-            &-including-tax:after {
+            &-including-tax::after {
                 content: '('attr(data-label)')';
             }
         }
@@ -41,6 +41,7 @@
         .price-excluding-tax {
             display: block;
             .lib-font-size(18);
+
             line-height: 1;
 
             .price {
@@ -49,6 +50,7 @@
 
             .cart-tax-total {
                 &:extend(.abs-tax-total all);
+
                 &-expanded {
                     &:extend(.abs-tax-total-expanded all);
                 }
@@ -60,7 +62,7 @@
             display: block;
             .lib-font-size(18);
 
-            &:before {
+            &::before {
                 content: attr(data-label) ': ';
                 .lib-font-size(11);
             }

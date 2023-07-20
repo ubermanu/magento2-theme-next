@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Ratings
@@ -19,7 +19,7 @@
 ) {
     overflow: hidden;
 
-    &:before {
+    &::before {
         ._lib-rating-icon-defalt(
             @_icon-font,
             @_icon-font-size,
@@ -30,6 +30,7 @@
             @_icon-count,
             @_icon-content
         );
+
         display: block;
         position: absolute;
         z-index: 1;
@@ -41,7 +42,7 @@
         &:hover,
         &:checked {
             + label {
-                &:before {
+                &::before {
                     opacity: 1;
                 }
             }
@@ -57,23 +58,24 @@
             .lib-visually-hidden();
         }
 
-        &:before {
+        &::before {
             ._lib-rating-icon-defalt(
                 @_icon-font,
                 @_icon-font-size,
                 @_icon-letter-spacing,
                 @_icon-color-active
             );
+
             opacity: 0;
         }
 
         &:hover {
-            &:before {
+            &::before {
                 opacity: 1;
             }
 
             ~ label {
-                &:before {
+                &::before {
                     opacity: 0;
                 }
             }
@@ -103,11 +105,12 @@
 
     .rating-result {
         .lib-css(width, (@_icon-font-size * @_icon-count) + ceil(@_icon-letter-spacing * (@_icon-count - 1)));
+
         display: inline-block;
         position: relative;
         vertical-align: middle;
 
-        &:before {
+        &::before {
             left: 0;
             position: absolute;
             top: 0;
@@ -127,7 +130,7 @@
             display: block;
             overflow: hidden;
 
-            &:before {
+            &::before {
                 position: relative;
                 z-index: 2;
                 ._lib-rating-summary-icon-default(
@@ -166,7 +169,7 @@
         .rating-@{_index} {
             z-index: @_icon-count - (@_index - 2);
 
-            &:before {
+            &::before {
                .lib-rating-icons-content(@_index, @_icon-content);
             }
         }
@@ -190,6 +193,7 @@
     .lib-css(height, @_icon-font-size);
     .lib-css(letter-spacing, @_icon-letter-spacing);
     .lib-css(line-height, @_icon-font-size);
+
     font-style: normal;
     font-weight: normal;
     speak: none;
@@ -213,6 +217,7 @@
     .lib-css(letter-spacing, @_icon-letter-spacing);
     .lib-css(line-height, @_icon-font-size);
     .lib-rating-icons-content(@_icon-count, @_icon-content);
+
     display: block;
     font-style: normal;
     font-weight: normal;
@@ -224,5 +229,6 @@
     @_icon-content: @rating-icon__content
 ) when (@_icon-count > 0) {
     .lib-rating-icons-content((@_icon-count - 1),@_icon-content);
+
     content+_: @_icon-content;
 }

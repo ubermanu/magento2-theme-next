@@ -1,17 +1,17 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Common
 //  _____________________________________________
 
 & when (@media-common = true) {
-
     .form-giftregistry-share,
     .form-giftregistry-edit {
         &:extend(.abs-add-fields all);
+
         .actions-toolbar:not(:last-child) {
             margin-bottom: @indent__xl;
         }
@@ -141,6 +141,7 @@
 
             .price-wrapper {
                 .lib-font-size(18);
+
                 display: block;
                 font-weight: @font-weight__bold;
                 white-space: nowrap;
@@ -151,6 +152,7 @@
             .item-options {
                 &:extend(.abs-product-options-list all);
                 &:extend(.abs-add-clearfix all);
+
                 margin-bottom: 0;
             }
 
@@ -175,7 +177,7 @@
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
     .table-giftregistry-items {
         .col.product {
-            &:before {
+            &::before {
                 &:extend(.abs-visually-hidden-mobile all);
             }
             &:extend(.abs-add-clearfix-mobile all);
@@ -211,6 +213,7 @@
     .form-giftregistry-search {
         .fieldset {
             margin-bottom: @form-field__vertical-indent__desktop;
+
             > .fields-specific-options {
                 > .field {
                     .lib-form-field-type-revert();

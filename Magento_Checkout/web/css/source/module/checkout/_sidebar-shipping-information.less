@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Variables
@@ -33,6 +33,7 @@
         .shipping-information-title {
             &:extend(.abs-checkout-title all);
             .lib-css(border-bottom, @checkout-step-title__border);
+
             margin: 0 0 @indent__base;
             position: relative;
 
@@ -48,6 +49,7 @@
                     @_icon-font-color-hover: @checkout-sidebar-shipping-information-edit-icon__hover__color,
                     @_icon-font-color-active: @checkout-sidebar-shipping-information-edit-icon__color
                 );
+
                 margin: 0;
                 position: absolute;
                 right: 0;
@@ -56,6 +58,7 @@
 
         .shipping-information-content {
             .lib-css(line-height, @checkout-sidebar-shipping-information__line-height);
+
             .actions-toolbar {
                 margin-left: 0;
             }

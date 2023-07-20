@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Lib -> Components -> Modals
@@ -41,12 +41,9 @@
 //  ---------------------------------------------
 
 .lib-modal() {
-    bottom: 0;
-    left: 0;
+    inset: 0;
     min-width: 0;
     position: fixed;
-    right: 0;
-    top: 0;
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s .3s, opacity .3s ease;
@@ -64,6 +61,7 @@
     .modal-inner-wrap {
         .lib-css(background-color, @modal__background-color);
         .lib-css(box-shadow, @modal__box-shadow);
+
         opacity: 1;
         pointer-events: auto;
     }
@@ -91,6 +89,7 @@
 
 .lib-modal-popup() {
     .lib-css(z-index, @modal-popup__z-index);
+
     left: 0;
     overflow-y: auto;
 
@@ -109,6 +108,7 @@
     .modal-inner-wrap {
         .lib-css(margin, @modal-popup__indent-vertical auto);
         .lib-css(width, @modal-popup__width);
+
         display: flex;
         flex-direction: column;
         box-sizing: border-box;

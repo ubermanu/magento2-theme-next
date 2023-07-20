@@ -1,7 +1,7 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Variables
@@ -33,6 +33,7 @@
         .actions-toolbar {
             .action-cancel {
                 &:extend(.abs-action-button-as-link all);
+
                 display: none;
             }
         }
@@ -119,6 +120,7 @@
 
         .title {
             .lib-css(font-weight, @font-weight__bold);
+
             border-radius: 3px;
 
             .lib-button(
@@ -140,6 +142,7 @@
         .content {
             &:extend(.abs-add-clearfix all);
             .lib-css(border-bottom, @gift-item-block__border-width solid @gift-item-block__border-color);
+
             padding: @indent__s @indent__s @indent__base;
             position: relative;
         }
@@ -155,6 +158,7 @@
             .item-options {
                 dt {
                     .lib-css(font-weight, @font-weight__regular);
+
                     margin: @indent__s 0;
                 }
             }
@@ -162,7 +166,7 @@
             &:extend(.abs-add-clearfix all);
 
             dt {
-                &:after {
+                &::after {
                     content: '';
                 }
             }
@@ -195,10 +199,11 @@
                 @_icon-font-position: after,
                 @_icon-font-display: inline-block
                 );
+
                 padding-right: @indent__base;
                 position: relative;
 
-                &:after {
+                &::after {
                     position: absolute;
                     right: 0;
                     top: -4px;
@@ -229,6 +234,7 @@
         .actions-toolbar {
             .action-update {
                 .lib-font-size(20);
+
                 padding: 15px;
                 width: 100%;
             }
@@ -237,6 +243,7 @@
 
     .gift-item-block {
         .lib-css(border-top, @gift-item-block__border-width solid @gift-item-block__border-color);
+
         border-bottom: 0;
     }
 
@@ -296,8 +303,9 @@
             }
 
             &:nth-child(3) {
-                &:before {
+                &::before {
                     .lib-css(border-left, 1px solid @gift-item-block__border-color);
+
                     bottom: 5rem;
                     content: '';
                     display: block;

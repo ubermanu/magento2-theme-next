@@ -1,14 +1,13 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 
 //
 //  Common
 //  _____________________________________________
 
 & when (@media-common = true) {
-
     .block.filter {
         margin-bottom: @indent__xl;
 
@@ -35,7 +34,7 @@
             display: block;
             font-weight: @font-weight__bold;
 
-            &:after {
+            &::after {
                 content: ':';
             }
         }
@@ -56,6 +55,7 @@
 
         .filter-options-title {
             .lib-heading(h4);
+
             margin: 0 0 @indent__s;
             word-break: break-all;
         }
@@ -71,11 +71,11 @@
         .count {
             .lib-css(color, @text__color__muted);
 
-            &:before {
+            &::before {
                 content: '(';
             }
 
-            &:after {
+            &::after {
                 content: ')';
             }
         }
@@ -101,6 +101,7 @@
 
             .action.remove {
                 &:extend(.abs-remove-button-for-blocks all);
+
                 left: -6px;
                 position: absolute;
                 top: 0;
