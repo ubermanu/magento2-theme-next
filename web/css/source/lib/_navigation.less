@@ -121,7 +121,8 @@
             }
 
             &.active,
-            &.has-active { // ToDo UI: remove "has_active" here, when mobile navigation default open state is implemented
+            &.has-active {
+                // ToDo UI: remove "has_active" here, when mobile navigation default open state is implemented
                 > a:not(.ui-state-active) {
                     .lib-css(background, @_nav-level0-item-background-color-active);
                     .lib-css(border-color, @_nav-level0-item__active__border-color);
@@ -166,7 +167,7 @@
                 padding: 0;
                 position: relative;
                 top: auto !important;
-                transition: left .3s ease-out;
+                transition: left 0.3s ease-out;
 
                 > li {
                     > a {
@@ -364,7 +365,8 @@
                 position: relative;
                 display: inline-block;
 
-                &:hover, &.ui-state-focus {
+                &:hover,
+                &.ui-state-focus {
                     .lib-css(background, @_nav-level0-item-background-color-hover);
                     .lib-css(border, @_nav-level0-item-border-hover);
                     .lib-css(color, @_nav-level0-item-color-hover);
@@ -475,7 +477,7 @@
                     left: 100% !important;
                 }
 
-                .submenu-reverse{
+                .submenu-reverse {
                     left: auto !important;
                     right: 100%;
                 }

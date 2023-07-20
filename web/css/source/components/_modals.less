@@ -14,7 +14,7 @@
 @import '../../source/_variables.less';
 
 @modal__background-color: @color-white;
-@modal__box-shadow: 0 0 12px 2px rgba(0, 0, 0, .35);
+@modal__box-shadow: 0 0 12px 2px rgba(0, 0, 0, 0.35);
 
 @modal-popup__indent-vertical: 5rem;
 @modal-popup__padding: 3rem;
@@ -46,12 +46,12 @@
     position: fixed;
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0s .3s, opacity .3s ease;
+    transition: visibility 0s 0.3s, opacity 0.3s ease;
 
     &._show {
         visibility: visible;
         opacity: 1;
-        transition: opacity .3s ease;
+        transition: opacity 0.3s ease;
 
         .modal-inner-wrap {
             transform: translate(0, 0);
@@ -82,7 +82,7 @@
         overflow-y: auto;
         position: static;
         transform: translateX(100%);
-        transition: transform .3s ease-in-out;
+        transition: transform 0.3s ease-in-out;
         width: auto;
     }
 }
@@ -117,8 +117,7 @@
         position: absolute;
         right: 0;
         transform: translateY(-200%);
-        transition: transform .2s ease;
-
+        transition: transform 0.2s ease;
     }
 }
 

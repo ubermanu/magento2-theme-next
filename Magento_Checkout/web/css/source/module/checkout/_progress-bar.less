@@ -37,7 +37,6 @@
 //  _____________________________________________
 
 & when (@media-common = true) {
-
     //
     //  Checkout Progress Bar
     //  ---------------------------------------------
@@ -59,7 +58,8 @@
         vertical-align: top;
         width: 50%;
 
-        &::before { // Horizontal line
+        &::before {
+            // Horizontal line
             .lib-css(background, @checkout-progress-bar-item__background-color);
             .lib-css(top, (@checkout-progress-bar-item-element__width/2));
 

@@ -99,7 +99,7 @@
             );
         }
 
-        .lib-css(padding-right, @_popup-icon-font-size)
+        .lib-css(padding-right, @_popup-icon-font-size);
     }
 
     .popup-content {
@@ -178,7 +178,7 @@
         .lib-css(opacity, @_overlay-opacity);
 
         & when not (@_overlay-opacity-old = false) {
-            filter: alpha(opacity=@_overlay-opacity-old);
+            filter: alpha(opacity= @_overlay-opacity-old);
         }
     }
 }
@@ -193,7 +193,7 @@
 }
 
 //  Popup shadow
-._lib-popup-shadow(@_popup-shadow) when not (@_popup-shadow = '') and not (@_popup-shadow = none)  {
+._lib-popup-shadow(@_popup-shadow) when not (@_popup-shadow = '') and not (@_popup-shadow = none) {
     .lib-css(box-shadow, @_popup-shadow);
 }
 
@@ -259,7 +259,9 @@
     @_popup-actions-toolbar-actions-links-margin-top,
     @_popup-actions-toolbar-primary-actions-links-margin-top,
     @_popup-actions-toolbar-secondary-actions-links-margin-top
-) when (@_popup-actions-toolbar = true) {
+)
+    when
+    (@_popup-actions-toolbar = true) {
     .popup-footer {
         .actions.toolbar {
             .lib-actions-toolbar(
@@ -292,7 +294,9 @@
     @_popup-icon-font-vertical-align,
     @_popup-icon-font-position,
     @_popup-icon-font-text-hide
-) when (@_popup-button-close-icon = true) {
+)
+    when
+    (@_popup-button-close-icon = true) {
     .lib-button-icon(
         @_icon-font-content: @_popup-icon-font-content,
         @_icon-font: @_popup-icon-font,

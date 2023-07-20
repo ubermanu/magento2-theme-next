@@ -81,7 +81,7 @@
 
     .nav-sections {
         -webkit-overflow-scrolling: touch;
-        .lib-css(transition, left .3s);
+        .lib-css(transition, left 0.3s);
 
         height: 100%;
         left: calc(~'-1 * (100% - @{active-nav-indent})');
@@ -95,7 +95,7 @@
             font-size: 1.6rem;
             font-weight: @font-weight__bold;
             margin: 0;
-            padding: .8rem 3.5rem .8rem 2rem;
+            padding: 0.8rem 3.5rem 0.8rem 2rem;
 
             .label {
                 display: block;
@@ -160,7 +160,7 @@
                 &.greet.welcome {
                     border-top: 1px solid @color-gray82;
                     font-weight: @font-weight__bold;
-                    padding: .8rem @submenu__padding-left;
+                    padding: 0.8rem @submenu__padding-left;
                 }
 
                 > a {
@@ -175,7 +175,7 @@
 
                 display: block;
                 font-weight: @font-weight__bold;
-                padding: .8rem @submenu__padding-left;
+                padding: 0.8rem @submenu__padding-left;
             }
 
             .header.links {
@@ -190,7 +190,7 @@
         width: 100%;
 
         .page-wrapper {
-            .lib-css(transition, left .3s);
+            .lib-css(transition, left 0.3s);
 
             height: 100%;
             left: 0;
@@ -221,7 +221,7 @@
 
         .nav-toggle {
             &::after {
-                background: rgba(0, 0, 0, @overlay__opacity);
+                background: rgb(0 0 0 / @overlay__opacity);
                 content: '';
                 display: block;
                 height: 100%;

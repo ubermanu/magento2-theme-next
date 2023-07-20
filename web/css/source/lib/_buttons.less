@@ -78,7 +78,8 @@
     box-sizing: border-box;
     vertical-align: middle;
 
-    ._lib-button-icon (
+    // prettier-ignore: somehow prettier adds an additional semicolon here
+    ._lib-button-icon(
         @_button-icon-use: @_button-icon-use,
         @_icon-font-content: @_button-font-content,
         @_icon-font: @_button-icon-font,
@@ -244,7 +245,6 @@
 //  ---------------------------------------------
 
 .lib-button-reset() {
-    background-image: none; // Reset unusual Firefox-on-Android default style
     // stylelint-disable-next-line declaration-block-no-shorthand-property-overrides
     background: none;
     box-sizing: content-box; // Hack: fix Firefox button line-height problem
@@ -382,14 +382,15 @@
     .lib-button-size(
         @_button-line-height: @_button-line-height,
         @_button-padding: @_button-padding
-    )
+    );
 }
 
 //
 //  Inner buttons mixins
 //  ---------------------------------------------
 
-._lib-button-icon (
+// prettier-ignore
+._lib-button-icon(
     @_button-icon-use: @button-icon__use,
     @_icon-font-content: @button-icon__content,
     @_icon-font: @button-icon__font,
@@ -418,7 +419,8 @@
     );
 }
 
-.lib-button-icon (
+// prettier-ignore: somehow prettier adds an additional semicolon here
+.lib-button-icon(
     @_icon-font-content,
     @_icon-font: @button-icon__font,
     @_icon-font-size: @button-icon__font-size,

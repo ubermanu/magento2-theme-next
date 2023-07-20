@@ -153,14 +153,14 @@
 ._lib-tab-content-border(
     @_tab-content-border-top-status,
     @_tab-content-border
-) when (@_tab-content-border-top-status = false){
+) when (@_tab-content-border-top-status = false) {
     .lib-css(border, @_tab-content-border);
 }
 
 ._lib-tab-content-border(
     @_tab-content-border-top-status,
     @_tab-content-border
-) when (@_tab-content-border-top-status = true){
+) when (@_tab-content-border-top-status = true) {
     border: 0;
     .lib-css(border-top, @_tab-content-border);
 }

@@ -4,36 +4,36 @@
 
 .lib-form-element-input(
     @_type: @form-element-input-type,
-    @_background: ~"@{@{_type}__background}",
-    @_border: ~"@{@{_type}__border}",
-    @_border-radius: ~"@{@{_type}__border-radius}",
-    @_height: ~"@{@{_type}__height}",
-    @_width: ~"@{@{_type}__width}",
-    @_padding: ~"@{@{_type}__padding}",
-    @_margin: ~"@{@{_type}__margin}",
-    @_vertical-align: ~"@{@{_type}__vertical-align}",
-    @_background-clip: ~"@{@{_type}__background-clip}",
+    @_background: ~'@{@{_type}__background}',
+    @_border: ~'@{@{_type}__border}',
+    @_border-radius: ~'@{@{_type}__border-radius}',
+    @_height: ~'@{@{_type}__height}',
+    @_width: ~'@{@{_type}__width}',
+    @_padding: ~'@{@{_type}__padding}',
+    @_margin: ~'@{@{_type}__margin}',
+    @_vertical-align: ~'@{@{_type}__vertical-align}',
+    @_background-clip: ~'@{@{_type}__background-clip}',
 
-    @_font-size:  ~"@{@{_type}__font-size}",
-    @_color: ~"@{@{_type}__color}",
-    @_font-family: ~"@{@{_type}__font-family}",
-    @_font-weight: ~"@{@{_type}__font-weight}",
-    @_line-height: ~"@{@{_type}__line-height}",
-    @_font-style: ~"@{@{_type}__font-style}",
+    @_font-size:  ~'@{@{_type}__font-size}',
+    @_color: ~'@{@{_type}__color}',
+    @_font-family: ~'@{@{_type}__font-family}',
+    @_font-weight: ~'@{@{_type}__font-weight}',
+    @_line-height: ~'@{@{_type}__line-height}',
+    @_font-style: ~'@{@{_type}__font-style}',
 
-    @_placeholder-color: ~"@{@{_type}-placeholder__color}",
-    @_placeholder-font-style: ~"@{@{_type}-placeholder__font-style}",
+    @_placeholder-color: ~'@{@{_type}-placeholder__color}',
+    @_placeholder-font-style: ~'@{@{_type}-placeholder__font-style}',
 
-    @_disabled-background: ~"@{@{_type}__disabled__background}",
-    @_disabled-border: ~"@{@{_type}__disabled__border}",
-    @_disabled-opacity: ~"@{@{_type}__disabled__opacity}",
-    @_disabled-color: ~"@{@{_type}__disabled__color}",
-    @_disabled-font-style: ~"@{@{_type}__disabled__font-style}",
+    @_disabled-background: ~'@{@{_type}__disabled__background}',
+    @_disabled-border: ~'@{@{_type}__disabled__border}',
+    @_disabled-opacity: ~'@{@{_type}__disabled__opacity}',
+    @_disabled-color: ~'@{@{_type}__disabled__color}',
+    @_disabled-font-style: ~'@{@{_type}__disabled__font-style}',
 
-    @_focus-background: ~"@{@{_type}__focus__background}",
-    @_focus-border: ~"@{@{_type}__focus__border}",
-    @_focus-color: ~"@{@{_type}__focus__color}",
-    @_focus-font-style: ~"@{@{_type}__focus__font-style}"
+    @_focus-background: ~'@{@{_type}__focus__background}',
+    @_focus-border: ~'@{@{_type}__focus__border}',
+    @_focus-color: ~'@{@{_type}__focus__color}',
+    @_focus-font-style: ~'@{@{_type}__focus__font-style}'
 ) {
     .lib-css(background, @_background);
     .lib-css(background-clip, @_background-clip);
@@ -86,9 +86,9 @@
 
 .lib-form-element-choice(
     @_type: @form-element-choice__type,
-    @_vertical-align: ~"@{@{_type}__vertical-align}",
-    @_margin: ~"@{@{_type}__margin}",
-    @_disabled-opacity: ~"@{@{_type}__disabled__opacity}"
+    @_vertical-align: ~'@{@{_type}__vertical-align}',
+    @_margin: ~'@{@{_type}__margin}',
+    @_disabled-opacity: ~'@{@{_type}__disabled__opacity}'
 ) {
     .lib-css(margin, @_margin);
     .lib-css(vertical-align, @_vertical-align);
@@ -258,11 +258,11 @@
         .lib-form-element-input(@_type: input-text);
     }
 
-    input[type="number"] {
+    input[type='number'] {
         .lib-form-element-number-reset();
     }
 
-    input[type="search"] {
+    input[type='search'] {
         .lib-form-element-search-reset();
     }
 
@@ -281,14 +281,14 @@
         .lib-form-element-textarea-resize();
     }
 
-    input[type="checkbox"] {
+    input[type='checkbox'] {
         .lib-form-element-choice(@_type: input-checkbox);
 
         position: relative;
         top: 2px;
     }
 
-    input[type="radio"] {
+    input[type='radio'] {
         .lib-form-element-choice(@_type: input-radio);
     }
 
@@ -302,9 +302,9 @@
         .lib-form-validation-note();
     }
 
-    input[type="button"],
-    input[type="reset"],
-    input[type="submit"] {
+    input[type='button'],
+    input[type='reset'],
+    input[type='submit'] {
         cursor: pointer;
         appearance: button;
     }
@@ -332,7 +332,9 @@
     @_note-icon-font-vertical-align,
     @_note-icon-font-position,
     @_note-icon-font-text-hide
-) when (@_note-icon-use = true) {
+)
+    when
+    (@_note-icon-use = true) {
     .lib-icon-font(
         @_icon-font-content: @_note-icon-font-content,
         @_icon-font: @_note-icon-font,
@@ -441,7 +443,7 @@
     .lib-css(margin, @_margin);
     .lib-css(padding, @_padding);
 
-    letter-spacing: -.31em;
+    letter-spacing: -0.31em;
 
     > * {
         letter-spacing: normal;
@@ -685,7 +687,9 @@
     @_type-block-label-margin: @form-field-type-label-block__margin,
     @_type-block-label-padding: @form-field-type-label-block__padding,
     @_type-block-label-align: @form-field-type-label-block__align
-) when (@_type = inline) {
+)
+    when
+    (@_type = inline) {
     ._lib-form-field-type-inline(
         @_type-inline-margin,
         @_type-inline-label-margin,
@@ -710,7 +714,9 @@
     @_type-block-label-margin: @form-field-type-label-block__margin,
     @_type-block-label-padding: @form-field-type-label-block__padding,
     @_type-block-label-align: @form-field-type-label-block__align
-) when (@_type = block) {
+)
+    when
+    (@_type = block) {
     ._lib-form-field-type-block(
         @_type-block-margin,
         @_type-block-label-margin,
@@ -879,7 +885,12 @@
     @_type-block-label-margin: @form-field-type-label-block__margin,
     @_type-block-label-padding: @form-field-type-label-block__padding,
     @_type-block-label-align: @form-field-type-label-block__align
-) when (@_type = block) and not (@_type = false) {
+)
+    when
+    (@_type = block)
+    and
+    not
+    (@_type = false) {
     &:not(.choice) {
         > .label {
             box-sizing: content-box;
@@ -929,7 +940,12 @@
     @_type-block-label-margin: @form-field-type-label-block__margin,
     @_type-block-label-padding: @form-field-type-label-block__padding,
     @_type-block-label-align: @form-field-type-label-block__align
-) when (@_type = inline) and not (@_type = false) {
+)
+    when
+    (@_type = inline)
+    and
+    not
+    (@_type = false) {
     > .label {
         ._lib-revert-type-inline-label-margin(
             @_type-inline-label-margin

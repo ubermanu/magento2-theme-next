@@ -8,16 +8,16 @@
 //  _____________________________________________
 
 .lib-message(@_message-type: info) {
-    @_message-background: "message-@{_message-type}__background";
-    @_message-border-color: "message-@{_message-type}__border-color";
-    @_message-color: "message-@{_message-type}__color";
-    @_message-link-color: "message-@{_message-type}-link__color";
-    @_message-link-color-hover: "message-@{_message-type}-link__color-hover";
-    @_message-link-color-active: "message-@{_message-type}-link__color-active";
-    @_message-icon-top: "message-@{_message-type}-icon__top";
-    @_message-icon-right: "message-@{_message-type}-icon__right";
-    @_message-icon-bottom: "message-@{_message-type}-icon__bottom";
-    @_message-icon-left: "message-@{_message-type}-icon__left";
+    @_message-background: 'message-@{_message-type}__background';
+    @_message-border-color: 'message-@{_message-type}__border-color';
+    @_message-color: 'message-@{_message-type}__color';
+    @_message-link-color: 'message-@{_message-type}-link__color';
+    @_message-link-color-hover: 'message-@{_message-type}-link__color-hover';
+    @_message-link-color-active: 'message-@{_message-type}-link__color-active';
+    @_message-icon-top: 'message-@{_message-type}-icon__top';
+    @_message-icon-right: 'message-@{_message-type}-icon__right';
+    @_message-icon-bottom: 'message-@{_message-type}-icon__bottom';
+    @_message-icon-left: 'message-@{_message-type}-icon__left';
     ._lib-message();
     ._lib-message-style(
         @_message-color: @@_message-color,
@@ -78,9 +78,16 @@
 ._lib-message-border(
     @_message-border-width: @message__border-width,
     @_message-border-style: @message__border-style
-) when not (@_message-border-width = 0)
-and not (@_message-border-width = false)
-and not (@_message-border-style = false) {
+)
+    when
+    not
+    (@_message-border-width = 0)
+    and
+    not
+    (@_message-border-width = false)
+    and
+    not
+    (@_message-border-style = false) {
     .lib-css(border, @_message-border-width @_message-border-style);
 }
 
@@ -88,13 +95,13 @@ and not (@_message-border-style = false) {
 .lib-message-icon-lateral(@_message-type: info, @_message-position: right) {
     .lib-message(@_message-type);
     @_message-icon-position: @_message-position;
-    @_message-icon: "message-@{_message-type}-icon";
-    @_message-icon-color: "message-@{_message-type}-icon__color-lateral";
-    @_message-icon-background: "message-@{_message-type}-icon__background";
-    @_message-icon-top: "message-@{_message-type}-icon__top";
-    @_message-icon-right: "message-@{_message-type}-icon__right";
-    @_message-icon-bottom: "message-@{_message-type}-icon__bottom";
-    @_message-icon-left: "message-@{_message-type}-icon__left";
+    @_message-icon: 'message-@{_message-type}-icon';
+    @_message-icon-color: 'message-@{_message-type}-icon__color-lateral';
+    @_message-icon-background: 'message-@{_message-type}-icon__background';
+    @_message-icon-top: 'message-@{_message-type}-icon__top';
+    @_message-icon-right: 'message-@{_message-type}-icon__right';
+    @_message-icon-bottom: 'message-@{_message-type}-icon__bottom';
+    @_message-icon-left: 'message-@{_message-type}-icon__left';
     ._lib-message-icon-lateral(
         @_message-icon-position,
         @@_message-icon,
@@ -110,13 +117,13 @@ and not (@_message-border-style = false) {
 //  Messages with inner icon
 .lib-message-icon-inner(@_message-type: info) {
     .lib-message(@_message-type);
-    @_message-icon: "message-@{_message-type}-icon";
-    @_message-icon-color: "message-@{_message-type}-icon__color-inner";
-    @_message-icon-background: "message-@{_message-type}-icon__background";
-    @_message-icon-top: "message-@{_message-type}-icon__top";
-    @_message-icon-right: "message-@{_message-type}-icon__right";
-    @_message-icon-bottom: "message-@{_message-type}-icon__bottom";
-    @_message-icon-left: "message-@{_message-type}-icon__left";
+    @_message-icon: 'message-@{_message-type}-icon';
+    @_message-icon-color: 'message-@{_message-type}-icon__color-inner';
+    @_message-icon-background: 'message-@{_message-type}-icon__background';
+    @_message-icon-top: 'message-@{_message-type}-icon__top';
+    @_message-icon-right: 'message-@{_message-type}-icon__right';
+    @_message-icon-bottom: 'message-@{_message-type}-icon__bottom';
+    @_message-icon-left: 'message-@{_message-type}-icon__left';
     ._lib-message-icon-inner(
         @@_message-icon,
         @@_message-icon-color,

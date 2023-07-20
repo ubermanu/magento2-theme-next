@@ -18,8 +18,7 @@
 ) when (@font-format = false) {
     @font-face {
         font-family: @family-name;
-        src: url('@{font-path}.woff2') format('woff2'),
-        url('@{font-path}.woff') format('woff');
+        src: url('@{font-path}.woff2') format('woff2'), url('@{font-path}.woff') format('woff');
         font-weight: @font-weight;
         font-style: @font-style;
         font-display: @font-display;
@@ -161,14 +160,14 @@
 }
 
 .lib-heading(@_heading_level: h1) {
-    @_font-color: "@{_heading_level}__font-color";
-    @_font-size: "@{_heading_level}__font-size";
-    @_font-family: "@{_heading_level}__font-family";
-    @_font-weight: "@{_heading_level}__font-weight";
-    @_line-height: "@{_heading_level}__line-height";
-    @_font-style: "@{_heading_level}__font-style";
-    @_margin-top: "@{_heading_level}__margin-top";
-    @_margin-bottom: "@{_heading_level}__margin-bottom";
+    @_font-color: '@{_heading_level}__font-color';
+    @_font-size: '@{_heading_level}__font-size';
+    @_font-family: '@{_heading_level}__font-family';
+    @_font-weight: '@{_heading_level}__font-weight';
+    @_line-height: '@{_heading_level}__line-height';
+    @_font-style: '@{_heading_level}__font-style';
+    @_margin-top: '@{_heading_level}__margin-top';
+    @_margin-bottom: '@{_heading_level}__margin-bottom';
     .lib-typography(
         @@_font-size,
         @@_font-color,
@@ -278,11 +277,11 @@
     }
 
     sup {
-        top: -.5em;
+        top: -0.5em;
     }
 
     sub {
-        bottom: -.25em;
+        bottom: -0.25em;
     }
 
     dfn {
@@ -323,7 +322,12 @@
         .lib-heading(h6);
     }
 
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         small,
         .small {
             .lib-typography(
@@ -334,7 +338,6 @@
         }
     }
 }
-
 
 //
 //  Links
@@ -552,7 +555,6 @@
 
         &::before,
         &::after {
-            content: '';
             content: none;
         }
     }
@@ -575,4 +577,3 @@
     .lib-typography-code();
     .lib-typography-blockquote();
 }
-

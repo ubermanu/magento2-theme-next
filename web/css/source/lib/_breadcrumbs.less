@@ -153,7 +153,8 @@
         .lib-css(padding, @_breadcrumbs-padding);
     }
 
-    & when not (@_breadcrumbs-separator-symbol = '') and not (@_breadcrumbs-separator-symbol = false) { // Insert separating symbol to "content"
+    & when not (@_breadcrumbs-separator-symbol = '') and not (@_breadcrumbs-separator-symbol = false) {
+        // Insert separating symbol to "content"
         .item:not(:last-child) {
             &::after {
                 .lib-css(color, @_breadcrumbs-separator-color);
@@ -162,7 +163,8 @@
         }
     }
 
-    & when (@_breadcrumbs-icon-use = true) {  // Use font icon as a separating symbol
+    & when (@_breadcrumbs-icon-use = true) {
+        // Use font icon as a separating symbol
         .item:not(:last-child) {
             .lib-icon-font(
                 @_icon-font-content: @_breadcrumbs-icon-font-content,

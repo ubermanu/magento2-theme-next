@@ -287,7 +287,7 @@
                 @_icon-font-vertical-align: @_pager-icon-font-vertical-align,
                 @_icon-font-position: @_pager-icon-font-position,
                 @_icon-font-text-hide: @_pager-icon-font-text-hide
-            );
+            );;
         }
 
         &.previous {
@@ -305,7 +305,7 @@
                 @_icon-font-vertical-align: @_pager-icon-font-vertical-align,
                 @_icon-font-position: @_pager-icon-font-position,
                 @_icon-font-text-hide: @_pager-icon-font-text-hide
-            );
+            );;
         }
     }
 }
@@ -338,7 +338,7 @@
     @_pager-font-size,
     @_pager-font-weight,
     @_pager-line-height
-) when not (@_pager-label-display = none){
+) when not (@_pager-label-display = none) {
     > .label {
         .lib-css(display, @_pager-label-display);
         .lib-css(font-weight, @_pager-font-weight);
@@ -375,7 +375,8 @@
     }
 }
 
-._lib-pager-icon (
+._lib-pager-icon
+    (
     @_pager-icon-use,
     @_icon-font-content,
     @_icon-font,
@@ -389,7 +390,11 @@
     @_icon-font-vertical-align,
     @_icon-font-position,
     @_icon-font-text-hide
-) when (@_pager-icon-use = true) and (@_icon-font-position = before) {
+)
+    when
+    (@_pager-icon-use = true)
+    and
+    (@_icon-font-position = before) {
     &:visited {
         &::before {
             .lib-css(color, @_icon-font-color-visited);
@@ -417,7 +422,8 @@
     );
 }
 
-._lib-pager-icon (
+._lib-pager-icon
+    (
     @_icon-font-content,
     @_pager-icon-use,
     @_icon-font,
@@ -431,7 +437,11 @@
     @_icon-font-vertical-align,
     @_icon-font-position,
     @_icon-font-text-hide
-) when (@_pager-icon-use = true) and (@_icon-font-position = after) {
+)
+    when
+    (@_pager-icon-use = true)
+    and
+    (@_icon-font-position = after) {
     .lib-icon-font(
         @_icon-font-content: @_icon-font-content,
         @_icon-font: @_icon-font,

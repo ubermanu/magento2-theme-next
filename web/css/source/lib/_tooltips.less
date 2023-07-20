@@ -9,8 +9,8 @@
 
 .lib-tooltip(
     @_tooltip-position: top,
-    @_tooltip-selector-toggle: ~".tooltip-toggle",
-    @_tooltip-selector-content: ~".tooltip-content",
+    @_tooltip-selector-toggle: ~'.tooltip-toggle',
+    @_tooltip-selector-content: ~'.tooltip-content',
     @_tooltip-background: @tooltip__background,
     @_tooltip-border-color: @tooltip__border-color,
     @_tooltip-border-width: @tooltip__border-width,
@@ -117,7 +117,9 @@
     @_tooltip-arrow-before-margin,
     @_tooltip-arrow-offset,
     @_tooltip-border-color
-) when (@_tooltip-position = top) {
+)
+    when
+    (@_tooltip-position = top) {
     .lib-css(margin-bottom, @_tooltip-arrow-size);
 
     bottom: 100%;
@@ -149,7 +151,9 @@
     @_tooltip-arrow-before-margin,
     @_tooltip-arrow-offset,
     @_tooltip-border-color
-) when (@_tooltip-position = left) {
+)
+    when
+    (@_tooltip-position = left) {
     .lib-css(margin-right, @_tooltip-arrow-size);
 
     right: 100%;
@@ -163,7 +167,7 @@
     &::after {
         .lib-css(border-left-color, @_tooltip-background);
         .lib-css(margin-top, @_tooltip-arrow-after-margin);
-        .lib-css(top, (@_tooltip-arrow-offset + @_tooltip-arrow-size))
+        .lib-css(top, (@_tooltip-arrow-offset + @_tooltip-arrow-size));
     }
 
     &::before {
@@ -181,7 +185,9 @@
     @_tooltip-arrow-before-margin,
     @_tooltip-arrow-offset,
     @_tooltip-border-color
-) when (@_tooltip-position = right) {
+)
+    when
+    (@_tooltip-position = right) {
     .lib-css(margin-left, @_tooltip-arrow-size);
 
     left: 100%;
@@ -213,7 +219,9 @@
     @_tooltip-arrow-before-margin,
     @_tooltip-arrow-offset,
     @_tooltip-border-color
-) when (@_tooltip-position = bottom) {
+)
+    when
+    (@_tooltip-position = bottom) {
     .lib-css(margin-top, @_tooltip-arrow-size);
 
     left: 0;

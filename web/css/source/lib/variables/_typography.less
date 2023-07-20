@@ -12,7 +12,7 @@
 //  ---------------------------------------------
 
 //  Path
-@icons__font-path: "@{baseDir}fonts/Blank-Theme-Icons/Blank-Theme-Icons";
+@icons__font-path: '@{baseDir}fonts/Blank-Theme-Icons/Blank-Theme-Icons';
 
 //  Names
 @icons__font-name: 'icons-blank-theme'; // ToDo UI: we need to rename (it shouldn't use blank theme name) or move icon fonts to blank theme
@@ -35,8 +35,8 @@
 @font-size__base: unit((@font-size-unit-ratio * @font-size-ratio__base), px); // Base font size value in <b>px</b>
 @font-size__xl: ceil((1.5 * @font-size__base)); // 21px
 @font-size__l: ceil((1.25 * @font-size__base)); // 18px
-@font-size__s: ceil((.85 * @font-size__base)); // 12px
-@font-size__xs: floor((.75 * @font-size__base)); // 11px
+@font-size__s: ceil((0.85 * @font-size__base)); // 12px
+@font-size__xs: floor((0.75 * @font-size__base)); // 11px
 
 //  Weights
 @font-weight__hairline: 100;
@@ -172,7 +172,7 @@
 @h3__font-weight: @heading__font-weight__base;
 @h3__font-style: @heading__font-style__base;
 @h3__line-height: @heading__line-height__base;
-@h3__margin-top: @indent__base * .75;
+@h3__margin-top: @indent__base * 0.75;
 @h3__margin-bottom: @indent__s;
 
 @h4__font-size: @font-size__base; // 14px
@@ -184,7 +184,7 @@
 @h4__margin-top: @heading__margin-top__base;
 @h4__margin-bottom: @heading__margin-bottom__base;
 
-@h5__font-size: ceil((@font-size__base * .85)); // 12px
+@h5__font-size: ceil((@font-size__base * 0.85)); // 12px
 @h5__font-color: @heading__color__base;
 @h5__font-family: @heading__font-family__base;
 @h5__font-weight: @font-weight__bold;
@@ -193,7 +193,7 @@
 @h5__margin-top: @heading__margin-top__base;
 @h5__margin-bottom: @heading__margin-bottom__base;
 
-@h6__font-size: ceil((@font-size__base * .7)); // 10px
+@h6__font-size: ceil((@font-size__base * 0.7)); // 10px
 @h6__font-color: @heading__color__base;
 @h6__font-family: @heading__font-family__base;
 @h6__font-weight: @font-weight__bold;
@@ -204,7 +204,7 @@
 
 @heading__small-color: @primary__color;
 @heading__small-line-height: 1;
-@heading__small-size: (@font-size__xs/@font-size__base) * 100%;
+@heading__small-size: (@font-size__xs / @font-size__base) * 100%;
 
 //  Code blocks
 @code__background-color: @panel__background-color;

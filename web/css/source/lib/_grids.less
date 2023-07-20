@@ -11,21 +11,21 @@
 @column-width: 1;
 @total-columns: 1;
 @gutter-width: 1;
-@grid-width: (@column-width*@total-columns) + (@gutter-width*(@total-columns - 1));
+@grid-width: (@column-width* @total-columns) + (@gutter-width* (@total-columns - 1));
 
 .lib-column-wrapper() {
     width: 100%;
 }
 
 .lib-inline-column-wrapper() when not (@using-ieclasses) {
-    letter-spacing: -.31em;
+    letter-spacing: -0.31em;
     *letter-spacing: normal;
-    word-spacing: -.43em;
+    word-spacing: -0.43em;
 }
 
 .lib-inline-column-wrapper() when (@using-ieclasses) {
-    letter-spacing: -.31em;
-    word-spacing: -.43em;
+    letter-spacing: -0.31em;
+    word-spacing: -0.43em;
 }
 
 .lib-column() {
@@ -181,7 +181,7 @@
     @span,
     @total-columns: @total-columns
 ) {
-    @calc-column-width: 100%*((((@gutter-width+@column-width)*@span)) / @grid-width);
+    @calc-column-width: 100% * ((((@gutter-width+ @column-width) * @span)) / @grid-width);
 
     .lib-css(padding-left, @calc-column-width);
 }
@@ -190,7 +190,7 @@
     @span,
     @total-columns: @total-columns
 ) {
-    @calc-column-width: 100%*((((@gutter-width+@column-width)*@span)) / @grid-width);
+    @calc-column-width: 100% * ((((@gutter-width+ @column-width) * @span)) / @grid-width);
 
     .lib-css(padding-right, @calc-column-width);
 }
@@ -199,7 +199,7 @@
     @span,
     @total-columns: @total-columns
 ) {
-    @calc-column-width: 100%*((((@gutter-width+@column-width)*@span)) / @grid-width);
+    @calc-column-width: 100% * ((((@gutter-width+ @column-width) * @span)) / @grid-width);
 
     .lib-css(margin-left, @calc-column-width);
 }
@@ -208,7 +208,7 @@
     @span,
     @total-columns: @total-columns
 ) {
-    @calc-column-width: 100%*((((@gutter-width+@column-width)*@span)+@gutter-width) / @grid-width);
+    @calc-column-width: 100% * ((((@gutter-width+ @column-width) * @span) + @gutter-width) / @grid-width);
 
     .lib-css(margin-right, @calc-column-width);
 }
@@ -217,7 +217,7 @@
     @span,
     @total-columns: @total-columns
 ) {
-    @calc-column-width: 100%*((((@gutter-width+@column-width)*@span)) / @grid-width);
+    @calc-column-width: 100% * ((((@gutter-width+ @column-width) * @span)) / @grid-width);
 
     .lib-css(margin-right, @calc-column-width);
 }
@@ -226,7 +226,7 @@
     @span,
     @total-columns: @total-columns
 ) {
-    @calc-column-width: 100%*((((@gutter-width+@column-width)*@span)-@gutter-width) / @grid-width);
+    @calc-column-width: 100% * ((((@gutter-width+ @column-width) * @span)-@gutter-width) / @grid-width);
 
     .lib-css(width, @calc-column-width);
 }
@@ -242,7 +242,7 @@
     @total-columns: @total-columns,
     @end-column: false
 ) when not (@end-column) {
-    @calc-gutter-width: 100%*(@gutter-width/@grid-width);
+    @calc-gutter-width: 100% * (@gutter-width / @grid-width);
 
     .lib-css(margin-right, @calc-gutter-width);
 }
