@@ -11,7 +11,7 @@
     "magefront": "^0.23.1",
     "magefront-plugin-less": "^0.15.0",
     "postcss-less": "^6.0.0",
-    "prettier": "^3.0.0",
+    "prettier": "2.x",
     "stylelint": "^15.10.2",
     "stylelint-config-standard-less": "^1.0.0"
   },
