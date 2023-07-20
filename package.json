@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "magefront -c -t Ubermanu/next",
+    "check": "stylelint '**/*.less'"
+  },
+  "devDependencies": {
+    "@ubermanu/prettier-config": "^1.7.1",
+    "less": "^4.1.3",
+    "magefront": "^0.23.1",
+    "magefront-plugin-less": "^0.15.0",
+    "postcss-less": "^6.0.0",
+    "prettier": "^3.0.0",
+    "stylelint": "^15.10.2",
+    "stylelint-config-standard-less": "^1.0.0"
+  },
+  "prettier": "@ubermanu/prettier-config"
+}

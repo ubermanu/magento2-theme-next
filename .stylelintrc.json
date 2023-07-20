@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "stylelint-config-standard-less"
+  ],
+  "customSyntax": "postcss-less",
+  "rules": {
+    "import-notation": false
+  }
+}
