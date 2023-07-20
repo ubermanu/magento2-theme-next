@@ -9,6 +9,8 @@ Improves the blank theme by adding some features and fixes.
 composer require ubermanu/magento2-theme-next
 ```
 
+This theme requires Magento 2.4+ and [magefront](https://ubermanu.github.io/magefront/).
+
 ## Features
 
 ### LESS 4
