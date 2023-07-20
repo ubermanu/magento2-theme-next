@@ -25,18 +25,28 @@
 @font-family__base: @font-family__sans-serif;
 
 //  Sizes
-@root__font-size: 62.5%; // Defines ratio between root font size and base font size, 1rem = 10px
-@font-size-ratio__base: 1.4; // Defines ratio of the root font-size to the base font-size
+@root__font-size: 100%; // Defines ratio between root font size and base font size, 1rem = 10px
+@font-size-ratio__base: 1; // Defines ratio of the root font-size to the base font-size
 
+// TODO: Remove all that conversion stuff
 @font-size-unit: rem; // The unit to which most typography values will be converted by default
-@font-size-unit-ratio: unit((@root__font-size * 16/100)); // Ratio of the root font-size to the font-size unit
-@font-size-unit-convert: true; // Controls whether font-size values are converted to the specified font-size unit
+@font-size-unit-ratio: 1; // Ratio of the root font-size to the font-size unit
+@font-size-unit-convert: false; // Controls whether font-size values are converted to the specified font-size unit
 
-@font-size__base: unit((@font-size-unit-ratio * @font-size-ratio__base), px); // Base font size value in <b>px</b>
-@font-size__xl: ceil((1.5 * @font-size__base)); // 21px
-@font-size__l: ceil((1.25 * @font-size__base)); // 18px
-@font-size__s: ceil((0.85 * @font-size__base)); // 12px
-@font-size__xs: floor((0.75 * @font-size__base)); // 11px
+// TODO: Use tailwindcss font-size values
+@font-size__5xl: 3rem;
+@font-size__4xl: 2.5rem;
+@font-size__3xl: 2rem;
+@font-size__2xl: 1.75rem;
+@font-size__xl: 1.5rem;
+@font-size__lg: 1.25rem;
+@font-size__base: 1rem;
+@font-size__sm: 0.875rem;
+@font-size__xs: 0.75rem;
+
+// TODO: Move to compatibility.less
+@font-size__l: @font-size__lg;
+@font-size__s: @font-size__sm;
 
 //  Weights
 @font-weight__hairline: 100;
@@ -54,11 +64,20 @@
 @font-style__emphasis: italic;
 
 //  Line heights
-@line-height__base: 1.4286;
-@line-height__computed: floor(@font-size__base * @line-height__base);
-@line-height__xl: 1.7;
-@line-height__l: 1.5;
-@line-height__s: 1.33;
+@line-height__5xl: 1;
+@line-height__4xl: 2.5rem;
+@line-height__3xl: 2.25rem;
+@line-height__2xl: 2rem;
+@line-height__xl: 1.75rem;
+@line-height__lg: 1.75rem;
+@line-height__base: 1.5rem;
+@line-height__sm: 1.25rem;
+@line-height__xs: 1rem;
+
+// TODO: Move to compatibility.less
+@line-height__computed: @line-height__base;
+@line-height__s: @line-height__sm;
+@line-height__l: @line-height__lg;
 
 //  Colors
 @text__color: @primary__color;
@@ -69,12 +88,17 @@
 //  Indents
 //  ---------------------------------------------
 
-@indent__base: @line-height__computed; // 20px
-@indent__xl: (@indent__base * 2); // 40px
-@indent__l: (@indent__base * 1.5); // 30px
-@indent__m: (@indent__base * 1.25); // 25px
-@indent__s: (@indent__base / 2); // 10px
-@indent__xs: (@indent__base / 4); // 5px
+// TODO: Check those values, might be incorrect
+@indent__xl: 2rem;
+@indent__lg: 1.5rem;
+@indent__base: 1rem;
+@indent__sm: 0.5rem;
+@indent__xs: 0.25rem;
+
+// TODO: Move to compatibility.less
+@indent__l: @indent__lg;
+@indent__s: @indent__sm;
+@indent__m: @indent__base;
 
 //
 //  Borders
@@ -146,6 +170,8 @@
 @heading__font-style__base: false;
 @heading__margin-top__base: @indent__base;
 @heading__margin-bottom__base: @indent__base;
+
+// TODO: Use tailwindcss prose values
 
 @h1__font-size: ceil((@font-size__base * 1.85)); // 26px
 @h1__font-color: @heading__color__base;
