@@ -74,8 +74,6 @@
     }
 
     button {
-        .lib-button();
-
         &::-moz-focus-inner {
             border: 0;
             padding: 0;
@@ -97,10 +95,6 @@
         &:focus {
             box-shadow: none;
             outline: 0;
-        }
-
-        &:focus-visible {
-            .lib-css(box-shadow, @focus__box-shadow);
         }
     }
 }

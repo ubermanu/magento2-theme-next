@@ -8,24 +8,19 @@
 //  _____________________________________________
 
 & when (@media-common = true) {
-    //  Using buttons mixins
-    button,
-    a.action.primary {
-        .lib-css(border-radius, @button__border-radius);
-    }
-
-    button {
-        &:active {
-            .lib-css(box-shadow, @button__shadow);
-        }
-    }
-
-    a.action.primary {
+    a.button,
+    a.action {
         .lib-link-as-button();
     }
 
-    .action.primary,
-    .action-primary {
+    .button,
+    .button.secondary,
+    .action.secondary {
+        .lib-button();
+    }
+
+    .button.primary,
+    .action.primary {
         .lib-button-primary();
     }
 }

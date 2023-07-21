@@ -127,6 +127,20 @@
         cursor: default;
         pointer-events: none; // Disabling of clicks
     }
+
+    // Border radius
+    .lib-css(border-radius, @button__border-radius);
+
+    // Add press effect
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-duration: .2s;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+
+    &:active:hover,
+    &:active:focus {
+        transform: scale(0.97);
+        transition: transform 0s ease-out;
+    }
 }
 
 //
