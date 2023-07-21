@@ -13,39 +13,38 @@
         margin-bottom: @indent__xl;
 
         .form.subscribe {
-            display: table;
+            display: flex;
             width: 100%;
-        }
-
-        .fieldset {
-            display: table-cell;
-            margin: 0;
-            padding: 0;
-            vertical-align: top;
         }
 
         .field {
             margin: 0;
 
             .control {
+                position: relative;
+
                 .lib-icon-font(
-                @icon-envelope,
-                @_icon-font-size: 35px,
-                @_icon-font-line-height: 33px,
-                @_icon-font-color: @form-element-input-placeholder__color
+                    @icon-envelope,
+                    @_icon-font-size: @font-size__lg,
+                    @_icon-font-line-height: @line-height__lg,
+                    @_icon-font-color: @form-element-input-placeholder__color,
+                    @_icon-font-display: false
                 );
 
                 display: block;
 
                 &::before {
                     position: absolute;
+                    left: @indent__base;
+                    top: 0.4rem;
                 }
             }
         }
 
         input {
-            margin-right: 35px;
-            padding: 0 0 0 35px; // Reset some default Safari padding values.
+            .lib-form-element-input(@_type: input-text);
+            box-sizing: border-box;
+            padding-left: @indent__2xl;
         }
 
         .title {
@@ -55,17 +54,23 @@
         .label {
             &:extend(.abs-visually-hidden all);
         }
+    }
+}
 
-        .actions {
-            display: table-cell;
-            vertical-align: top;
-            width: 1%;
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .block.newsletter {
+        input {
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
         }
 
         .action.subscribe {
             border-bottom-left-radius: 0;
             border-top-left-radius: 0;
-            margin-left: -1px;
         }
     }
 }
@@ -76,23 +81,19 @@
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .block.newsletter {
-        max-width: 44%;
+        max-width: 50%;
         width: max-content;
 
         .field {
-            margin-right: 5px;
+            margin-right: @indent__sm;
 
             &.newsletter {
-                max-width: 220px;
+                max-width: 20rem;
             }
 
             .control {
                 width: 100%;
             }
-        }
-
-        .action.subscribe {
-            border-radius: 3px;
         }
     }
 }
