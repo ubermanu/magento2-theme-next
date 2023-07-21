@@ -12,14 +12,14 @@
 //  ---------------------------------------------
 
 @form-element-input-type: ''; // [input-text|select|textarea|input-radio|input-checkbox]
-@form-element-input__background: @color-white;
-@form-element-input__border-color: @color-gray76;
+@form-element-input__background: @color-gray-100;
+@form-element-input__border-color: @color-gray-100;
 @form-element-input__border: 1px solid @form-element-input__border-color;
-@form-element-input__border-radius: 1px;
-@form-element-input__height: 32px;
+@form-element-input__border-radius: @rounded-md;
+@form-element-input__height: false;
 @form-element-input__width: 100%;
 @form-element-input__margin: false;
-@form-element-input__padding: 0 9px;
+@form-element-input__padding: @indent__s @indent__m;
 @form-element-input__vertical-align: baseline;
 @form-element-input__background-clip: padding-box; // [border-box|content-box|padding-box]
 @form-element-input__font-size: @font-size__base;
@@ -30,7 +30,7 @@
 @form-element-input__line-height: @line-height__base;
 
 //  Placeholder
-@form-element-input-placeholder__color: @color-gray76;
+@form-element-input-placeholder__color: @color-gray-400;
 @form-element-input-placeholder__font-style: @form-element-input__font-style;
 
 //  Disabled state
