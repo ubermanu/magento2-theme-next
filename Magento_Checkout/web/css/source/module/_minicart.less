@@ -128,12 +128,18 @@
             height: 100vh;
             z-index: @z-index-10;
             box-shadow: @shadow__lg;
+            transition: right 180ms ease-out;
 
             .lib-css(padding, 3rem @indent__lg @minicart__padding-horizontal);
 
             .block-title {
                 display: none;
             }
+        }
+
+        // Drawer animation
+        &:not(.active) .block-minicart {
+            right: -100%;
         }
 
         .product {
