@@ -130,6 +130,10 @@
             box-shadow: @shadow__lg;
             transition: right 180ms ease-out;
 
+            // TODO: Make the list scrollable and block the body scroll (modal behavior)
+            max-height: 100vh;
+            overflow-y: auto;
+
             .lib-css(padding, 3rem @indent__lg @minicart__padding-horizontal);
 
             .block-title {
