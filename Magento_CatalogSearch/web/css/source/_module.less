@@ -207,9 +207,8 @@
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .block-search {
         float: right;
-        padding-left: 15px;
         position: relative;
-        width: 250px;
+        width: 16rem;
         z-index: 4;
 
         .label {
@@ -219,7 +218,7 @@
         .control {
             border-top: 0;
             margin: 0;
-            padding: 0 0 25px;
+            padding: 0;
         }
 
         .nested {
@@ -232,7 +231,7 @@
             .lib-input-placeholder(@form-element-input-placeholder__color);
 
             margin: 0;
-            padding-right: 35px;
+            padding-right: @indent__2xl;
             position: static;
         }
 
@@ -247,8 +246,9 @@
 
             padding: @indent__xs 0;
             position: absolute;
-            right: 10px;
-            top: 0;
+            right: @indent__md;
+            top: 50%;
+            transform: translateY(-50%);
             z-index: 1;
 
             &:focus {
