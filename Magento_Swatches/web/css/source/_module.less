@@ -143,8 +143,8 @@
             text-align: center;
             text-overflow: ellipsis;
 
-            &:focus {
-                box-shadow: @focus__box-shadow;
+            &:focus-visible {
+                .lib-css(box-shadow, @focus__box-shadow);
             }
 
             &.text {

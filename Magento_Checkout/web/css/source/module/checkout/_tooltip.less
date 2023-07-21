@@ -72,17 +72,15 @@
                 padding-left: 1px;
             }
 
-            &:focus {
-                ._keyfocus & {
-                    .lib-css(z-index, @checkout-tooltip__hover__z-index);
+            &:focus-visible {
+                .lib-css(z-index, @checkout-tooltip__hover__z-index);
 
-                    + .field-tooltip-content {
-                        display: block;
-                    }
+                + .field-tooltip-content {
+                    display: block;
+                }
 
-                    &::before {
-                        .lib-css(color, @checkout-tooltip-icon__hover__color);
-                    }
+                &::before {
+                    .lib-css(color, @checkout-tooltip-icon__hover__color);
                 }
             }
         }
@@ -106,9 +104,9 @@
             &::before,
             &::after {
                 .lib-arrow(
-                @_position: left,
-                @_size: @checkout-tooltip-icon-arrow__font-size,
-                @_color: @checkout-tooltip-content__background-color
+                    @_position: left,
+                    @_size: @checkout-tooltip-icon-arrow__font-size,
+                    @_color: @checkout-tooltip-content__background-color
                 );
                 .lib-css(left, @checkout-tooltip-icon-arrow__left);
                 .lib-css(top, @checkout-tooltip-content__padding);

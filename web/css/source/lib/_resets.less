@@ -93,17 +93,13 @@
     }
 
     * {
+        &:focus-visible,
         &:focus {
             box-shadow: none;
             outline: 0;
         }
-    }
 
-    ._keyfocus *,
-    input:not([disabled]),
-    textarea:not([disabled]),
-    select:not([disabled]) {
-        &:focus {
+        &:focus-visible {
             .lib-css(box-shadow, @focus__box-shadow);
         }
     }
