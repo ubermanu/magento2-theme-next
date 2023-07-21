@@ -129,6 +129,7 @@
 @color-pink-800: #9d174d;
 @color-pink-900: #831843;
 
+// Rose colors
 @color-rose-50: #fff1f2;
 @color-rose-100: #ffe4e6;
 @color-rose-200: #fecdd3;
@@ -140,17 +141,29 @@
 @color-rose-800: #9f1239;
 @color-rose-900: #881337;
 
+// Stone colors
+@color-stone-50: #fafaf9;
+@color-stone-100: #f5f5f4;
+@color-stone-200: #e7e5e4;
+@color-stone-300: #d6d3d1;
+@color-stone-400: #a8a29e;
+@color-stone-500: #78716c;
+@color-stone-600: #57534e;
+@color-stone-700: #44403c;
+@color-stone-800: #292524;
+@color-stone-900: #1c1917;
+
 //
-//  Color variables
+//  Color variables (compat)
 //  _____________________________________________
 
-@color-blue-dodger: #008bdb;
-@color-black_dark: #333333;
+@color-blue-dodger: @color-blue-500;
+@color-black_dark: @color-neutral-700;
+@color-darkie-gray: @color-stone-500;
 
-@color-white: #fff;
-@color-black: #000;
+@color-white: @color-neutral-50;
+@color-black: @color-neutral-900;
 
-@color-darkie-gray: #8a837f;
 @color-gray19: #303030;
 @color-gray20: #333;
 @color-gray34: #575757;
@@ -177,6 +190,8 @@
 @color-gray92: #ebebeb;
 @color-gray94: #f0f0f0;
 @color-gray95: #f2f2f2;
+
+// TODO: Edit these colors to match tailwind ones
 @color-gray_light: #cccccc;
 @color-lighter-grayish: #cacaca;
 @color-very-dark-gray: #666;
@@ -210,17 +225,17 @@
 @color-red11: #b30000;
 @color-red12: #d10029;
 
-@color-orange-red1: #ff5501;
+@color-orange-red1: @color-orange-500;
 @color-orange-red2: #ff5601; // Legacy orange
 @color-orange-red3: #ff5700; // Legacy orange
 @color-orange-red4: #fc5e10; // Legacy orange
 
-@color-dark-green1: #006400;
+@color-dark-green1: @color-green-600;
 
-@color-blue1: #1979c3;
-@color-blue2: #006bb4;
-@color-blue3: #00699d;
-@color-sky-blue1: #68a8e0;
+@color-blue1: @color-blue-500;
+@color-blue2: @color-blue-600;
+@color-blue3: @color-blue-700;
+@color-sky-blue1: @color-blue-400;
 
 @color-pink1: #fae5e5;
 @color-dark-pink1: #800080; // Legacy pink
@@ -239,9 +254,9 @@
 //  Color nesting
 //  ---------------------------------------------
 
-@theme__color__primary: @color-blue1;
-@theme__color__primary-alt: @color-blue2;
-@theme__color__secondary: @color-orange-red1;
+@theme__color__primary: @color-blue-500;
+@theme__color__primary-alt: @color-blue-600;
+@theme__color__secondary: @color-orange-500;
 
 @primary__color: @color-gray20;
 @primary__color__dark: darken(@primary__color, 35%); // #000
@@ -252,7 +267,7 @@
 @secondary__color: @color-gray91;
 @secondary__color__light: lighten(@secondary__color, 5%);
 
-@page__background-color: @color-white;
+@page__background-color: @color-neutral-50;
 @panel__background-color: darken(@page__background-color, 6%);
 
 @active__color: @theme__color__secondary;
