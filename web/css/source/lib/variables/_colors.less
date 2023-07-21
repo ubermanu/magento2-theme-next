@@ -153,6 +153,18 @@
 @color-stone-800: #292524;
 @color-stone-900: #1c1917;
 
+// Amber colors
+@color-amber-50: #fffbeb;
+@color-amber-100: #fef3c7;
+@color-amber-200: #fde68a;
+@color-amber-300: #fcd34d;
+@color-amber-400: #fbbf24;
+@color-amber-500: #f59e0b;
+@color-amber-600: #d97706;
+@color-amber-700: #b45309;
+@color-amber-800: #92400e;
+@color-amber-900: #78350f;
+
 //
 //  Color variables (compat)
 //  _____________________________________________
@@ -161,8 +173,8 @@
 @color-black_dark: @color-neutral-700;
 @color-darkie-gray: @color-stone-500;
 
-@color-white: @color-neutral-50;
-@color-black: @color-neutral-900;
+@color-white: #fff;
+@color-black: #000;
 
 @color-gray19: #303030;
 @color-gray20: #333;
@@ -220,10 +232,10 @@
 @color-gray-darken3: #555;
 @color-gray-darken4: #494949;
 
-@color-red9: #ff0101;
-@color-red10: #e02b27;
-@color-red11: #b30000;
-@color-red12: #d10029;
+@color-red9: @color-red-600;
+@color-red10: @color-red-700;
+@color-red11: @color-red-900;
+@color-red12: @color-red-800;
 
 @color-orange-red1: @color-orange-500;
 @color-orange-red2: #ff5601; // Legacy orange
@@ -240,15 +252,15 @@
 @color-pink1: #fae5e5;
 @color-dark-pink1: #800080; // Legacy pink
 
-@color-brownie: #514943;
-@color-brownie-vanilla: #736963;
-@color-brownie1: #6f4400;
-@color-brownie-light1: #c07600;
+@color-brownie: @color-stone-600;
+@color-brownie-vanilla: @color-stone-500;
+@color-brownie1:  @color-amber-900;
+@color-brownie-light1: @color-amber-600;
 
-@color-yellow-light1: #fdf0d5;
-@color-yellow-light2: #ffee9c;
-@color-yellow-light3: #d6ca8e;
-@color-yellow1: #ff0;
+@color-yellow-light1: @color-yellow-50;
+@color-yellow-light2: @color-yellow-100;
+@color-yellow-light3: @color-yellow-200;
+@color-yellow1: @color-yellow-400;
 
 //
 //  Color nesting
@@ -271,4 +283,4 @@
 @panel__background-color: darken(@page__background-color, 6%);
 
 @active__color: @theme__color__secondary;
-@error__color: @color-red10;
+@error__color: @color-red-600;
