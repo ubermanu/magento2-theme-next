@@ -56,7 +56,8 @@
 
             &.empty {
                 display: block;
-                font-size: 14px;
+                font-size: @font-size__l;
+                font-family: @font-family__serif;
                 padding: @indent__l 0 @indent__base;
                 text-align: center;
             }
@@ -103,29 +104,31 @@
     }
 
     .minicart-wrapper {
-        .lib-dropdown(
-            @_toggle-selector: ~'.action.showcart',
-            @_options-selector: ~'.block-minicart',
-            @_dropdown-list-width: 320px,
-            @_dropdown-list-position-right: 0,
-            @_dropdown-list-pointer-position: right,
-            @_dropdown-list-pointer-position-left-right: 26px,
-            @_dropdown-list-z-index: 101,
-            @_dropdown-toggle-icon-content: @icon-cart,
-            @_dropdown-toggle-active-icon-content: @icon-cart,
-            @_dropdown-list-item-padding: false,
-            @_dropdown-list-item-hover: false,
-            @_icon-font-position: before,
-            @_icon-font-size: @font-size__xl,
-            @_icon-font-line-height: @line-height__4xl,
-            @_icon-font-color: @minicart-icons-color,
-            @_icon-font-color-hover: @minicart-icons-color-hover,
-            @_icon-font-color-active: @minicart-icons-color
-        );
+        .action.showcart {
+            color: inherit;
+            margin-left: @indent__base;
 
+            .lib-icon-font(
+                @icon-cart,
+                @_icon-font-size: @font-size__xl,
+                @_icon-font-line-height: @line-height__4xl,
+                @_icon-font-text-hide: false,
+                @_icon-font-position: before
+            );
+        }
+
+        // TODO: Remove this
         float: right;
 
         .block-minicart {
+            background: @page__background-color;
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            z-index: @z-index-10;
+            box-shadow: @shadow__lg;
+
             .lib-css(padding, @indent__lg @minicart__padding-horizontal);
 
             .block-title {
@@ -150,17 +153,17 @@
             &.close {
                 .lib-button-icon(
                     @icon-remove,
-                    @_icon-font-size: @font-size__base,
-                    @_icon-font-line-height: @line-height__base,
+                    @_icon-font-size: @font-size__xl,
+                    @_icon-font-line-height: @line-height__xl,
                     @_icon-font-text-hide: true
                 );
                 .lib-button-reset();
 
-                height: 40px;
                 position: absolute;
-                right: 0;
+                left: 0;
                 top: 0;
-                width: 40px;
+                height: 3rem;
+                width: 3rem;
             }
 
             &.showcart {
@@ -182,7 +185,7 @@
                     .lib-css(height, @minicart-qty__height);
                     .lib-css(line-height, @minicart-qty__height);
 
-                    border-radius: @rounded-sm;
+                    border-radius: @rounded__sm;
                     display: inline-block;
                     margin: 3px 0 0;
                     min-width: 18px;
@@ -430,11 +433,8 @@
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .minicart-wrapper {
-        margin-left: @indent__base;
-
         .block-minicart {
-            right: -@indent__base;
-            width: 24rem;
+            width: 30rem;
         }
     }
 }
