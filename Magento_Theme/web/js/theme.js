@@ -5,11 +5,9 @@
 
 define([
     'jquery',
-    'mage/smart-keyboard-handler',
     'mage/mage',
-    'mage/ie-class-fixer',
     'domReady!'
-], function ($, keyboardHandler) {
+], function ($) {
     'use strict';
 
     $('.cart-summary').mage('sticky', {
@@ -17,6 +15,7 @@ define([
     });
 
     $('.panel.header > .header.links').clone().appendTo('#store\\.links');
+
     $('#store\\.links li a').each(function () {
         var id = $(this).attr('id');
 
@@ -24,6 +23,4 @@ define([
             $(this).attr('id', id + '_mobile');
         }
     });
-
-    keyboardHandler.apply();
 });
