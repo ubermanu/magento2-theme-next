@@ -23,7 +23,7 @@
 //  Display settings
 @button__display: inline-block;
 @button__cursor: pointer;
-@button__border-radius: 3px;
+@button__border-radius: @rounded__base;
 
 @button__disabled__opacity: 0.5;
 
@@ -95,11 +95,11 @@
 @button-icon__active__font-color: inherit;
 
 //  Large button
-@button__font-size__l: @font-size__l;
-@button__line-height__l: @font-size__l + 4;
-@button__padding__l: 14px 17px;
+@button__font-size__l: @font-size__lg;
+@button__line-height__l: @line-height__lg;
+@button__padding__l: @indent__base @indent__l;
 
 //  Small button
-@button__font-size__s: 11px;
-@button__line-height__s: @button__font-size__s + 1;
-@button__padding__s: @indent__xs 8px;
+@button__font-size__s: @font-size__sm;
+@button__line-height__s: @line-height__sm;
+@button__padding__s: @indent__sm @indent__xs;
