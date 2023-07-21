@@ -242,11 +242,21 @@
             }
         }
 
+        // Disables the width calculation on the minicart items pictures
+        // TODO: Remove that behavior from the script itself
+        .product-image-container[style] {
+            width: auto !important;
+        }
+
         .product-image-wrapper {
             &:extend(.abs-reset-image-wrapper all);
         }
 
         .product-item-pricing {
+            .price-container {
+                margin-bottom: @indent__base;
+            }
+
             .label {
                 display: inline-block;
             }
@@ -261,31 +271,38 @@
             margin-top: 10px;
         }
 
-        .product {
+        .product-item > .product {
             display: flex;
             align-items: center;
             gap: @indent__sm;
             width: 100%;
+        }
+
+        .product.actions {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            margin-top: @indent__base;
+            gap: @indent__sm;
+        }
+
+        .product.options {
+            font-size: @font-size__sm;
+            margin-bottom: @indent__base;
 
             .toggle {
                 .lib-icon-font(
                     @_icon-font-content: @icon-down,
-                    @_icon-font-size: 28px,
-                    @_icon-font-line-height: 16px,
                     @_icon-font-text-hide: false,
                     @_icon-font-position: after,
-                    @_icon-font-display: block
+                    @_icon-font-display: inline-flex,
+                    @_icon-font-vertical-align: middle,
+                    @_icon-font-margin: 0 0 0 @indent__xs
                 );
 
                 cursor: pointer;
                 position: relative;
                 white-space: nowrap;
-
-                &::after {
-                    position: static;
-                    right: @indent__base;
-                    top: 0;
-                }
             }
 
             &.active {
@@ -295,6 +312,13 @@
                         @_icon-font-position: after
                     );
                 }
+            }
+
+            .list {
+                column-count: 2;
+                column-gap: @indent__base;
+                font-size: @font-size__xs;
+                margin-top: @indent__sm;
             }
         }
 
@@ -357,8 +381,12 @@
         }
 
         .item-qty {
+            .lib-form-element-input(@_type: input-text);
+
             text-align: center;
-            width: 45px;
+            width: 3rem;
+            line-height: @line-height__sm;
+            padding: @indent__xs;
         }
 
         .update-cart-item {
@@ -375,14 +403,13 @@
         .action {
             &.edit,
             &.delete {
+                color: inherit;
+
                 .lib-icon-font(
                     @icon-settings,
-                    @_icon-font-size: 28px,
-                    @_icon-font-line-height: 28px,
                     @_icon-font-text-hide: true,
-                    @_icon-font-color: @color-gray19,
-                    @_icon-font-color-hover: @color-gray19,
-                    @_icon-font-color-active: @color-gray19
+                    @_icon-font-color-hover: @link__hover__color,
+                    @_icon-font-color-active: @link__active__color
                 );
             }
 

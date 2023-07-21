@@ -45,7 +45,7 @@
 
                 .actions-secondary {
                     display: inline-block;
-                    font-size: 1.4rem;
+                    font-size: @font-size__lg;
                     vertical-align: middle;
                     white-space: nowrap;
 
@@ -95,7 +95,7 @@
                 margin: @indent__s 0 @indent__m;
 
                 .price {
-                    .lib-font-size(14);
+                    font-size: @font-size__lg;
 
                     font-weight: @font-weight__bold;
                     white-space: nowrap;
@@ -113,7 +113,7 @@
             .special-price,
             .minimal-price {
                 .price {
-                    .lib-font-size(14);
+                    font-size: @font-size__lg;
 
                     font-weight: @font-weight__bold;
                 }
@@ -154,7 +154,7 @@
 
                 .price-label {
                     .lib-css(color, @link__color);
-                    .lib-font-size(14);
+                    font-size: @font-size__lg;
                 }
 
                 .price {
@@ -188,7 +188,7 @@
 
     .price-container {
         .price {
-            .lib-font-size(14);
+            font-size: @font-size__lg;
         }
 
         .price-including-tax + .price-excluding-tax,
@@ -202,7 +202,7 @@
         .weee .price,
         .weee + .price-excluding-tax::before,
         .weee + .price-excluding-tax .price {
-            .lib-font-size(11);
+            font-size: @font-size__s;
         }
 
         .weee {
