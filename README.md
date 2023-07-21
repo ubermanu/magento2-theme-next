@@ -17,10 +17,17 @@ This theme requires Magento 2.4+ and [magefront](https://ubermanu.github.io/mage
 
 This theme uses the latest version of LESS (4.x) instead of the PHP port used internally in Magento 2.
 
-### Product grid
+### Grid
 
-The product grid has been updated to use CSS Grid instead of blocks and floats.
+The theme uses `grid` instead of `float` for the layout.\
+It makes it easier to extend the layout and add new columns, resize them, etc.
 
-### Actions Toolbar
+### Feather Icons
 
-The actions toolbar mixin has been updated to use Flexbox instead of floats.
+The theme uses [Feather Icons](https://feathericons.com/) instead of the built-in Blank-Theme-Icons.
+
+> The already existing icon variables are still available.
+
+### TailwindCSS
+
+The theme uses [TailwindCSS](https://tailwindcss.com/) values for colors, spacing, font sizes, etc.
