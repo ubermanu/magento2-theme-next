@@ -104,29 +104,29 @@
 
     .minicart-wrapper {
         .lib-dropdown(
-        @_toggle-selector: ~'.action.showcart',
-        @_options-selector: ~'.block-minicart',
-        @_dropdown-list-width: 320px,
-        @_dropdown-list-position-right: 0,
-        @_dropdown-list-pointer-position: right,
-        @_dropdown-list-pointer-position-left-right: 26px,
-        @_dropdown-list-z-index: 101,
-        @_dropdown-toggle-icon-content: @icon-cart,
-        @_dropdown-toggle-active-icon-content: @icon-cart,
-        @_dropdown-list-item-padding: false,
-        @_dropdown-list-item-hover: false,
-        @_icon-font-position: before,
-        @_icon-font-size: 35px,
-        @_icon-font-line-height: 33px,
-        @_icon-font-color: @minicart-icons-color,
-        @_icon-font-color-hover: @minicart-icons-color-hover,
-        @_icon-font-color-active: @minicart-icons-color
+            @_toggle-selector: ~'.action.showcart',
+            @_options-selector: ~'.block-minicart',
+            @_dropdown-list-width: 320px,
+            @_dropdown-list-position-right: 0,
+            @_dropdown-list-pointer-position: right,
+            @_dropdown-list-pointer-position-left-right: 26px,
+            @_dropdown-list-z-index: 101,
+            @_dropdown-toggle-icon-content: @icon-cart,
+            @_dropdown-toggle-active-icon-content: @icon-cart,
+            @_dropdown-list-item-padding: false,
+            @_dropdown-list-item-hover: false,
+            @_icon-font-position: before,
+            @_icon-font-size: @font-size__xl,
+            @_icon-font-line-height: @line-height__4xl,
+            @_icon-font-color: @minicart-icons-color,
+            @_icon-font-color-hover: @minicart-icons-color-hover,
+            @_icon-font-color-active: @minicart-icons-color
         );
 
         float: right;
 
         .block-minicart {
-            .lib-css(padding, 25px @minicart__padding-horizontal);
+            .lib-css(padding, @indent__lg @minicart__padding-horizontal);
 
             .block-title {
                 display: none;
@@ -150,8 +150,8 @@
             &.close {
                 .lib-button-icon(
                     @icon-remove,
-                    @_icon-font-size: 32px,
-                    @_icon-font-line-height: 32px,
+                    @_icon-font-size: @font-size__base,
+                    @_icon-font-line-height: @line-height__base,
                     @_icon-font-text-hide: true
                 );
                 .lib-button-reset();
@@ -166,6 +166,12 @@
             &.showcart {
                 white-space: nowrap;
 
+                &:hover {
+                    &::before {
+                        animation: shake-y 800ms ease-in-out none;
+                    }
+                }
+
                 .text {
                     &:extend(.abs-visually-hidden all);
                 }
@@ -176,7 +182,7 @@
                     .lib-css(height, @minicart-qty__height);
                     .lib-css(line-height, @minicart-qty__height);
 
-                    border-radius: 2px;
+                    border-radius: @rounded-sm;
                     display: inline-block;
                     margin: 3px 0 0;
                     min-width: 18px;
@@ -424,11 +430,11 @@
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .minicart-wrapper {
-        margin-left: 13px;
+        margin-left: @indent__base;
 
         .block-minicart {
-            right: -15px;
-            width: 390px;
+            right: -@indent__base;
+            width: 24rem;
         }
     }
 }
