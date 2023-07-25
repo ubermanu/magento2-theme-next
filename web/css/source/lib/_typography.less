@@ -51,9 +51,9 @@
 //  https://tailwindcss.com/docs/font-size
 .lib-text(@_size) {
     @_font-size: 'font-size__@{_size}';
-    font-size: @@_font-size;
+    .lib-css(font-size, @@_font-size);
     @_line-height: 'line-height__@{_size}';
-    line-height: @@_line-height;
+    .lib-css(line-height, @@_line-height);
 }
 
 //  @deprecated: use lib-text instead
