@@ -68,21 +68,22 @@
 
         .sorter-action {
             position: relative;
-            top: -2px;
+            vertical-align: top;
+            top: 0.1rem;
+            margin-left: @indent__xs;
         }
     }
 
     .sorter-options {
-        margin: 0 0 0 7px;
+        margin: 0 0 0 @indent__xs;
         width: auto;
     }
 
     .sorter-action {
-        vertical-align: top;
         .lib-icon-font(
             @icon-arrow-up,
-            @_icon-font-size: 28px,
-            @_icon-font-line-height: 32px,
+            @_icon-font-size: @font-size__lg,
+            @_icon-font-line-height: @line-height__lg,
             @_icon-font-color: @header-icons-color,
             @_icon-font-color-hover: @header-icons-color-hover,
             @_icon-font-text-hide: true
