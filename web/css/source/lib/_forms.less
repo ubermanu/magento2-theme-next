@@ -271,8 +271,7 @@
     }
 
     select[multiple] {
-        .lib-css(height, auto);
-
+        height: auto;
         background-image: none;
     }
 
@@ -292,7 +291,7 @@
         .lib-form-element-choice(@_type: input-radio);
     }
 
-    input,
+    .input-text,
     select,
     textarea {
         .lib-form-validation();
@@ -306,7 +305,7 @@
     input[type='reset'],
     input[type='submit'] {
         cursor: pointer;
-        appearance: button;
+        -webkit-appearance: button;
     }
 
     input::-moz-focus-inner {
