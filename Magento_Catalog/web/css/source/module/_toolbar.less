@@ -7,8 +7,9 @@
 //  Variables
 //  ---------------------------------------------
 
-@toolbar-mode-icon-font-size: 24px;
-@toolbar-element-background: @panel__background-color;
+@toolbar-mode-icon-font-size: @font-size__lg;
+@toolbar-mode__item__border-radius: @rounded__base;
+@toolbar-element-background: @color-gray-300;
 
 //
 //  Common
@@ -28,9 +29,8 @@
 
     .toolbar-amount {
         display: block;
-        line-height: @toolbar-mode-icon-font-size + 2;
         margin: 0;
-        padding: 8px 0 0;
+        padding: @indent__sm 0 0;
         vertical-align: middle;
 
         .products.wrapper ~ .toolbar & {
@@ -74,6 +74,57 @@
         }
     }
 
+    .modes {
+        display: inline-flex;
+        float: left;
+        margin-right: @indent__base;
+
+        .products.wrapper ~ .toolbar & {
+            display: none;
+        }
+    }
+
+    .modes-mode {
+        .lib-css(color, @text__color__muted);
+        .lib-css(border-radius, @toolbar-mode__item__border-radius 0 0 @toolbar-mode__item__border-radius);
+
+        border: 1px solid @border-color__base;
+        border-right: 0;
+        float: left;
+        font-weight: @font-weight__regular;
+        line-height: 1;
+        padding: @indent__sm @indent__md;
+        text-align: center;
+
+        &:not(.active) {
+            &:hover {
+                .lib-css(color, @text__color__muted);
+                background: @color-gray-200;
+            }
+        }
+
+        &:last-child {
+            border-right: 1px solid @border-color__base;
+            .lib-css(border-radius, 0 @toolbar-mode__item__border-radius @toolbar-mode__item__border-radius 0);
+        }
+
+        &.active {
+            pointer-events: none;
+            background: @color-gray-300;
+            color: @theme__color__primary;
+        }
+
+        .lib-icon-font(
+            @icon-grid,
+            @_icon-font-size: @toolbar-mode-icon-font-size,
+            @_icon-font-text-hide: true
+        );
+    }
+
+    .mode-list {
+        .lib-icon-font-symbol(@icon-list);
+    }
+
     .sorter-options {
         margin: 0 0 0 @indent__xs;
         width: auto;
@@ -98,10 +149,6 @@
         }
     }
 
-    .modes {
-        display: none;
-    }
-
     .limiter-options {
         margin: 0 5px 0 7px;
         width: auto;
@@ -115,6 +162,16 @@
         .page-products .toolbar & {
             display: none;
         }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .modes {
+        display: none;
     }
 }
 
@@ -145,58 +202,8 @@
         float: right;
     }
 
-    .modes {
-        display: inline-block;
-        float: left;
-        margin-right: @indent__base;
-
-        .products.wrapper ~ .toolbar & {
-            display: none;
-        }
-    }
-
     .modes-label {
         &:extend(.abs-visually-hidden-desktop all);
-    }
-
-    .modes-mode {
-        .lib-css(color, @text__color__muted);
-
-        border: 1px solid @border-color__base;
-        border-right: 0;
-        float: left;
-        font-weight: @font-weight__regular;
-        line-height: 1;
-        padding: 7px 10px;
-        text-align: center;
-
-        &:not(.active) {
-            &:hover {
-                .lib-css(color, @text__color__muted);
-
-                background: darken(@toolbar-element-background, 7%);
-            }
-        }
-
-        &:last-child {
-            border-right: 1px solid @border-color__base;
-        }
-
-        &.active {
-            .lib-css(color, @primary__color__light);
-        }
-
-        .lib-icon-font(
-            @icon-grid,
-            @_icon-font-size: @toolbar-mode-icon-font-size,
-            @_icon-font-text-hide: true,
-            @_icon-font-color: @text__color__muted,
-            @_icon-font-color-hover: @text__color__muted
-        );
-    }
-
-    .mode-list {
-        .lib-icon-font-symbol(@icon-list);
     }
 
     .toolbar {
