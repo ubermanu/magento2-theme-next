@@ -1,4 +1,5 @@
-@layout-column-main__sidebar-offset: 20px;
+@layout-column-main__sidebar-width: 20rem;
+@layout-column-main__sidebar-offset: @indent__base;
 @layout-column__additional-sidebar-offset: @layout-column-main__sidebar-offset;
 
 //
@@ -83,17 +84,17 @@
     .columns {
         .page-layout-2columns-left & {
             grid-template-areas: 'sidebar main' 'sidebar-additional main';
-            grid-template-columns: max-content 1fr;
+            grid-template-columns: @layout-column-main__sidebar-width 1fr;
         }
 
         .page-layout-2columns-right & {
             grid-template-areas: 'main sidebar' 'main sidebar-additional';
-            grid-template-columns: 1fr max-content;
+            grid-template-columns: 1fr @layout-column-main__sidebar-width;
         }
 
         .page-layout-3columns & {
             grid-template-areas: 'sidebar main sidebar-additional';
-            grid-template-columns: max-content 1fr max-content;
+            grid-template-columns: @layout-column-main__sidebar-width 1fr @layout-column-main__sidebar-width;
         }
     }
 
