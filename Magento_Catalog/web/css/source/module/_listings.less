@@ -177,6 +177,12 @@
             .tocart {
                 white-space: nowrap;
             }
+
+            &-actions {
+                .lib-actions-toolbar(
+                    @_actions-toolbar-actions-position: left
+                );
+            }
         }
     }
 
@@ -236,12 +242,6 @@
                 &-details {
                     display: table-cell;
                     vertical-align: top;
-                }
-
-                &-actions {
-                    .lib-actions-toolbar(
-                        @_actions-toolbar-actions-position: left
-                    );
                 }
             }
         }
