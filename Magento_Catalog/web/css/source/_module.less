@@ -310,7 +310,7 @@
             margin: @indent__s 0;
 
             .price-container {
-                .lib-font-size(14);
+                font-size: @font-size__base;
             }
 
             .price-label + .price-wrapper {
@@ -331,15 +331,13 @@
             margin: @indent__base 0;
 
             .field.qty {
-                padding-right: (0.75 * @indent__base);
+                padding-right: @indent__md;
             }
 
             .input-text.qty {
-                @tocart-input-size: (@button__line-height__l + 28px);
-
-                height: (@tocart-input-size + 2px);
+                height: 4rem;
                 text-align: center;
-                width: (@tocart-input-size + 2px);
+                width: 4rem;
             }
 
             .actions {
