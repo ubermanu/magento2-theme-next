@@ -231,7 +231,7 @@
             .legend {
                 .lib-css(font-weight, @font-weight__bold);
                 .lib-css(margin, 0 0 @indent__xs);
-                .lib-font-size(14px);
+                .lib-text(xl);
 
                 border: none;
                 display: inline-block;
@@ -282,20 +282,19 @@
             .price-including-tax + .price-excluding-tax,
             .weee + .price-excluding-tax,
             .weee {
-                .lib-font-size(12);
+                .lib-text(lg);
 
-                line-height: 14px;
                 margin-bottom: @indent__xs;
 
                 .price {
-                    .lib-font-size(12);
+                    .lib-text(lg);
 
                     font-weight: @font-weight__bold;
                 }
             }
 
             .price-wrapper .price {
-                .lib-font-size(18);
+                .lib-text('3xl');
 
                 font-weight: @font-weight__bold;
             }
@@ -365,7 +364,7 @@
         .lib-css(background, @sidebar__background-color);
 
         margin: @indent__s 0;
-        padding: @indent__s (0.75 * @indent__base);
+        padding: @indent__s @indent__md;
 
         .price-container {
             display: inline-block;
@@ -377,7 +376,7 @@
             display: inline-block;
 
             .price {
-                .lib-font-size(14);
+                .lib-text(xl);
 
                 font-weight: @font-weight__bold;
             }
@@ -430,16 +429,16 @@
 
             .price-box {
                 display: block;
-                margin: 7px 0;
+                margin: @indent__sm 0;
             }
 
             .text {
-                margin-right: 8px;
+                margin-right: @indent__sm;
             }
 
             .counter {
                 .lib-css(color, @primary__color__lighter);
-                .lib-font-size(12);
+                .lib-text(xl);
 
                 white-space: nowrap;
             }
@@ -748,7 +747,7 @@
             }
 
             &.attribute {
-                .lib-font-size(13);
+                .lib-text(xl);
 
                 img {
                     height: auto;
@@ -759,7 +758,7 @@
 
         .product-item-photo {
             display: block;
-            margin: 0 auto 15px;
+            margin: 0 auto @indent__xl;
         }
 
         .product-image-photo {
@@ -771,11 +770,11 @@
         .product.rating,
         .product-item-name {
             display: block;
-            margin: 15px 0;
+            margin: @indent__xl 0;
         }
 
         .product-addto-links {
-            margin-top: 15px;
+            margin-top: @indent__xl;
 
             .action.split,
             .action.toggle {
@@ -828,14 +827,14 @@
         }
 
         .product-item .product-item-name {
-            margin-left: 22px;
+            margin-left: @indent__3xl;
         }
 
         .action {
             &.delete {
                 &:extend(.abs-remove-button-for-blocks all);
 
-                left: -6px;
+                left: (-@indent__xs);
                 position: absolute;
                 right: 0;
                 top: 0;
@@ -851,7 +850,7 @@
         }
 
         .actions-toolbar {
-            margin: 17px 0 0;
+            margin: @indent__2xl 0 0;
         }
     }
 }
