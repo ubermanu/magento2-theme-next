@@ -54,9 +54,9 @@
                     }
 
                     > .action {
-                        line-height: 35px;
+                        line-height: 2rem;
                         text-align: center;
-                        width: 35px;
+                        width: 2rem;
 
                         &:extend(.abs-actions-addto-gridlist all);
 
@@ -68,11 +68,6 @@
                             &:extend(.abs-visually-hidden all);
                         }
                     }
-                }
-
-                .actions-primary {
-                    display: inline-block;
-                    vertical-align: middle;
                 }
             }
 
@@ -242,6 +237,12 @@
                     display: table-cell;
                     vertical-align: top;
                 }
+
+                &-actions {
+                    .lib-actions-toolbar(
+                        @_actions-toolbar-actions-position: left
+                    );
+                }
             }
         }
 
@@ -283,8 +284,6 @@
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__s) {
     .product-item-actions {
-        display: block;
-
         .products-grid & {
             margin-top: @indent__s;
         }
