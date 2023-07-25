@@ -94,11 +94,10 @@
             }
 
             &-options {
+                display: flex;
+                flex-wrap: wrap;
+                gap: @indent__s;
                 margin: @indent__s 0;
-
-                &:focus {
-                    box-shadow: none;
-                }
 
                 .swatch-option-tooltip-layered .title {
                     .lib-css(color, @swatch-option-tooltip-layered-title__color);
@@ -133,15 +132,15 @@
 
             cursor: pointer;
             float: left;
-            height: 20px;
-            margin: 0 @indent__s @indent__xs 0;
+            min-height: 1rem;
             max-width: 100%;
-            min-width: 30px;
+            min-width: 1rem;
             overflow: hidden;
-            padding: 1px 2px;
+            padding: @indent__xs;
             position: relative;
             text-align: center;
             text-overflow: ellipsis;
+            border-radius: @rounded__base;
 
             &:focus-visible {
                 .lib-css(box-shadow, @focus__box-shadow);
@@ -152,11 +151,10 @@
                 .lib-css(color, @swatch-option-text__color);
 
                 font-size: @font-size__s;
-                font-weight: @font-weight__bold;
-                line-height: 20px;
-                margin-right: 7px;
-                min-width: 22px;
-                padding: 4px 8px;
+                font-weight: @font-weight__semibold;
+                line-height: @line-height__s;
+                padding: @indent__xs @indent__s;
+                min-width: auto;
 
                 &.selected {
                     .lib-css(background-color, @swatch-option-text__selected__background-color);
@@ -177,6 +175,8 @@
 
             &.image,
             &.color {
+                border-radius: @rounded__full;
+
                 &:not(.disabled):hover {
                     .lib-css(border, @img-color-swatch-option__hover__border);
                     .lib-css(outline, @img-color-swatch-option__hover__outline);
