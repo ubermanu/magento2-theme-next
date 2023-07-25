@@ -48,31 +48,21 @@
     }
 }
 
-//  Rem font size
-.lib-font-size(@sizeValue) when not (ispercentage(@sizeValue)) and not (@sizeValue = false) and (isunit(@sizeValue, @font-size-unit)) {
+//  https://tailwindcss.com/docs/font-size
+.lib-text(@_size) {
+    @_font-size: 'font-size__@{_size}';
+    font-size: @@_font-size;
+    @_line-height: 'line-height__@{_size}';
+    line-height: @@_line-height;
+}
+
+//  @deprecated: use lib-text instead
+.lib-font-size(@sizeValue) {
     .lib-css(font-size, @sizeValue);
 }
 
-.lib-font-size(@sizeValue) when not (ispercentage(@sizeValue)) and not (@sizeValue = false) and (isunit(@sizeValue, em)) {
-    .lib-css(font-size, @sizeValue);
-}
-
-.lib-font-size(@sizeValue) when not (ispercentage(@sizeValue)) and not (@sizeValue = false) and not (isunit(@sizeValue, em)) and not (isunit(@sizeValue, @font-size-unit)) {
-    .lib-font-size-value(@sizeValue);
-    .lib-css(font-size, @fontValue);
-}
-
-//  Rem line height
-.lib-line-height(@heightValue) when not (@heightValue = false) and not (@heightValue = normal) and not (ispercentage(@heightValue)) {
-    .lib-font-size-value(@heightValue);
-    .lib-css(line-height, @fontValue);
-}
-
-.lib-line-height(@heightValue) when (ispercentage(@heightValue)) and not (@heightValue = false) {
-    .lib-css(line-height, @heightValue);
-}
-
-.lib-line-height(@heightValue) when (@heightValue = normal) {
+//  @deprecated: use lib-text instead
+.lib-line-height(@heightValue) {
     .lib-css(line-height, @heightValue);
 }
 
@@ -154,7 +144,7 @@
     }
 
     &:active {
-        .lib-css(color,@_link-color-active);
+        .lib-css(color, @_link-color-active);
         .lib-css(text-decoration, @_link-text-decoration-active);
     }
 }
@@ -178,13 +168,11 @@
     );
 
     & {
-        .lib-font-size-value(@@_margin-top);
-        .lib-css(margin-top, @fontValue);
+        .lib-css(margin-top, @@_margin-top);
     }
 
     & {
-        .lib-font-size-value(@@_margin-bottom);
-        .lib-css(margin-bottom, @fontValue);
+        .lib-css(margin-bottom, @@_margin-bottom);
     }
 }
 
@@ -222,15 +210,8 @@
     }
 
     p {
-        & {
-            .lib-font-size-value(@_p-margin-top);
-            .lib-css(margin-top, @fontValue);
-        }
-
-        & {
-            .lib-font-size-value(@_p-margin-bottom);
-            .lib-css(margin-bottom, @fontValue);
-        }
+        .lib-css(margin-top, @_p-margin-top);
+        .lib-css(margin-bottom, @_p-margin-bottom);
     }
 
     //  Abbreviations and acronyms
@@ -331,9 +312,9 @@
         small,
         .small {
             .lib-typography(
-            @_heading-small-size,
-            @_heading-small-color,
-            @_line-height: @_heading-small-line-height
+                @_heading-small-size,
+                @_heading-small-color,
+                @_line-height: @_heading-small-line-height
             );
         }
     }
@@ -369,26 +350,12 @@
 ) {
     ul,
     ol {
-        & {
-            .lib-font-size-value(@_list-margin-top);
-            .lib-css(margin-top, @fontValue);
-        }
-
-        & {
-            .lib-font-size-value(@_list-margin-bottom);
-            .lib-css(margin-bottom, @fontValue);
-        }
+        .lib-css(margin-top, @_list-margin-top);
+        .lib-css(margin-bottom, @_list-margin-bottom);
 
         > li {
-            & {
-                .lib-font-size-value(@_list-item-margin-top);
-                .lib-css(margin-top, @fontValue);
-            }
-
-            & {
-                .lib-font-size-value(@_list-item-margin-bottom);
-                .lib-css(margin-bottom, @fontValue);
-            }
+            .lib-css(margin-top, @_list-item-margin-top);
+            .lib-css(margin-bottom, @_list-item-margin-bottom);
         }
 
         ul,
