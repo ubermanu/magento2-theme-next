@@ -97,6 +97,7 @@
 
                 .price-label {
                     font-size: @font-size__s;
+                    margin-right: @indent__xs;
 
                     &::after {
                         content: ':';
@@ -179,6 +180,8 @@
             }
 
             &-actions {
+                margin-top: @indent__base;
+
                 .lib-actions-toolbar(
                     @_actions-toolbar-actions-position: left
                 );
@@ -284,10 +287,6 @@
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__s) {
     .product-item-actions {
-        .products-grid & {
-            margin-top: @indent__s;
-        }
-
         .actions-primary + .actions-secondary {
             > * {
                 white-space: normal;
