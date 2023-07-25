@@ -91,10 +91,13 @@
     }
 
     * {
-        &:focus-visible,
         &:focus {
-            box-shadow: none;
-            outline: 0;
+            outline: none;
+        }
+
+        &:focus-visible {
+            .lib-css(outline, @focus__outline);
+            .lib-css(outline-offset, @focus__outline-offset);
         }
     }
 }
