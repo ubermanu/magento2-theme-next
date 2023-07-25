@@ -34,8 +34,8 @@
         .label {
             .lib-icon-font(
                 @_icon-font-content: @icon-search,
-                @_icon-font-size: 35px,
-                @_icon-font-line-height: 33px,
+                @_icon-font-size: @font-size__xl,
+                @_icon-font-line-height: @line-height__xl,
                 @_icon-font-color: @header-icons-color,
                 @_icon-font-color-hover: @header-icons-color-hover,
                 @_icon-font-color-active: @header-icons-color-hover,
@@ -65,9 +65,8 @@
         }
 
         input {
-            font-size: 16px;
             left: -300%;
-            margin: 15px 0;
+            margin: @indent__base 0;
             position: absolute;
         }
 
@@ -80,7 +79,7 @@
         &:extend(.abs-add-box-sizing all);
 
         display: none;
-        margin-top: -15px;
+        margin-top: -@indent__base;
         overflow: hidden;
         position: absolute;
         z-index: 3;
@@ -240,6 +239,8 @@
             .lib-button-icon(
                 @_icon-font-content: @icon-search,
                 @_icon-font-text-hide: true,
+                @_icon-font-size: @font-size__lg,
+                @_icon-font-line-height: @line-height__lg,
                 @_icon-font-color: @header-icons-color
             );
             .lib-button-reset();
