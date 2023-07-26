@@ -69,7 +69,9 @@
         }
 
         .count {
-            .lib-css(color, @text__color__muted);
+            color: @text__color__muted;
+            display: inline-flex;
+            margin-left: @indent__sm;
 
             &::before {
                 content: '(';
