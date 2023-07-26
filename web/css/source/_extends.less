@@ -1118,31 +1118,28 @@
     .abs-shopping-cart-items {
         .action {
             &.continue {
-                border-radius: @button__border-radius;
-                font-weight: @font-weight__bold;
                 .lib-link-as-button();
                 .lib-button(
-                    @_button-padding: 7px 15px 7px 0,
                     @_button-icon-use: true,
                     @_button-font-content: @icon-prev,
-                    @_button-icon-font-size: 32px,
-                    @_button-icon-font-line-height: 16px,
+                    @_button-icon-font-size: @font-size__lg,
+                    @_button-icon-font-line-height: inherit,
                     @_button-icon-font-position: before
                 );
 
-                &:active {
-                    .lib-css(box-shadow, @button__shadow);
-                }
+                padding-left: @indent__sm;
             }
 
             &.update {
-                .lib-button-icon(
-                    @icon-update,
-                    @_icon-font-size: 32px,
-                    @_icon-font-line-height: 16px
+                .lib-link-as-button();
+                .lib-button(
+                    @_button-icon-use: true,
+                    @_button-font-content: @icon-update,
+                    @_button-icon-font-size: @font-size__lg,
+                    @_button-icon-font-line-height: inherit,
+                    @_button-icon-font-margin: 0 @indent__xs 0 0,
+                    @_button-icon-font-position: before
                 );
-
-                padding-left: @indent__xs;
             }
         }
     }
@@ -1418,27 +1415,29 @@
             border-top: @border-width__base solid @border-color__base;
             cursor: pointer;
             font-weight: @font-weight__semibold;
+
             .lib-icon-font(
                 @_icon-font-content: @icon-down,
-                @_icon-font-size: 30px,
+                @_icon-font-size: @font-size__lg,
+                @_icon-font-line-height: @line-height__lg,
                 @_icon-font-position: after,
                 @_icon-font-display: block
             );
 
             margin-bottom: 0;
             overflow: hidden;
-            padding: 7px @indent__l 7px @indent__xs;
+            padding: @indent__sm @indent__xl @indent__sm @indent__xs;
             position: relative;
 
             &::after {
                 position: absolute;
-                right: -5px;
-                top: -5px;
+                right: @indent__sm;
+                top: @indent__sm;
             }
 
             strong {
                 .column.main & {
-                    .lib-font-size(18);
+                    .lib-text(lg);
 
                     font-weight: @font-weight__regular;
                 }

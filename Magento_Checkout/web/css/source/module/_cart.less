@@ -17,11 +17,14 @@
         .lib-css(background, @sidebar__background-color);
 
         margin-bottom: @indent__m;
-        padding: 1px 15px @indent__m;
+        padding: @indent__xs @indent__base @indent__m;
+        border-radius: @rounded__base;
 
         > .title {
-            display: block;
             .lib-heading(h3);
+
+            display: block;
+            margin-bottom: @indent__lg;
         }
 
         .block {
@@ -68,6 +71,7 @@
                 }
             }
         }
+
         &:extend(.abs-adjustment-incl-excl-tax all);
     }
 
