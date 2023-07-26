@@ -132,12 +132,12 @@
         ~ .ui-datepicker-trigger {
             .lib-button-reset();
             .lib-icon-font(
-            @_icon-font-content: @icon-calendar,
-            @_icon-font-color: @primary__color__lighter,
-            @_icon-font-size: @icon-calendar__font-size,
-            @_icon-font-line-height: @icon-calendar__font-size,
-            @_icon-font-display: block,
-            @_icon-font-text-hide: true
+                @_icon-font-content: @icon-calendar,
+                @_icon-font-color: @primary__color__lighter,
+                @_icon-font-size: @icon-calendar__font-size,
+                @_icon-font-line-height: @icon-calendar__font-size,
+                @_icon-font-display: block,
+                @_icon-font-text-hide: true
             );
 
             display: inline-block;
@@ -187,6 +187,43 @@
         background-repeat: no-repeat;
         background-size: 1rem 1rem;
         padding-right: @indent__xl;
+    }
+
+    // Radio element
+    // TODO: Move to lib?
+    input[type='radio'] {
+        display: inline-grid;
+        place-content: center;
+        appearance: none;
+        background-color: #fff;
+        margin: 0;
+        font: inherit;
+        color: currentColor;
+        width: 1.2rem;
+        height: 1.2rem;
+        border: 2px solid currentColor;
+        border-radius: @rounded__full;
+        box-sizing: border-box;
+
+        &::before {
+            content: '';
+            width: 0.65rem;
+            height: 0.65rem;
+            border-radius: @rounded__full;
+            transform: scale(0);
+            box-shadow: inset 1rem 1rem @theme__color__primary;
+        }
+
+        &:checked {
+            &::before {
+                transform: scale(1);
+            }
+        }
+
+        &,
+        & + label {
+            cursor: pointer;
+        }
     }
 }
 
