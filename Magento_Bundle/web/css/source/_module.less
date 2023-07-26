@@ -36,7 +36,15 @@
             margin-bottom: @indent__l;
         }
 
-        .action.back {
+        .action.back.customization {
+            .lib-button();
+            .lib-button-s();
+            .lib-button-icon(
+                @_icon-font-content: @icon-arrow-left,
+                @_icon-font-size: inherit,
+                @_icon-font-line-height: inherit
+            );
+
             margin-bottom: @indent__l;
         }
 
@@ -55,7 +63,8 @@
             &:extend(.abs-add-box-sizing all);
             .lib-css(background, @secondary__color);
 
-            padding: @indent__s @indent__base;
+            padding: @indent__md @indent__base;
+            border-radius: @rounded__base;
 
             > .title > strong {
                 .lib-heading(h2);
