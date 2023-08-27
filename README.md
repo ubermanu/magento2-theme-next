@@ -31,3 +31,8 @@ The theme uses [Feather Icons](https://feathericons.com/) instead of the built-i
 ### TailwindCSS
 
 The theme uses [TailwindCSS](https://tailwindcss.com/) values for colors, spacing, font sizes, etc.
+
+### TKO
+
+The theme uses [TKO](https://github.com/knockout/tko) instead of KnockoutJS.\
+If you face any issues, please report them to the [ubermanu/magento2-tko](https://github.com/ubermanu/magento2-tko) repository.
