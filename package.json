@@ -6,10 +6,10 @@
     "check": "stylelint '**/*.less'"
   },
   "devDependencies": {
-    "@ubermanu/prettier-config": "^3.1.0",
+    "@ubermanu/prettier-config": "^3.2.0",
     "less": "^4.1.3",
     "magefront": "^2.0.0",
-    "prettier": "^3.0.2",
+    "prettier": "^3.0.3",
     "stylelint": "^15.10.3",
     "stylelint-config-standard-less": "^2.0.0"
   }
