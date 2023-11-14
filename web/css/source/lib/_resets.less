@@ -1,7 +1,4 @@
-/**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
+@import '../../vendor/tailwindcss/_preflight.less';
 
 //
 //  Resets
@@ -12,83 +9,8 @@
 //  ---------------------------------------------
 
 .lib-magento-reset() {
-    body {
-        margin: 0;
-        padding: 0;
-    }
-
-    article,
-    aside,
-    details,
-    figcaption,
-    figure,
-    main,
-    footer,
-    header,
-    nav,
-    section,
-    summary {
-        display: block;
-    }
-
-    audio,
-    canvas,
-    video {
-        display: inline-block;
-    }
-
-    audio:not([controls]) {
-        display: none;
-        height: 0;
-    }
-
-    nav ul,
-    nav ol {
-        list-style: none none;
-    }
-
-    img {
-        max-width: 100%;
-        height: auto;
-        border: 0;
-    }
-
-    video,
-    embed,
-    object {
-        max-width: 100%;
-    }
-
-    svg:not(:root) {
-        overflow: hidden;
-    }
-
-    figure {
-        margin: 0;
-    }
-
-    .lib-typography-all();
-
-    table {
-        .lib-table();
-    }
-
-    button {
-        &::-moz-focus-inner {
-            border: 0;
-            padding: 0;
-        }
-    }
-
-    .lib-form-element-all();
-
-    form {
-        -webkit-tap-highlight-color: rgb(0 0 0 / 0%);
-    }
-
-    address {
-        font-style: normal;
-    }
+    .lib-tailwindcss-preflight();
+    .lib-typography__base();
 
     * {
         &:focus {
