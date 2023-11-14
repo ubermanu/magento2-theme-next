@@ -1,0 +1,33 @@
+//
+//  Blocks & Widgets
+//  ---------------------------------------------
+
+& when (@media-common = true) {
+    .block {
+        &:extend(.abs-margin-for-blocks-and-widgets all);
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .title {
+            margin-bottom: @indent__s;
+
+            strong {
+                .lib-heading(h4);
+
+                .column.main & {
+                    font-size: @h3__font-size;
+                }
+            }
+        }
+
+        p:last-child {
+            margin: 0;
+        }
+
+        .box-actions {
+            margin-top: @indent__xs;
+        }
+    }
+}
