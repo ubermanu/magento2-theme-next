@@ -11,7 +11,6 @@
     ._lib-layout-width(@_layout__min-width, @_layout__max-width);
     .lib-css(padding-left, @layout-indent__width);
     .lib-css(padding-right, @layout-indent__width);
-
     margin: 0 auto;
 }
 
@@ -28,6 +27,19 @@
 ) when not (@_layout__min-width = @_layout__max-width) {
     .lib-css(max-width, @_layout__max-width);
     .lib-css(min-width, @_layout__min-width);
-
     width: auto;
+}
+
+// @deprecated
+#lib-layout-columns() {
+    .main() {
+    }
+    .left() {
+    }
+    .right() {
+    }
+}
+
+// @deprecated
+.lib-layout-column(@_total-columns, @_order, @_width) {
 }
