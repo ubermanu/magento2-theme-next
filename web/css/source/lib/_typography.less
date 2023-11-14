@@ -198,17 +198,6 @@
     @_strong-font-weight: @font-weight__bold,
     @_sub-sup-font-size: (@font-size__xs/@font-size__base)*100%
 ) {
-    html {
-        .lib-css(font-size, @_root-font-size);
-
-        text-size-adjust: 100%;
-        //font-size-adjust: 1;
-    }
-
-    body {
-        .lib-typography();
-    }
-
     p {
         .lib-css(margin-top, @_p-margin-top);
         .lib-css(margin-bottom, @_p-margin-bottom);

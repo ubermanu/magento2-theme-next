@@ -10,7 +10,16 @@
 
 .lib-magento-reset() {
     .lib-tailwindcss-preflight();
-    .lib-typography__base();
+
+    html {
+        .lib-css(font-size, @root__font-size);
+        text-size-adjust: 100%;
+        //font-size-adjust: 1;
+    }
+
+    body {
+        .lib-typography();
+    }
 
     * {
         &:focus {
