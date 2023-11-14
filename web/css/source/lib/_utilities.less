@@ -201,16 +201,12 @@
     @_background-gradient-direction,
     @_background-gradient,
     @_background-gradient-color-position: true
-)
-    when
-    (@_background-gradient-direction = horizontal)
-    and
-    (@_background-gradient = true) {
+) when (@_background-gradient-direction = horizontal) and (@_background-gradient = true) {
     #lib-gradient > .horizontal(
         @_start-color: @_background-gradient-color-start,
         @_end-color: @_background-gradient-color-end,
         @_background-color-position: @_background-gradient-color-position
-    );;
+    );
 }
 
 //  Pager gradient - vertical
@@ -220,11 +216,7 @@
     @_background-gradient-direction,
     @_background-gradient,
     @_background-gradient-color-position: true
-)
-    when
-    (@_background-gradient-direction = vertical)
-    and
-    (@_background-gradient = true) {
+) when (@_background-gradient-direction = vertical) and (@_background-gradient = true) {
     #lib-gradient > .vertical(
         @_start-color: @_background-gradient-color-start,
         @_end-color: @_background-gradient-color-end,
@@ -257,7 +249,6 @@
 ) {
     .lib-font-size(@_font-size);
     .lib-line-height(@_line-height);
-
     letter-spacing: normal;
 }
 
@@ -268,29 +259,14 @@
 .lib-css(
     @_property,
     @_value
-)
-    when
-    not
-    (@_value = '')
-    and
-    not
-    (@_value = false)
-    and
-    not
-    (extract(@_value, 1) = false)
-    and
-    not
-    (extract(@_value, 2) = false)
-    and
-    not
-    (extract(@_value, 3) = false)
-    and
-    not
-    (extract(@_value, 4) = false)
-    and
-    not
-    (extract(@_value, 5) = false) {
-    @{_property}: @_value;
+) when not (@_value = '')
+    and not (@_value = false)
+    and not (extract(@_value, 1) = false)
+    and not (extract(@_value, 2) = false)
+    and not (extract(@_value, 3) = false)
+    and not (extract(@_value, 4) = false)
+    and not (extract(@_value, 5) = false) {
+        @{_property}: @_value;
 }
 
 //
@@ -423,4 +399,58 @@
         .lib-css(border-color, transparent transparent @_border-color transparent);
         .lib-css(z-index, @_z-index - 1);
     }
+}
+
+//
+//  Flex layout
+//  ---------------------------------------------
+
+// @deprecated
+.lib-vendor-prefix-display(@_value: flex) {
+    .lib-css(display, @_value);
+}
+
+// @deprecated
+.lib-vendor-prefix-flex-grow(@_value: 0) {
+    .lib-css(flex-grow, @_value);
+}
+
+// @deprecated
+.lib-vendor-prefix-flex-shrink(@_value: 1) {
+    .lib-css(flex-shrink, @_value);
+}
+
+// @deprecated
+.lib-vendor-prefix-flex-basis(@_value: auto) {
+    .lib-css(flex-basis, @_value);
+}
+
+// @deprecated
+.lib-vendor-prefix-flex-wrap(@_value: wrap) {
+    .lib-css(flex-wrap, @_value);
+}
+
+// @deprecated
+.lib-vendor-prefix-flex-direction(@_value: column) {
+    .lib-css(flex-direction, @_value);
+}
+
+// @deprecated
+.lib-vendor-prefix-order(@_value: 0) {
+    .lib-css(order, @_value);
+}
+
+// @deprecated
+.lib-vendor-box-align(@_value: stretch) {
+    .lib-css(align-items, @_value);
+}
+
+// @deprecated
+.lib-vendor-prefix-appearance(@value: none) {
+    .lib-css(appearance, @value);
+}
+
+// @deprecated
+.lib-vendor-prefix-column-count(@_value) {
+    .lib-css(column-count, @_value);
 }
