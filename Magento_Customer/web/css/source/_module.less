@@ -14,11 +14,11 @@
 
 @account-nav-item-hover: @color-gray91;
 
-@_password-default: false;
-@_password-weak: #ffafae;
-@_password-medium: #ffd6b3;
-@_password-strong: #c5eeac;
-@_password-very-strong: #81b562;
+@_password-default: @input-text__background;
+@_password-weak: @color-red-300;
+@_password-medium: @color-yellow-200;
+@_password-strong: @color-green-200;
+@_password-very-strong: @color-green-500;
 
 //
 //  Common
@@ -254,7 +254,7 @@
         position: relative;
         z-index: 0;
         margin-top: @indent__s;
-        padding: @indent__xs;
+        padding: @indent__xs @indent__sm;
         border-radius: @rounded__sm;
         font-size: @font-size__xs;
 

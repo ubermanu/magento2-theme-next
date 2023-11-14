@@ -266,7 +266,7 @@
         .lib-form-element-search-reset();
     }
 
-    select {
+    .input-select {
         .lib-form-element-input(@_type: select);
     }
 
@@ -282,7 +282,6 @@
 
     input[type='checkbox'] {
         .lib-form-element-choice(@_type: input-checkbox);
-
         position: relative;
         top: 2px;
     }
@@ -331,9 +330,7 @@
     @_note-icon-font-vertical-align,
     @_note-icon-font-position,
     @_note-icon-font-text-hide
-)
-    when
-    (@_note-icon-use = true) {
+) when (@_note-icon-use = true) {
     .lib-icon-font(
         @_icon-font-content: @_note-icon-font-content,
         @_icon-font: @_note-icon-font,
@@ -686,9 +683,7 @@
     @_type-block-label-margin: @form-field-type-label-block__margin,
     @_type-block-label-padding: @form-field-type-label-block__padding,
     @_type-block-label-align: @form-field-type-label-block__align
-)
-    when
-    (@_type = inline) {
+) when (@_type = inline) {
     ._lib-form-field-type-inline(
         @_type-inline-margin,
         @_type-inline-label-margin,
@@ -713,9 +708,7 @@
     @_type-block-label-margin: @form-field-type-label-block__margin,
     @_type-block-label-padding: @form-field-type-label-block__padding,
     @_type-block-label-align: @form-field-type-label-block__align
-)
-    when
-    (@_type = block) {
+) when (@_type = block) {
     ._lib-form-field-type-block(
         @_type-block-margin,
         @_type-block-label-margin,
@@ -884,12 +877,7 @@
     @_type-block-label-margin: @form-field-type-label-block__margin,
     @_type-block-label-padding: @form-field-type-label-block__padding,
     @_type-block-label-align: @form-field-type-label-block__align
-)
-    when
-    (@_type = block)
-    and
-    not
-    (@_type = false) {
+) when (@_type = block) and not (@_type = false) {
     &:not(.choice) {
         > .label {
             box-sizing: content-box;
@@ -939,8 +927,7 @@
     @_type-block-label-margin: @form-field-type-label-block__margin,
     @_type-block-label-padding: @form-field-type-label-block__padding,
     @_type-block-label-align: @form-field-type-label-block__align
-)
-    when
+) when
     (@_type = inline)
     and
     not
@@ -1109,4 +1096,89 @@
         @_line-height: @_line-height,
         @_font-style: @_font-style
     );
+}
+
+.lib-form-element-checkbox(
+    @_checkbox__color: @color-white,
+    @_checkbox__background: @color-white,
+    @_checkbox__background-checked: @theme__color__primary,
+    @_checkbox__width: 1.2rem,
+    @_checkbox__height: 1.2rem,
+    @_checkbox__border: 2px solid @color-black,
+    @_checkbox__border-radius: @rounded__sm,
+    @_checkbox__use-icon-font: true,
+    @_checkbox__icon-font: @icons__font-name,
+    @_checkbox__icon-font-content: @icon-check,
+    @_checkbox__icon-font-size: 0.8rem,
+    @_checkbox__icon-font-vertical-align: middle,
+    @_checkbox__icon-font-line-height: 1rem,
+    @_checkbox__display: inline-block
+) {
+    .lib-form-element-choice(@_type: input-checkbox);
+    .lib-css(color, @_checkbox__color);
+    .lib-css(background, @_checkbox__background);
+    .lib-css(width, @_checkbox__width);
+    .lib-css(height, @_checkbox__height);
+    .lib-css(border, @_checkbox__border);
+    .lib-css(border-radius, @_checkbox__border-radius);
+    appearance: none;
+    cursor: pointer;
+
+    & when (@_checkbox__use-icon-font = true) {
+        .lib-icon-font(
+            @_icon-font: @_checkbox__icon-font,
+            @_icon-font-content: @_checkbox__icon-font-content,
+            @_icon-font-color: inherit,
+            @_icon-font-size: @_checkbox__icon-font-size,
+            @_icon-font-vertical-align: @_checkbox__icon-font-vertical-align,
+            @_icon-font-line-height: @_checkbox__icon-font-line-height,
+            @_icon-font-display: false
+        );
+    }
+
+    &::before {
+        display: block;
+        visibility: hidden;
+    }
+
+    &:checked {
+        .lib-css(background, @_checkbox__background-checked);
+
+        &::before {
+            visibility: visible;
+        }
+    }
+
+    & + .label {
+        .lib-css(vertical-align, @input-checkbox__vertical-align);
+    }
+}
+
+.lib-form-element-radio() {
+    .lib-form-element-choice(@_type: input-radio);
+    appearance: none;
+    background-color: @color-white;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.2rem;
+    height: 1.2rem;
+    border: 2px solid currentColor;
+    border-radius: @rounded__full;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    &::before {
+        content: '';
+        width: 0.65rem;
+        height: 0.65rem;
+        border-radius: @rounded__full;
+        visibility: hidden;
+    }
+
+    &:checked {
+        &::before {
+            visibility: visible;
+        }
+    }
 }
