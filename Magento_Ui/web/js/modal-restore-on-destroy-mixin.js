@@ -9,7 +9,7 @@ define([
 ], function ($) {
     'use strict';
 
-    var modalWidgetMixin = {
+    const modalWidgetMixin = {
         options: {
             restoreOnDestroy: false,
         },
@@ -50,7 +50,7 @@ define([
             this._off(this.element, 'openModal closeModal');
 
             // Restore original position
-            var originalPosition = this.originalPosition,
+            const originalPosition = this.originalPosition,
                 next = originalPosition.parent.children().eq(originalPosition.index);
 
             // Don't try to place the dialog next to itself
