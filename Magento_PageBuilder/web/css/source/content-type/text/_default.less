@@ -4,9 +4,6 @@
 
 & when (@media-common = true) {
     div[data-content-type='text'] {
-        word-wrap: break-word;
-
-        // Apply the typography styles in this context
-        .lib-typography-all();
+        &:extend(.abs-rich-text-content all);
     }
 }
