@@ -258,7 +258,8 @@
 
 .lib-css(
     @_property,
-    @_value
+    @_value,
+    @_prefix: 0
 ) when not (@_value = '')
     and not (@_value = false)
     and not (extract(@_value, 1) = false)
