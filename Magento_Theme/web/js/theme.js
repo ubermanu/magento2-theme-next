@@ -10,17 +10,18 @@ define([
 ], function ($) {
     'use strict';
 
-    $('.cart-summary').mage('sticky', {
-        container: '#maincontent'
-    });
-
-    $('.panel.header > .header.links').clone().appendTo('#store\\.links');
-
-    $('#store\\.links li a').each(function () {
-        var id = $(this).attr('id');
-
-        if (id !== undefined) {
-            $(this).attr('id', id + '_mobile');
-        }
-    });
+    // TODO: remove this when implemented in templates/styles
+    // $('.cart-summary').mage('sticky', {
+    //     container: '#maincontent'
+    // });
+    //
+    // $('.panel.header > .header.links').clone().appendTo('#store\\.links');
+    //
+    // $('#store\\.links li a').each(function () {
+    //     var id = $(this).attr('id');
+    //
+    //     if (id !== undefined) {
+    //         $(this).attr('id', id + '_mobile');
+    //     }
+    // });
 });
