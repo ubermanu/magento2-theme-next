@@ -29,6 +29,7 @@
 @modal-slide-header__padding-vertical: 2.1rem;
 
 @modal-popup-confirm__width: 50rem;
+@modal-slide__width: 30rem;
 
 @modal-popup-image-box__border-color: @color-gray80;
 @modal-popup-image-box__max-width: 78rem;
@@ -69,7 +70,9 @@
 }
 
 .lib-modal-slide() {
-    .lib-css(left, @modal-slide__first__indent-left);
+    left: unset;
+    right: 0;
+    .lib-css(width, @modal-slide__width);
     .lib-css(z-index, @modal-slide__z-index);
 
     &._show {
@@ -251,5 +254,9 @@
                 max-height: 90vh; /** iOS webkit fix height problem when added long content **/
             }
         }
+    }
+
+    .modal-slide {
+        width: 100%;
     }
 }

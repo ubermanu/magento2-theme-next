@@ -70,33 +70,30 @@
 
     .page-header {
         .lib-css(background-color, @header__background-color);
-
         margin-bottom: @indent__base;
     }
 
-    .header {
-        &.content {
-            &:extend(.abs-add-clearfix all);
-
-            padding-top: @indent__s;
-            position: relative;
-        }
+    .header.content {
+        display: flex;
+        align-items: center;
+        gap: @indent__base;
+        padding-top: @indent__base;
     }
 
     .logo {
-        float: left;
-        margin: 0 0 @indent__s @indent__xl;
+        //float: left;
+        //margin: 0 0 @indent__s @indent__xl;
         max-width: 50%;
-        position: relative;
-        z-index: 5;
+        //position: relative;
+        //z-index: 5;
 
         img {
             display: block;
             height: auto;
         }
 
-        .page-print & {
-            float: none;
+        .header.content & {
+            margin-right: auto;
         }
     }
 
@@ -162,7 +159,6 @@
 
         &.demo {
             .lib-message(@_message-type: global-caution);
-
             margin-bottom: 0;
             text-align: center;
         }
@@ -174,7 +170,6 @@
 
     .page-footer {
         .lib-css(background-color, @footer__background-color);
-
         margin-top: auto;
     }
 
@@ -214,14 +209,14 @@
 
             .options {
                 .lib-dropdown(
-                @_dropdown-actions-padding: 0,
-                @_dropdown-list-item-padding: 0,
-                @_dropdown-toggle-icon-content: @icon-down,
-                @_dropdown-toggle-active-icon-content: @icon-up,
-                @_icon-font-text-hide: true,
-                @_icon-font-size: 22px,
-                @_icon-font-line-height: 22px,
-                @_dropdown-list-min-width: 160px
+                    @_dropdown-actions-padding: 0,
+                    @_dropdown-list-item-padding: 0,
+                    @_dropdown-toggle-icon-content: @icon-down,
+                    @_dropdown-toggle-active-icon-content: @icon-up,
+                    @_icon-font-text-hide: true,
+                    @_icon-font-size: 22px,
+                    @_icon-font-line-height: 22px,
+                    @_dropdown-list-min-width: 160px
                 );
 
                 ul.dropdown {
@@ -297,6 +292,21 @@
 }
 
 //
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .header.content {
+        flex-wrap: wrap;
+
+        .logo {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+//
 //  Desktop
 //  _____________________________________________
 
@@ -342,9 +352,11 @@
         }
 
         &.content {
-            &:extend(.abs-add-clearfix-desktop all);
-
             padding: @indent__l @indent__base 0;
+
+            .minicart-wrapper {
+                order: 3;
+            }
         }
     }
 
@@ -386,8 +398,6 @@
     }
 
     .logo {
-        margin: 0 auto 25px 0;
-
         img {
             max-height: inherit;
         }

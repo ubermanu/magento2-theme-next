@@ -25,6 +25,8 @@ require([
                     responsive: true,
                     innerScroll: true,
                     restoreOnDestroy: true,
+                    clickableOverlay: true,
+                    modalClass: 'filter-modal',
                     title: $t('Filter'),
                     trigger: '[data-role=navigation-filters]',
                     buttons: [],

@@ -1,14 +1,11 @@
-/**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
-
 //
 //  Variables
 //  _____________________________________________
 
 @autocomplete__background-color: @color-white;
 @autocomplete__border: 1px solid @form-element-input__border-color;
+@autocomplete__box-shadow: @shadow__lg;
+
 @autocomplete-item__border: 1px solid @color-gray90;
 @autocomplete-item__hover__color: @color-gray91;
 @autocomplete-item-amount__color: @color-gray60;
@@ -21,57 +18,24 @@
     .block-search {
         margin-bottom: 0;
 
-        .block {
-            &-title {
-                display: none;
-            }
+        .block-title {
+            display: none;
         }
 
         .block-content {
             margin-bottom: 0;
         }
 
-        .label {
-            .lib-icon-font(
-                @_icon-font-content: @icon-search,
-                @_icon-font-size: @font-size__xl,
-                @_icon-font-line-height: @line-height__xl,
-                @_icon-font-color: @header-icons-color,
-                @_icon-font-color-hover: @header-icons-color-hover,
-                @_icon-font-color-active: @header-icons-color-hover,
-                @_icon-font-text-hide: true
-            );
+        .field.search {
+            margin-bottom: 0;
 
-            display: inline-block;
-            float: right;
-
-            &.active {
-                + .control {
-                    input {
-                        position: static;
-                    }
-                }
+            .label {
+                &:extend(.abs-visually-hidden all);
             }
         }
 
-        .field.search {
-            margin-bottom: 0;
-        }
-
         .action.search {
-            display: none;
-        }
-
-        .control {
-            clear: both;
-            margin: 0 -@layout__width-xs-indent -1px;
-            padding: 0 @layout__width-xs-indent;
-        }
-
-        input {
-            left: -300%;
-            margin: @indent__base 0;
-            position: absolute;
+            &:extend(.abs-visually-hidden all);
         }
 
         .nested {
@@ -194,12 +158,22 @@
         .block-content {
             margin-bottom: 0;
         }
-    }
-}
 
-.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
-    .block-search {
-        margin-top: @indent__s;
+        .control {
+            //clear: both;
+            //margin: 0 -@layout__width-xs-indent -1px;
+            //padding: 0 @layout__width-xs-indent;
+        }
+
+        input {
+            //left: -300%;
+            //margin: @indent__base 0;
+            //position: absolute;
+        }
+
+        .header.content & {
+            flex-basis: 100%;
+        }
     }
 }
 
@@ -209,25 +183,25 @@
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .block-search {
-        float: right;
+        //float: right;
         position: relative;
         width: 16rem;
-        z-index: 4;
+        //z-index: 4;
 
         .label {
-            &:extend(.abs-visually-hidden-desktop all);
+            //&:extend(.abs-visually-hidden-desktop all);
         }
 
         .control {
-            border-top: 0;
-            margin: 0;
-            padding: 0;
+            //border-top: 0;
+            //margin: 0;
+            //padding: 0;
         }
 
         .nested {
-            display: block;
-            padding-top: 5px;
-            position: absolute;
+            //display: block;
+            //padding-top: 5px;
+            //position: absolute;
         }
 
         input {
@@ -239,26 +213,26 @@
         }
 
         .action.search {
-            display: inline-block;
-            .lib-button-icon(
-                @_icon-font-content: @icon-search,
-                @_icon-font-text-hide: true,
-                @_icon-font-size: @font-size__lg,
-                @_icon-font-line-height: @line-height__lg,
-                @_icon-font-color: @header-icons-color
-            );
-            .lib-button-reset();
+            //display: inline-block;
+            //.lib-button-icon(
+            //    @_icon-font-content: @icon-search,
+            //    @_icon-font-text-hide: true,
+            //    @_icon-font-size: @font-size__lg,
+            //    @_icon-font-line-height: @line-height__lg,
+            //    @_icon-font-color: @header-icons-color
+            //);
+            //.lib-button-reset();
 
-            padding: @indent__xs 0;
-            position: absolute;
-            right: @indent__md;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 1;
+            //padding: @indent__xs 0;
+            //position: absolute;
+            //right: @indent__md;
+            //top: 50%;
+            //transform: translateY(-50%);
+            //z-index: 1;
 
             &:focus {
                 &::before {
-                    .lib-css(color, @color-gray20);
+                    //.lib-css(color, @color-gray20);
                 }
             }
         }

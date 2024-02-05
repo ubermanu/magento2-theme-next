@@ -26,21 +26,22 @@
     }
 
     .nav-toggle {
+        cursor: pointer;
+
         .lib-icon-font(
             @icon-menu,
             @_icon-font-size: 1.5rem,
             @_icon-font-color: @header-icons-color,
-            @_icon-font-color-hover: @header-icons-color-hover
+            @_icon-font-color-hover: @header-icons-color-hover,
+            @_icon-font-display: block,
+            @_icon-font-position: before,
+            @_icon-font-text-hide: true
         );
-        .lib-icon-text-hide();
-
-        cursor: pointer;
-        display: block;
-        font-size: 0;
-        left: 15px;
-        position: absolute;
-        top: 15px;
-        z-index: 14;
+        //font-size: 0;
+        //left: 15px;
+        //position: absolute;
+        //top: 15px;
+        //z-index: 14;
     }
 }
 

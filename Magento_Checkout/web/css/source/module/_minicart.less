@@ -105,8 +105,8 @@
 
     .minicart-wrapper {
         .action.showcart {
+            white-space: nowrap;
             color: inherit;
-            margin-left: @indent__base;
 
             .lib-icon-font(
                 @icon-cart,
@@ -115,35 +115,54 @@
                 @_icon-font-text-hide: false,
                 @_icon-font-position: before
             );
-        }
 
-        // TODO: Remove this
-        float: right;
+            &:hover {
+                animation: shake-y 800ms ease-in-out none;
+            }
 
-        .block-minicart {
-            background: @page__background-color;
-            position: fixed;
-            top: 0;
-            right: 0;
-            height: 100vh;
-            z-index: @z-index-8;
-            box-shadow: @shadow__lg;
-            transition: right 180ms ease-out;
+            .text {
+                &:extend(.abs-visually-hidden all);
+            }
 
-            // TODO: Make the list scrollable and block the body scroll (modal behavior)
-            max-height: 100vh;
-            overflow-y: auto;
+            .counter.qty {
+                .lib-css(background, @active__color);
+                .lib-css(color, @page__background-color);
+                .lib-css(height, @minicart-qty__height);
+                .lib-css(line-height, @minicart-qty__height);
 
-            .lib-css(padding, 3rem @indent__lg @minicart__padding-horizontal);
+                border-radius: @rounded__base;
+                display: inline-block;
+                margin: 3px 0 0;
+                min-width: 18px;
+                overflow: hidden;
+                padding: 0 3px;
+                text-align: center;
+                white-space: normal;
 
-            .block-title {
-                display: none;
+                &.empty {
+                    display: none;
+                }
+
+                .loader {
+                    > img {
+                        .lib-css(max-width, @minicart-qty__height);
+                    }
+                }
+            }
+
+            .counter-label {
+                &:extend(.abs-visually-hidden all);
             }
         }
 
-        // Drawer animation
-        &:not(.active) .block-minicart {
-            right: -100%;
+        .minicart-widgets {
+            margin-top: 15px;
+        }
+    }
+
+    .block-minicart {
+        .block-title {
+            display: none;
         }
 
         .product {
@@ -159,70 +178,8 @@
             }
         }
 
-        .action {
-            &.close {
-                .lib-button-icon(
-                    @icon-remove,
-                    @_icon-font-size: @font-size__xl,
-                    @_icon-font-line-height: @line-height__xl,
-                    @_icon-font-text-hide: true
-                );
-                .lib-button-reset();
-
-                position: absolute;
-                left: 0;
-                top: 0;
-                height: 3rem;
-                width: 3rem;
-            }
-
-            &.showcart {
-                white-space: nowrap;
-
-                &:hover {
-                    &::before {
-                        animation: shake-y 800ms ease-in-out none;
-                    }
-                }
-
-                .text {
-                    &:extend(.abs-visually-hidden all);
-                }
-
-                .counter.qty {
-                    .lib-css(background, @active__color);
-                    .lib-css(color, @page__background-color);
-                    .lib-css(height, @minicart-qty__height);
-                    .lib-css(line-height, @minicart-qty__height);
-
-                    border-radius: @rounded__base;
-                    display: inline-block;
-                    margin: 3px 0 0;
-                    min-width: 18px;
-                    overflow: hidden;
-                    padding: 0 3px;
-                    text-align: center;
-                    white-space: normal;
-
-                    &.empty {
-                        display: none;
-                    }
-
-                    .loader {
-                        > img {
-                            .lib-css(max-width, @minicart-qty__height);
-                        }
-                    }
-                }
-
-                .counter-label {
-                    &:extend(.abs-visually-hidden all);
-                }
-            }
-        }
-
-        .minicart-widgets {
-            margin-top: 15px;
+        .action.close {
+            display: none;
         }
     }
 
@@ -256,10 +213,6 @@
         // TODO: Remove that behavior from the script itself
         .product-image-container[style] {
             width: auto !important;
-        }
-
-        .product-image-wrapper {
-            &:extend(.abs-reset-image-wrapper all);
         }
 
         .product-item-pricing {
@@ -428,47 +381,6 @@
                     @_icon-font-content: @icon-trash
                 );
             }
-        }
-    }
-}
-
-//
-//  Mobile
-//  _____________________________________________
-
-.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
-    .minicart-wrapper .block-minicart {
-        width: 290px;
-    }
-}
-
-.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
-    .minicart-wrapper {
-        margin-top: @indent__s;
-        //.lib-clearfix();
-
-        .product {
-            .actions {
-                //float: left;
-                //margin: 10px 0 0;
-            }
-        }
-
-        .update-cart-item {
-            //float: right;
-            //margin-left: 0;
-        }
-    }
-}
-
-//
-//  Desktop
-//  _____________________________________________
-
-.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
-    .minicart-wrapper {
-        .block-minicart {
-            width: 30rem;
         }
     }
 }
