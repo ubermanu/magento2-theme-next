@@ -229,23 +229,13 @@
     .products-list {
         .product {
             &-item {
-                display: table;
                 width: 100%;
+                margin-bottom: @indent__l;
 
                 &-info {
-                    display: table-row;
-                }
-
-                &-photo {
-                    display: table-cell;
-                    padding: 0 @indent__l @indent__l 0;
-                    vertical-align: top;
-                    width: 1%;
-                }
-
-                &-details {
-                    display: table-cell;
-                    vertical-align: top;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: @indent__m;
                 }
             }
         }
