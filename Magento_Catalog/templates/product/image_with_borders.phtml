@@ -3,7 +3,7 @@
 /** @var $escaper \Magento\Framework\Escaper */
 ?>
 <div class="product-image-container product-image-container-<?= /* @noEscape */ $block->getProductId() ?>">
-    <div class="product-image-wrapper" style="aspect-ratio: <?= $escaper->escapeHtmlAttr($block->getRatio()) ?>;">
+    <div class="product-image-wrapper" style="aspect-ratio: <?= $escaper->escapeHtmlAttr($block->getWidth() / $block->getHeight()) ?>;">
         <img class="<?= $escaper->escapeHtmlAttr($block->getClass()) ?>"
             <?php foreach ($block->getCustomAttributes() as $name => $value): ?>
                 <?= $escaper->escapeHtmlAttr($name) ?>="<?= $escaper->escapeHtml($value) ?>"
