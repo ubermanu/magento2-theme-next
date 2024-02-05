@@ -8,8 +8,9 @@
 //  _____________________________________________
 
 @checkout-tooltip__hover__z-index: @tooltip__z-index;
+@checkout-tooltip__box-shadow: @shadow__sm;
 
-@checkout-tooltip-icon-arrow__font-size: 10px;
+@checkout-tooltip-icon-arrow__font-size: 0;
 @checkout-tooltip-icon-arrow__left: -(@checkout-tooltip-content__padding + @checkout-tooltip-icon-arrow__font-size - @checkout-tooltip-content__border-width);
 
 @checkout-tooltip-icon__color: @color-gray-light2;
@@ -17,13 +18,14 @@
 @checkout-tooltip-icon__font-size: 24px;
 @checkout-tooltip-icon__hover__color: @primary__color;
 
-@checkout-tooltip-content__background-color: @color-gray-light01;
-@checkout-tooltip-content__border-color: @color-gray60;
+@checkout-tooltip-content__background-color: @message-info__background;
+@checkout-tooltip-content__border-color: false;
 @checkout-tooltip-content__border-width: 1px;
-@checkout-tooltip-content__font-size: @font-size__base;
-@checkout-tooltip-content__padding: 12px;
+@checkout-tooltip-content__border-radius: @rounded__base;
+@checkout-tooltip-content__font-size: @font-size__sm;
+@checkout-tooltip-content__padding: @indent__sm;
 @checkout-tooltip-content__width: 270px;
-@checkout-tooltip-content__active__border-color: darken(@checkout-tooltip-content__border-color, 20%);
+@checkout-tooltip-content__active__border-color: false;
 
 @checkout-tooltip-content-mobile-popup__width: 200px;
 @checkout-tooltip-content-mobile__right: -(@indent__s);
@@ -37,8 +39,8 @@
     .field-tooltip {
         cursor: pointer;
         position: absolute;
-        right: 0;
-        top: 1px;
+        right: @indent__sm;
+        top: @indent__sm;
 
         &._active {
             .lib-css(z-index, @checkout-tooltip__hover__z-index);
@@ -88,10 +90,11 @@
         .field-tooltip-content {
             .lib-css(background, @checkout-tooltip-content__background-color);
             .lib-css(border, @checkout-tooltip-content__border-width solid @checkout-tooltip-content__border-color);
-            .lib-css(border-radius, @checkout-tooltip-content__border-width);
+            .lib-css(border-radius, @checkout-tooltip-content__border-radius);
             .lib-css(font-size, @checkout-tooltip-content__font-size);
             .lib-css(padding, @checkout-tooltip-content__padding);
             .lib-css(width, @checkout-tooltip-content__width);
+            .lib-css(box-shadow, @checkout-tooltip__box-shadow);
 
             display: none;
             left: 38px;
