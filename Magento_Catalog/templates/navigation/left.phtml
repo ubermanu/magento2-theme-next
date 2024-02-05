@@ -1,0 +1,48 @@
+<?php
+/**
+ * Category left navigation
+ *
+ * @var \Magento\Catalog\Block\Navigation $block
+ * @var \Magento\Framework\Locale\LocaleFormatter $localeFormatter
+ * @var \Magento\Framework\Escaper $escaper
+ */
+?>
+<?php if (!$block->getCategory()) {
+    return;
+} ?>
+<?php $_categories = $block->getCurrentChildCategories() ;?>
+<?php $_count = is_array($_categories) ? count($_categories) : $_categories->count(); ?>
+<?php if ($_count):?>
+    <div class="block filter">
+        <div class="block-title filter-title">
+            <strong><?= $escaper->escapeHtml(__('Shop By')) ?></strong>
+        </div>
+        <div class="block-content filter-content">
+            <strong role="heading" aria-level="2" class="block-subtitle filter-subtitle"><?= $escaper->escapeHtml(__('Shopping Options')) ?></strong>
+            <dl class="filter-options" id="narrow-by-list2">
+                <dt role="term" aria-level="3" class="filter-options-title"><?= $escaper->escapeHtml(__('Category')) ?></dt>
+                <dd>
+                    <ol class="items">
+                        <?php /** @var \Magento\Catalog\Model\Category $_category */ ?>
+                        <?php foreach ($_categories as $_category):?>
+                            <?php if ($_category->getIsActive()):?>
+                                <li class="item">
+                                    <a href="<?= $escaper->escapeUrl($block->getCategoryUrl($_category)) ?>"
+                                        <?php if ($block->isCategoryActive($_category)):?>
+                                            class="current"
+                                        <?php endif; ?>
+                                    ><?= $escaper->escapeHtml($_category->getName()) ?></a>
+                                    <span class="count">
+                                        <?= $escaper->escapeHtml(
+                                            $localeFormatter->formatNumber($_category->getProductCount())
+                                        ) ?>
+                                    </span>
+                                </li>
+                            <?php endif; ?>
+                        <?php endforeach ?>
+                    </ol>
+                </dd>
+            </dl>
+        </div>
+    </div>
+<?php endif; ?>
