@@ -10,7 +10,6 @@
 
     .product {
         &-items {
-            font-size: 0;
             &:extend(.abs-reset-list all);
         }
 
@@ -21,11 +20,8 @@
                 padding: 0;
             }
 
-            &:extend(.abs-add-box-sizing all);
-
             &-name {
                 &:extend(.abs-product-link all);
-
                 display: block;
                 hyphens: auto;
                 margin: @indent__xs 0;
