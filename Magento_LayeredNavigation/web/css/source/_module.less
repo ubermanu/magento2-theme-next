@@ -31,8 +31,7 @@
         }
 
         .filter-label {
-            display: block;
-            font-weight: @font-weight__bold;
+            font-weight: @font-weight__semibold;
 
             &::after {
                 content: ':';
@@ -41,6 +40,15 @@
 
         + .filter-actions {
             margin-bottom: @indent__l;
+        }
+
+        .action.remove {
+            .lib-icon-font(
+                @icon-x-circle,
+                @_icon-font-text-hide: true,
+                @_icon-font-color-hover: @color-red-400,
+                @_icon-font-color-active: @color-red-500
+            );
         }
     }
 
