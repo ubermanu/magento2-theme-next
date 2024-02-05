@@ -4,13 +4,12 @@
 /** @var $escaper \Magento\Framework\Escaper */
 ?>
 
-<div data-block="minicart" class="minicart-wrapper">
+<div class="minicart-wrapper">
     <a class="action showcart" href="<?= $escaper->escapeUrl($block->getShoppingCartUrl()) ?>"
        data-bind="scope: 'minicart_content'">
         <span class="text"><?= $escaper->escapeHtml(__('My Cart')) ?></span>
         <span class="counter qty empty"
-              data-bind="css: { empty: !!getCartParam('summary_count') == false && !isLoading() },
-               blockLoader: isLoading">
+              data-bind="css: { empty: !!getCartParam('summary_count') == false && !isLoading() }, blockLoader: isLoading">
             <span class="counter-number">
                 <!-- ko if: getCartParam('summary_count') -->
                 <!-- ko text: getCartParam('summary_count').toLocaleString(window.LOCALE) --><!-- /ko -->
@@ -24,44 +23,46 @@
             </span>
         </span>
     </a>
-    <?php if ($block->getIsNeedToDisplaySideBar()):?>
-        <div class="block block-minicart"
-             data-mage-init='{"Magento_Ui/js/modal/modal":{
-                "type": "slide",
-                "trigger": ".action.showcart",
-                "responsive": true,
-                "innerScroll": true,
-                "clickableOverlay": true,
-                "modalClass": "minicart-modal",
-                "buttons":[]}}'>
-            <div id="minicart-content-wrapper" data-bind="scope: 'minicart_content'">
-                <!-- ko template: getTemplate() --><!-- /ko -->
-            </div>
-            <?= $block->getChildHtml('minicart.addons') ?>
-        </div>
-    <?php else: ?>
-        <?php $scriptString = <<<script
-            require(['jquery'], function ($) {
-                $('a.action.showcart').on('click', function() {
-                    $(document.body).trigger('processStart');
-                });
-            });
-script;
-        ?>
-        <?= /* @noEscape */ $secureRenderer->renderTag('script', [], $scriptString, false); ?>
-    <?php endif ?>
-    <?= /* @noEscape */ $secureRenderer->renderTag('script', [], 'window.checkout = ' .
-     /* @noEscape */ $block->getSerializedConfig(), false); ?>
-    <script type="text/x-magento-init">
-    {
-        "[data-block='minicart']": {
-            "Magento_Ui/js/core/app": <?= /* @noEscape */ $block->getJsLayout() ?>
-        },
-        "*": {
-            "Magento_Ui/js/block-loader": "<?= $block->escapeJs(
-                $block->escapeUrl($block->getViewFileUrl('images/loader-1.gif'))
-            ) ?>"
-        }
-    }
-    </script>
 </div>
+
+<?php if ($block->getIsNeedToDisplaySideBar()):?>
+    <div class="block block-minicart"
+         data-block="minicart"
+         data-mage-init='{"Magento_Ui/js/modal/modal":{
+            "type": "slide",
+            "trigger": ".action.showcart",
+            "responsive": true,
+            "innerScroll": true,
+            "clickableOverlay": true,
+            "buttons":[]}}'>
+        <div id="minicart-content-wrapper" data-bind="scope: 'minicart_content'">
+            <!-- ko template: getTemplate() --><!-- /ko -->
+        </div>
+        <?= $block->getChildHtml('minicart.addons') ?>
+    </div>
+<?php else: ?>
+    <?php $scriptString = <<<script
+        require(['jquery'], function ($) {
+            $('a.action.showcart').on('click', function() {
+                $(document.body).trigger('processStart');
+            });
+        });
+script;
+    ?>
+    <?= /* @noEscape */ $secureRenderer->renderTag('script', [], $scriptString, false); ?>
+<?php endif ?>
+
+<?= /* @noEscape */ $secureRenderer->renderTag('script', [], 'window.checkout = ' .
+ /* @noEscape */ $block->getSerializedConfig(), false); ?>
+<script type="text/x-magento-init">
+{
+    "[data-block='minicart']": {
+        "Magento_Ui/js/core/app": <?= /* @noEscape */ $block->getJsLayout() ?>
+    },
+    "*": {
+        "Magento_Ui/js/block-loader": "<?= $block->escapeJs(
+            $block->escapeUrl($block->getViewFileUrl('images/loader-1.gif'))
+        ) ?>"
+    }
+}
+</script>
