@@ -11,6 +11,6 @@
     "magefront": "^2.0.0",
     "prettier": "^3.0.3",
     "stylelint": "^15.10.3",
-    "stylelint-config-standard-less": "^2.0.0"
+    "stylelint-config-standard-less": "^3.0.1"
   }
 }
